@@ -1,0 +1,58 @@
+[
+    {
+        "nAdmMotAccCodigo": 7,
+        "cPerJuridica": "1000000002",
+        "nAdmAccCodigo": 4,
+        "cAdmMotAccDescripcion": "Postulación",
+        "cAdmMotAccDesCorta": "post.",
+        "nAdmMotAccstado": 1,
+        "dAdmMotAccFechaRegistro": "2022-08-19T00:00:00",
+        "cAdmMotAccUsuario": "1000000005",
+        "cAdmMotAccHost": "121.221.12.123",
+        "dAdmMotAccFechaUpdate": "0001-01-01T00:00:00",
+        "cAdmMotAccUsuarioUpd": null,
+        "cAdmMotAccHostUpd": null
+    },
+    {
+        "nAdmMotAccCodigo": 8,
+        "cPerJuridica": "1000000002",
+        "nAdmAccCodigo": 4,
+        "cAdmMotAccDescripcion": "Traslado de sucursal",
+        "cAdmMotAccDesCorta": "trasl. sucursal",
+        "nAdmMotAccstado": 1,
+        "dAdmMotAccFechaRegistro": "2022-08-19T00:00:00",
+        "cAdmMotAccUsuario": "1000000005",
+        "cAdmMotAccHost": null,
+        "dAdmMotAccFechaUpdate": "0001-01-01T00:00:00",
+        "cAdmMotAccUsuarioUpd": null,
+        "cAdmMotAccHostUpd": null
+    },
+    {
+        "nAdmMotAccCodigo": 9,
+        "cPerJuridica": "1000000002",
+        "nAdmAccCodigo": 5,
+        "cAdmMotAccDescripcion": "Retiro del curso",
+        "cAdmMotAccDesCorta": "ret. curso",
+        "nAdmMotAccstado": 1,
+        "dAdmMotAccFechaRegistro": "2022-08-19T00:00:00",
+        "cAdmMotAccUsuario": "1000000005",
+        "cAdmMotAccHost": null,
+        "dAdmMotAccFechaUpdate": "0001-01-01T00:00:00",
+        "cAdmMotAccUsuarioUpd": null,
+        "cAdmMotAccHostUpd": null
+    },
+    {
+        "nAdmMotAccCodigo": 10,
+        "cPerJuridica": "1000000002",
+        "nAdmAccCodigo": 5,
+        "cAdmMotAccDescripcion": "Cambio de carrera",
+        "cAdmMotAccDesCorta": "camb. carrera",
+        "nAdmMotAccstado": 1,
+        "dAdmMotAccFechaRegistro": "2022-08-19T00:00:00",
+        "cAdmMotAccUsuario": "1000000005",
+        "cAdmMotAccHost": null,
+        "dAdmMotAccFechaUpdate": "0001-01-01T00:00:00",
+        "cAdmMotAccUsuarioUpd": null,
+        "cAdmMotAccHostUpd": null
+    }
+]

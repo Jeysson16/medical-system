@@ -1,0 +1,44 @@
+[
+    {
+        "nIdEdificio": 1,
+        "cPerJurCodigo": "1000012312",
+        "cGAEDINombre": "Torre Begonias",
+        "cGAEDCode": "TBA02",
+        "nAcdCampusCodigo": 2,
+        "nGAEDEstado": 1,
+        "dGAEdiFechaRegistro": "2023-07-07T18:02:00.667",
+        "cGAEdiHostRegistro": "194.55.14.245",
+        "cGAEdiUsuarioRegistro": "1009121976",
+        "dGAEdiFechaUpdate": null,
+        "cGAEdiHostUpdate": null,
+        "cGAEdiUsuarioUpdate": null
+    },
+    {
+        "nIdEdificio": 2,
+        "cPerJurCodigo": "1000012312",
+        "cGAEDINombre": "Edificio Pitagoras",
+        "cGAEDCode": "ED211",
+        "nAcdCampusCodigo": 3,
+        "nGAEDEstado": 1,
+        "dGAEdiFechaRegistro": "2023-07-07T18:02:00.667",
+        "cGAEdiHostRegistro": "194.55.14.245",
+        "cGAEdiUsuarioRegistro": "1009121976",
+        "dGAEdiFechaUpdate": null,
+        "cGAEdiHostUpdate": null,
+        "cGAEdiUsuarioUpdate": null
+    },
+    {
+        "nIdEdificio": 3,
+        "cPerJurCodigo": "1000012312",
+        "cGAEDINombre": "Residencial San Felipe",
+        "cGAEDCode": "RESHIPO",
+        "nAcdCampusCodigo": 5,
+        "nGAEDEstado": 1,
+        "dGAEdiFechaRegistro": "2023-07-07T18:02:00.667",
+        "cGAEdiHostRegistro": "194.55.14.245",
+        "cGAEdiUsuarioRegistro": "1009121976",
+        "dGAEdiFechaUpdate": null,
+        "cGAEdiHostUpdate": null,
+        "cGAEdiUsuarioUpdate": null
+    }
+]

@@ -1,0 +1,40 @@
+[
+    {
+        "cPerJurCodigo": "1000000002",
+        "nAcdTipoCodigo": 2,
+        "dCModGestionAdmFecReg": "2022-07-27T20:58:47.693",
+        "dCModGestionAdmFecUpd": "2023-09-22T20:58:47.693",
+        "cCModGestionAdmHostReg": "201.230.81.249",
+        "cCModGestionAdmHostUpd": "201.230.81.249",
+        "cCModGestionAdmUsuReg": "1000000005",
+        "cCModGestionAdmUsuUpd": "1000000005",
+        "cPerJurCodigoDes": "Universidad Señor de Sipan",
+        "nAcdTipoCodigoDes": "Modalidad de Admisión"
+    },
+    {
+        "cPerJurCodigo": "1000000003",
+        "nAcdTipoCodigo": 6,
+        "dCModGestionAdmFecReg": "2020-12-10T20:58:47.693",
+        "dCModGestionAdmFecUpd": "2022-11-16T20:58:47.693",
+        "cCModGestionAdmHostReg": "201.230.81.249",
+        "cCModGestionAdmHostUpd": "201.230.81.249",
+        "cCModGestionAdmUsuReg": "1000000005",
+        "cCModGestionAdmUsuUpd": "1000000005",
+        "cPerJurCodigoDes": "Universidad Cesar Vallejo",
+        "nAcdTipoCodigoDes": "Modalidad de Admisión"
+    },
+    {
+        "cPerJurCodigo": "1000012312",
+        "nAcdTipoCodigo": 33,
+        "nIdProceso": 4,
+        "dCModGestionAdmFecReg": "2023-09-22T03:18:37.717",
+        "dCModGestionAdmFecUpd": "0001-01-01T00:00:00",
+        "cCModGestionAdmHostReg": "201.230.81.174",
+        "cCModGestionAdmHostUpd": null,
+        "cCModGestionAdmUsuReg": "1009121976",
+        "cCModGestionAdmUsuUpd": null,
+        "cPerJurCodigoDes": null,
+        "nAcdTipoCodigoDes": null,
+        "nIdProcesoDes": null
+    }
+]

@@ -1,0 +1,31 @@
+export interface AsiPersonaDetalle {
+    cPerJurCodigo?: string;
+    cPerCodigo?: string;
+    nLstControlCodigo?: number;
+    nElemCtlCodigo?: number;
+    nFormaRegistro?: number;
+    cIdFile?: string;
+    cIdPathFile?: string;
+    nTypeFile?: number;
+    cNameFile?: string;
+    nLstAcPerDetEstado?: number;
+    dLisCtlFechaVence?: Date | string;
+    cLisPerDetObservacion?: string;
+    dLstAsiPerFechaRegistro?: Date;
+    dLstAsiPerFechaUpdate?: Date;
+    cLstAsiPerHostRegistro?: string;
+    cLstAsiPerHostUpdate?: string;
+    cLstAsiPerUsuarioRegistro?: string;
+    cLstAsiPerUsuarioUpdate?: string;
+    nLisCtlDiasVence?: number;
+    nLisCtlObligatorio?: number;
+    nLisCtlSecuencia?: number;
+    dLisCtlFechaVenceCalculado?: Date;
+    nElemCtlDes?: string;
+    nLisCtlObligatorioDes?: string;
+    nLstAcPerDetEstadoDes?: string;
+    bViewObservation?: boolean;
+    bViewFile?: boolean;
+    cNameFileFP?: string;
+    cTypeFileFP?: string;
+}

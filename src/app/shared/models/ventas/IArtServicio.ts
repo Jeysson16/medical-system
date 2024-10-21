@@ -1,0 +1,57 @@
+import { ArtSerMasVenta } from "./IArtSerMasVenta";
+import { DetalleArtMasterDetraccion } from "./IDetalleArtMasterDetraccion";
+import { DetalleArtMasterImpuestos } from "./IDetalleArtMasterImpuestos";
+
+export interface IArtServicio {
+    nArtSerCodigo?: number;
+    cPerJurCodigo?: string;
+    cArtSerNombre?: string;
+    cArtSerDesCorta?: string;
+    cArtSerPalabraClave?: string;
+    nArtSerMoneda?: number;
+    nArtSerUsarTarifario?: boolean;
+    nArtSerCambiarPrecio?: boolean;
+    dArtSerFecEfectiva?: Date;
+    nArtSerTipCuenta?: number;
+    nArtSerModAssIngresoCodigo?: number;
+    nArtSerModAssCastigoCodigo?: number;
+    nArtSerModAssProvisionCodigo?: number;
+    nArtSerTipAfecto?: number;
+    nArtSerTipISC?: number;
+    cArtiMasCodigo?:string;
+    nArtSerPorISC?: number;
+    nArtSerValorISC?: number;
+    nArtSerPercepcion?: number;
+    nArtSerDetraccion?: number;
+    nArtSerImporte?: number;
+    nArtSerImpMinorista?: number;
+    nArtSerImpMayorista?: number;
+    nArtSerPromocion?: number;
+    nArtSerValorPromocion?: number;
+    nArtSerDescuento?: number;
+    nArtSerValorDescuento?: number;
+    nArtSerDetalle?: boolean;
+    nArtSerServicioBanco?: boolean;
+    nArtSerServicioMora?: boolean;
+    nAplicaProntoPago?: boolean;
+    nArtSerEstado?: boolean;
+    cPerUsuCodigoFirstRegister?: string;
+    cPerUsuHostFirstRegister?: string;
+    dPerUsuFecFirstRegister?: Date;
+    cPerUsuCodigoPreviousModify?: string;
+    cPerUsuHostPreviousModify?: string;
+    dPerUsuFecPreviousModify?: Date;
+    cPerUsuCodigoLastModify?: string;
+    cPerUsuHostLastModify?: string;
+    dPerUsuFecLastModify?: Date;
+
+    nArtSerMasTipo?: number;
+    nRefArtiCodigo?: number;
+    nArtMasUnidad?: number;
+    nArtTipoPrecio?: number;
+    nArtAsigIngresos?: number;
+    artServicio?: IArtServicio;
+    detalleArtMasterDetraccion?: DetalleArtMasterDetraccion;
+    lstDetalleArtMasterImpuestos?: DetalleArtMasterImpuestos[];
+    lstArtSerMasVenta?: ArtSerMasVenta[];
+}

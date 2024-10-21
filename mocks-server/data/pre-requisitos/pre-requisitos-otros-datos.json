@@ -1,0 +1,30 @@
+[
+    {
+        "nombrePrograma": "ESCUELA PROFESIONAL DE INGENIERA DE SISTEMAS",
+        "nombrePlanEstudio": "Pregrado",
+        "ciclo": 1,
+        "nombreCurso": "Matemática desde 0",
+        "creditos": 3
+    },
+    {
+        "nombrePrograma": "ESCUELA PROFESIONAL DE INGENIERA DE SISTEMAS",
+        "nombrePlanEstudio": "Pregrado",
+        "ciclo": 2,
+        "nombreCurso": "Matemática Básica",
+        "creditos": 5
+    },
+    {
+        "nombrePrograma": "ESCUELA PROFESIONAL DE INGENIERA DE SISTEMAS",
+        "nombrePlanEstudio": "Pregrado",
+        "ciclo": 3,
+        "nombreCurso": "Calculo 1",
+        "creditos": 5
+    },
+    {
+        "nombrePrograma": "ESCUELA PROFESIONAL DE INGENIERA DE SISTEMAS",
+        "nombrePlanEstudio": "Pregrado",
+        "ciclo": 3,
+        "nombreCurso": "Matemática para Ingeniería",
+        "creditos": 3
+    }
+]

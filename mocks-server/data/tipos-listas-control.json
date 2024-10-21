@@ -1,0 +1,57 @@
+[
+    {
+        "nConCodigo": 850011,
+        "nConValor": 0,
+        "cConDescripcion": "Baja"
+    },
+    {
+        "nConCodigo": 850011,
+        "nConValor": 1,
+        "cConDescripcion": "Compromiso"
+    },
+    {
+        "nConCodigo": 850011,
+        "nConValor": 2,
+        "cConDescripcion": "Contratación"
+    },
+    {
+        "nConCodigo": 850011,
+        "nConValor": 3,
+        "cConDescripcion": "Formación"
+    },
+    {
+        "nConCodigo": 850011,
+        "nConValor": 4,
+        "cConDescripcion": "Lista Asignación Personal"
+    },
+    {
+        "nConCodigo": 850011,
+        "nConValor": 5,
+        "cConDescripcion": "Lista Comunicaciones"
+    },
+    {
+        "nConCodigo": 850011,
+        "nConValor": 6,
+        "cConDescripcion": "Lista Condiciones Académicas"
+    },
+    {
+        "nConCodigo": 850011,
+        "nConValor": 7,
+        "cConDescripcion": "Lista Criterio Específico"
+    },
+    {
+        "nConCodigo": 850011,
+        "nConValor": 8,
+        "cConDescripcion": "Médica"
+    },
+    {
+        "nConCodigo": 850011,
+        "nConValor": 9,
+        "cConDescripcion": "Otras"
+    },
+    {
+        "nConCodigo": 850011,
+        "nConValor": 10,
+        "cConDescripcion": "Traslado"
+    }
+]

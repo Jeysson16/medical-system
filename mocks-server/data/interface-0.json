@@ -1,0 +1,152 @@
+[
+    {
+        "nIntCodigo": 8000,
+        "nIntClase": 0,
+        "cIntJerarquia": "01",
+        "cIntNombre": "Niveles de Instituciones Académicas",
+        "cIntDescripcion": "Niveles de Instituciones Académicas",
+        "nIntTipo": 1,
+        "nIntEstado": 1,
+        "dIntFecRegistro": "2022-10-13T10:02:50.7"
+    },
+    {
+        "nIntCodigo": 9000,
+        "nIntClase": 0,
+        "cIntJerarquia": "01",
+        "cIntNombre": "Formas de enseñanza",
+        "cIntDescripcion": "Formas de enseñanza de Instituciones Académicas",
+        "nIntTipo": 1,
+        "nIntEstado": 1,
+        "dIntFecRegistro": "2022-10-13T23:01:00"
+    },
+    {
+        "nIntCodigo": 10000,
+        "nIntClase": 0,
+        "cIntJerarquia": "01",
+        "cIntNombre": "Dependencias de Instituciones Académicas",
+        "cIntDescripcion": "Dependencias de Instituciones Académicas",
+        "nIntTipo": 1,
+        "nIntEstado": 1,
+        "dIntFecRegistro": "2022-10-14T15:18:00"
+    },
+    {
+        "nIntCodigo": 5001,
+        "nIntClase": 0,
+        "cIntJerarquia": "A",
+        "cIntNombre": "MODALIDAD DE ESTUDIOS",
+        "cIntDescripcion": "Modalidad de Estudios",
+        "nIntTipo": 1,
+        "nIntEstado": 1,
+        "dIntFecRegistro": "1900-01-01T00:00:00"
+    },
+    {
+        "nIntCodigo": 7006,
+        "nIntClase": 0,
+        "cIntJerarquia": "A",
+        "cIntNombre": "RPT MVC",
+        "cIntDescripcion": "Reporte MVC",
+        "nIntTipo": 1,
+        "nIntEstado": 1,
+        "dIntFecRegistro": "2018-08-06T17:46:30.523"
+    },
+    {
+        "nIntCodigo": 2099,
+        "nIntClase": 0,
+        "cIntJerarquia": "A",
+        "cIntNombre": "Menu APP Movil Adm",
+        "cIntDescripcion": "Menu APP Movil Adm",
+        "nIntTipo": 1000,
+        "nIntEstado": 1,
+        "dIntFecRegistro": "2019-02-04T21:58:24.79"
+    },
+    {
+        "nIntCodigo": 4117,
+        "nIntClase": 0,
+        "cIntJerarquia": "A",
+        "cIntNombre": "PDT 601",
+        "cIntDescripcion": "Planilla Electrónica",
+        "nIntTipo": 1,
+        "nIntEstado": 1,
+        "dIntFecRegistro": "1900-01-01T00:00:00"
+    },
+    {
+        "nIntCodigo": 4138,
+        "nIntClase": 0,
+        "cIntJerarquia": "A",
+        "cIntNombre": "CIERRE DE PLANILLAS",
+        "cIntDescripcion": "Cierre de Planillas",
+        "nIntTipo": 1,
+        "nIntEstado": 1,
+        "dIntFecRegistro": "1900-01-01T00:00:00"
+    },
+    {
+        "nIntCodigo": 5015,
+        "nIntClase": 0,
+        "cIntJerarquia": "A",
+        "cIntNombre": "CURRICULO",
+        "cIntDescripcion": "Curriculo",
+        "nIntTipo": 1,
+        "nIntEstado": 1,
+        "dIntFecRegistro": "1900-01-01T00:00:00"
+    },
+    {
+        "nIntCodigo": 5020,
+        "nIntClase": 0,
+        "cIntJerarquia": "A",
+        "cIntNombre": "TIPO CURRICULO",
+        "cIntDescripcion": "Tipo de Curriculo",
+        "nIntTipo": 1,
+        "nIntEstado": 1,
+        "dIntFecRegistro": "1900-01-01T00:00:00"
+    },
+    {
+        "nIntCodigo": 1117,
+        "nIntClase": 0,
+        "cIntJerarquia": "A",
+        "cIntNombre": "MENU REQMATRICULA",
+        "cIntDescripcion": "Menu Requisitos para Matricula",
+        "nIntTipo": 1,
+        "nIntEstado": 1,
+        "dIntFecRegistro": "1900-01-01T00:00:00"
+    },
+    {
+        "nIntCodigo": 1118,
+        "nIntClase": 0,
+        "cIntJerarquia": "A",
+        "cIntNombre": "CONFIGURACION DE POSTULANTES",
+        "cIntDescripcion": "Configuración de Postulantes",
+        "nIntTipo": 1,
+        "nIntEstado": 1,
+        "dIntFecRegistro": "1900-01-01T00:00:00"
+    },
+    {
+        "nIntCodigo": 1000,
+        "nIntClase": 0,
+        "cIntJerarquia": "A",
+        "cIntNombre": "SELECTOR MODULO",
+        "cIntDescripcion": "SideBar",
+        "nIntTipo": 0,
+        "nIntEstado": 1,
+        "dIntFecRegistro": "1900-01-01T00:00:00"
+    },
+    {
+        "nIntCodigo": 1001,
+        "nIntClase": 0,
+        "cIntJerarquia": "A",
+        "cIntNombre": "MENU",
+        "cIntDescripcion": "Menu",
+        "nIntTipo": 1,
+        "nIntEstado": 1,
+        "dIntFecRegistro": "2015-01-26T14:43:01.83"
+    },
+    {
+        "nIntCodigo": 1002,
+        "nIntClase": 0,
+        "cIntJerarquia": "A",
+        "cIntNombre": "Menu MVC",
+        "cIntDescripcion": "Menu MVC",
+        "nIntTipo": 1,
+        "nIntEstado": 1,
+        "dIntFecRegistro": "1900-01-01T00:00:00"
+    }
+]

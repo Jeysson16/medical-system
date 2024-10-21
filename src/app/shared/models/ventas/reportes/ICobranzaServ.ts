@@ -1,0 +1,31 @@
+export interface ICobranzaSer {
+    cPerJurCodigo: string;
+    nVenPayCodigo: number;
+    cPerIntDescripcion: string;
+    cPerCodigo: string;
+    tipoDoc: string;
+    cPerIdeNumero: string;
+    cPerApellido: string;
+    cPerNombre: string;
+    programa: string;
+    nPreVenDetCentroCosto: number;
+    nArtSerCodigo: number;
+    cArtSerNombre: string;
+    fechaRegistro: string;
+    fechaPago: string;
+    fechaEmision: string;
+    cVenPayRecIngreso: string;
+    cVenComCode: string;
+    cVenComSerie: string;
+    cVenComNumero: string;
+    nVenDetMoneda: number;
+    cConDescripcion: string;
+    nVenPayTC: number;
+    dolares: number;
+    soles: number;
+    total: number;
+    usuario: string;
+    cPerIdeNum: string;
+    cPerUsuCodigo: string;
+    nVenPayEstado: number;
+}

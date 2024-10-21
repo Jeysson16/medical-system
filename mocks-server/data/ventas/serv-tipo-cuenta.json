@@ -1,0 +1,36 @@
+[
+    {
+        "nServTipCtaCodigo": 1,
+        "cPerJurCodigo": "1000012312",
+        "nServTipCtaItemCta": 1,
+        "nServTipCtaClasificacion": 1,
+        "cServTipCtaDescripcion": "Pensión por inscripciones",
+        "nSysConModAssCodigoIngreso": 1,
+        "nSysConModAssCodigoProvision": null,
+        "nSysConModAssCodigoCastigo": null,
+        "nServTipCtaEstado": 1,
+        "dServTipCtaUsuReg": "1009121976",
+        "dServTipCtaHostReg": "192.54.12.112",
+        "dServTipCtaFecReg": "2023-11-11T00:00:00",
+        "dServTipCtaUsuUdp": null,
+        "dServTipCtaHostUdp": null,
+        "dServTipCtaFecUdp": null
+    },
+    {
+        "nServTipCtaCodigo": 2,
+        "cPerJurCodigo": "1000012312",
+        "nServTipCtaItemCta": 1,
+        "nServTipCtaClasificacion": 3,
+        "cServTipCtaDescripcion": "Pensión por Examen",
+        "nSysConModAssCodigoIngreso": 1,
+        "nSysConModAssCodigoProvision": null,
+        "nSysConModAssCodigoCastigo": null,
+        "nServTipCtaEstado": 1,
+        "dServTipCtaUsuReg": "1009121976",
+        "dServTipCtaHostReg": "192.54.12.112",
+        "dServTipCtaFecReg": "2023-11-11T00:00:00",
+        "dServTipCtaUsuUdp": null,
+        "dServTipCtaHostUdp": null,
+        "dServTipCtaFecUdp": null
+    }
+]

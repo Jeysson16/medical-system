@@ -1,0 +1,189 @@
+[
+    {
+        "nAcdNivCodigo": 20,
+        "cPerJurCodigo": "1000000002",
+        "cAcdNivNombre": "Básico",
+        "dAcdNivFecha": "2022-08-19T05:22:20.74",
+        "nAcdNivEstado": 1,
+        "dAcdNivFecRegistro": "2022-08-17T04:42:39.45",
+        "cAcdNivPerUsuRegistro": "1000000005",
+        "cAcdNivHostRegistro": "192.165.1.1",
+        "dAcdNivFecUpdate": "2022-08-19T05:22:20.74",
+        "cAcdNivPerUsuUpdate": "1000000005",
+        "cAcdNivHostUpdate": "192.168.1.9",
+        "lAcdSubNivelesList": [
+            {
+                "nAcdSubNivCodigo": 23,
+                "cPerJurCodigo": "1000000002",
+                "nAcdNivCodigo": 20,
+                "cAcdSubNivNombre": "prebeginner",
+                "dAcdSubNivFecha": "2022-08-17T22:30:16.087",
+                "nAcdSubNivEstado": 0,
+                "dAcdSubNivFecRegistro": "2022-08-17T22:21:34.51",
+                "cAcdSubNivPerUsuRegistro": "1000000005",
+                "cAcdSubNivHostRegistro": "192.168.1.9",
+                "dAcdSubNivFecUpdate": "2022-08-17T22:30:16.087",
+                "cAcdSubNivPerUsuUpdate": "1000000005",
+                "cAcdSubNivHostUpdate": "192.168.1.9"
+            },
+            {
+                "nAcdSubNivCodigo": 25,
+                "cPerJurCodigo": "1000000002",
+                "nAcdNivCodigo": 20,
+                "cAcdSubNivNombre": "Básico-1",
+                "dAcdSubNivFecha": "2022-08-18T03:09:40.31",
+                "nAcdSubNivEstado": 0,
+                "dAcdSubNivFecRegistro": "2022-08-17T23:01:36.23",
+                "cAcdSubNivPerUsuRegistro": "1000000005",
+                "cAcdSubNivHostRegistro": "192.168.1.9",
+                "dAcdSubNivFecUpdate": "2022-08-18T03:09:40.31",
+                "cAcdSubNivPerUsuUpdate": "1000000005",
+                "cAcdSubNivHostUpdate": "192.168.1.9"
+            }
+        ]
+    },
+    {
+        "nAcdNivCodigo": 21,
+        "cPerJurCodigo": "1000000002",
+        "cAcdNivNombre": "Intermedio",
+        "dAcdNivFecha": "2022-08-17T22:30:29.593",
+        "nAcdNivEstado": 1,
+        "dAcdNivFecRegistro": "2022-08-17T22:30:29.593",
+        "cAcdNivPerUsuRegistro": "1000000005",
+        "cAcdNivHostRegistro": "192.168.1.9",
+        "dAcdNivFecUpdate": "0001-01-01T00:00:00",
+        "cAcdNivPerUsuUpdate": null,
+        "cAcdNivHostUpdate": null,
+        "lAcdSubNivelesList": [
+            {
+                "nAcdSubNivCodigo": 24,
+                "cPerJurCodigo": "1000000002",
+                "nAcdNivCodigo": 21,
+                "cAcdSubNivNombre": "Intermedio 1",
+                "dAcdSubNivFecha": "2022-08-17T23:01:15.617",
+                "nAcdSubNivEstado": 1,
+                "dAcdSubNivFecRegistro": "2022-08-17T23:01:15.617",
+                "cAcdSubNivPerUsuRegistro": "1000000005",
+                "cAcdSubNivHostRegistro": "192.168.1.9",
+                "dAcdSubNivFecUpdate": "0001-01-01T00:00:00",
+                "cAcdSubNivPerUsuUpdate": null,
+                "cAcdSubNivHostUpdate": null
+            }
+        ]
+    },
+    {
+        "nAcdNivCodigo": 22,
+        "cPerJurCodigo": "1000000002",
+        "cAcdNivNombre": "Avanzado",
+        "dAcdNivFecha": "2022-08-17T23:01:49.34",
+        "nAcdNivEstado": 1,
+        "dAcdNivFecRegistro": "2022-08-17T23:01:49.34",
+        "cAcdNivPerUsuRegistro": "1000000005",
+        "cAcdNivHostRegistro": "192.168.1.9",
+        "dAcdNivFecUpdate": "0001-01-01T00:00:00",
+        "cAcdNivPerUsuUpdate": null,
+        "cAcdNivHostUpdate": null,
+        "lAcdSubNivelesList": [
+            {
+                "nAcdSubNivCodigo": 26,
+                "cPerJurCodigo": "1000000002",
+                "nAcdNivCodigo": 20,
+                "cAcdSubNivNombre": "Avanzado 1",
+                "dAcdSubNivFecha": "2022-08-18T03:09:40.31",
+                "nAcdSubNivEstado": 0,
+                "dAcdSubNivFecRegistro": "2022-08-17T23:01:36.23",
+                "cAcdSubNivPerUsuRegistro": "1000000005",
+                "cAcdSubNivHostRegistro": "192.168.1.9",
+                "dAcdSubNivFecUpdate": "2022-08-18T03:09:40.31",
+                "cAcdSubNivPerUsuUpdate": "1000000005",
+                "cAcdSubNivHostUpdate": "192.168.1.9"
+            },
+            {
+                "nAcdSubNivCodigo": 27,
+                "cPerJurCodigo": "1000000002",
+                "nAcdNivCodigo": 20,
+                "cAcdSubNivNombre": "Avanzado 2",
+                "dAcdSubNivFecha": "2022-08-18T03:09:40.31",
+                "nAcdSubNivEstado": 0,
+                "dAcdSubNivFecRegistro": "2022-08-17T23:01:36.23",
+                "cAcdSubNivPerUsuRegistro": "1000000005",
+                "cAcdSubNivHostRegistro": "192.168.1.9",
+                "dAcdSubNivFecUpdate": "2022-08-18T03:09:40.31",
+                "cAcdSubNivPerUsuUpdate": "1000000005",
+                "cAcdSubNivHostUpdate": "192.168.1.9"
+            },
+            {
+                "nAcdSubNivCodigo": 28,
+                "cPerJurCodigo": "1000000002",
+                "nAcdNivCodigo": 20,
+                "cAcdSubNivNombre": "Avanzado 3",
+                "dAcdSubNivFecha": "2022-08-18T03:09:40.31",
+                "nAcdSubNivEstado": 0,
+                "dAcdSubNivFecRegistro": "2022-08-17T23:01:36.23",
+                "cAcdSubNivPerUsuRegistro": "1000000005",
+                "cAcdSubNivHostRegistro": "192.168.1.9",
+                "dAcdSubNivFecUpdate": "2022-08-18T03:09:40.31",
+                "cAcdSubNivPerUsuUpdate": "1000000005",
+                "cAcdSubNivHostUpdate": "192.168.1.9"
+            }
+        ]
+    },
+    {
+        "nAcdNivCodigo": 23,
+        "cPerJurCodigo": "1000000002",
+        "cAcdNivNombre": "Experto",
+        "dAcdNivFecha": "2022-08-19T05:20:54.843",
+        "nAcdNivEstado": 1,
+        "dAcdNivFecRegistro": "2022-08-19T05:20:54.843",
+        "cAcdNivPerUsuRegistro": "1000000005",
+        "cAcdNivHostRegistro": "192.168.1.9",
+        "dAcdNivFecUpdate": "0001-01-01T00:00:00",
+        "cAcdNivPerUsuUpdate": null,
+        "cAcdNivHostUpdate": null,
+        "lAcdSubNivelesList": [
+            {
+                "nAcdSubNivCodigo": 29,
+                "cPerJurCodigo": "1000000002",
+                "nAcdNivCodigo": 20,
+                "cAcdSubNivNombre": "Experto 1",
+                "dAcdSubNivFecha": "2022-08-18T03:09:40.31",
+                "nAcdSubNivEstado": 0,
+                "dAcdSubNivFecRegistro": "2022-08-17T23:01:36.23",
+                "cAcdSubNivPerUsuRegistro": "1000000005",
+                "cAcdSubNivHostRegistro": "192.168.1.9",
+                "dAcdSubNivFecUpdate": "2022-08-18T03:09:40.31",
+                "cAcdSubNivPerUsuUpdate": "1000000005",
+                "cAcdSubNivHostUpdate": "192.168.1.9"
+            }
+        ]
+    },
+    {
+        "nAcdNivCodigo": 25,
+        "cPerJurCodigo": "1000000002",
+        "cAcdNivNombre": "Maximus",
+        "dAcdNivFecha": "2022-08-22T03:49:31.417",
+        "nAcdNivEstado": 0,
+        "dAcdNivFecRegistro": "2022-08-22T03:49:31.417",
+        "cAcdNivPerUsuRegistro": "1000000005",
+        "cAcdNivHostRegistro": "192.168.1.9",
+        "dAcdNivFecUpdate": "0001-01-01T00:00:00",
+        "cAcdNivPerUsuUpdate": null,
+        "cAcdNivHostUpdate": null,
+        "lAcdSubNivelesList": [
+            {
+                "nAcdSubNivCodigo": 30,
+                "cPerJurCodigo": "1000000002",
+                "nAcdNivCodigo": 20,
+                "cAcdSubNivNombre": "Maximo 1",
+                "dAcdSubNivFecha": "2022-08-18T03:09:40.31",
+                "nAcdSubNivEstado": 0,
+                "dAcdSubNivFecRegistro": "2022-08-17T23:01:36.23",
+                "cAcdSubNivPerUsuRegistro": "1000000005",
+                "cAcdSubNivHostRegistro": "192.168.1.9",
+                "dAcdSubNivFecUpdate": "2022-08-18T03:09:40.31",
+                "cAcdSubNivPerUsuUpdate": "1000000005",
+                "cAcdSubNivHostUpdate": "192.168.1.9"
+            }
+        ]
+    }
+]

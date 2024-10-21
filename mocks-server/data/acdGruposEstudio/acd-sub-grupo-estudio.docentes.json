@@ -1,0 +1,44 @@
+[
+    {
+        "nAcdSubGruEstCodigo": 1,
+        "cPerCodigo": "1021012458",
+        "nDocTipo": 2000,
+        "nAcdSubGruEstDocentesEstado": 1,
+        "dAcdSubGruEstDocFechaReg": "2023-06-28T23:44:22.49",
+        "dAcdSubGruEstDocFechaUpd": "0001-01-01T00:00:00",
+        "cAcdSubGruEstDocHostReg": "string",
+        "cAcdSubGruEstDocHostUpd": null,
+        "cAcdSubGruEstDocUsuarioReg": "string",
+        "cAcdSubGruEstDocUsuarioUpd": null,
+        "cPerCodigoDes": "TORRES ARAUJO MIGUEL",
+        "cDocTipoDes": "DOCENTE"
+    },
+    {
+        "nAcdSubGruEstCodigo": 1,
+        "cPerCodigo": "1022113123",
+        "nDocTipo": 2000,
+        "nAcdSubGruEstDocentesEstado": 1,
+        "dAcdSubGruEstDocFechaReg": "2023-06-28T23:44:22.49",
+        "dAcdSubGruEstDocFechaUpd": "0001-01-01T00:00:00",
+        "cAcdSubGruEstDocHostReg": "string",
+        "cAcdSubGruEstDocHostUpd": null,
+        "cAcdSubGruEstDocUsuarioReg": "string",
+        "cAcdSubGruEstDocUsuarioUpd": null,
+        "cPerCodigoDes": "SMITH GUITIERREZ AKIRA",
+        "cDocTipoDes": "DOCENTE"
+    },
+    {
+        "nAcdSubGruEstCodigo": 1,
+        "cPerCodigo": "1035119874",
+        "nDocTipo": 2000,
+        "nAcdSubGruEstDocentesEstado": 1,
+        "dAcdSubGruEstDocFechaReg": "2023-06-28T23:44:22.49",
+        "dAcdSubGruEstDocFechaUpd": "0001-01-01T00:00:00",
+        "cAcdSubGruEstDocHostReg": "string",
+        "cAcdSubGruEstDocHostUpd": null,
+        "cAcdSubGruEstDocUsuarioReg": "string",
+        "cAcdSubGruEstDocUsuarioUpd": null,
+        "cPerCodigoDes": "ZEGARRA SOLIS RENZO",
+        "cDocTipoDes": "DOCENTE"
+    }
+]

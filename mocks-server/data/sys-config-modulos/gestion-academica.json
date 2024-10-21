@@ -1,0 +1,38 @@
+[
+    {
+        "cPerJurCodigo": "1000000002",
+        "nAcdTipoCodigo": 1,
+        "dCModGestionAcadFecReg": "2022-07-27T20:58:47.693",
+        "dCModGestionAcadFecUpd": "2023-09-22T20:58:47.693",
+        "cCModGestionAcadHostReg": "201.230.81.249",
+        "cCModGestionAcadHostUpd": "201.230.81.249",
+        "cCModGestionAcadUsuReg": "1000000005",
+        "cCModGestionAcadUsuUpd": "1000000005",
+        "cPerJurCodigoDes": "Universidad Señor de Sipan",
+        "nAcdTipoCodigoDes": "Modalidad de Estudios"
+    },
+    {
+        "cPerJurCodigo": "1000000003",
+        "nAcdTipoCodigo": 8,
+        "dCModGestionAcadFecReg": "2020-12-10T20:58:47.693",
+        "dCModGestionAcadFecUpd": "2022-11-16T20:58:47.693",
+        "cCModGestionAcadHostReg": "201.230.81.249",
+        "cCModGestionAcadHostUpd": "201.230.81.249",
+        "cCModGestionAcadUsuReg": "1000000005",
+        "cCModGestionAcadUsuUpd": "1000000005",
+        "cPerJurCodigoDes": "Universidad Cesar Vallejo",
+        "nAcdTipoCodigoDes": "Modalidad de Estudios"
+    },
+    {
+        "cPerJurCodigo": "1000012312",
+        "nAcdTipoCodigo": 5,
+        "dCModGestionAcadFecReg": "2023-05-31T18:07:35.997",
+        "dCModGestionAcadFecUpd": "2023-05-31T18:15:43.373",
+        "cCModGestionAcadHostReg": "179.6.18.26",
+        "cCModGestionAcadHostUpd": "179.6.18.26",
+        "cCModGestionAcadUsuReg": "1000000005",
+        "cCModGestionAcadUsuUpd": "1000000005",
+        "cPerJurCodigoDes": "Universidad Privada Antenor Orrego",
+        "nAcdTipoCodigoDes": "Modalidad de Estudios"
+    }
+]

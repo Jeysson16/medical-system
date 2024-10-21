@@ -1,0 +1,18 @@
+[
+    {
+        "nSysTLDetId": 1,
+        "nSysTemplLoadId": 1,
+        "cSysTLDetNombreCampo": "Codigo de modalidad",
+        "cSysTLDetTipoCampo": "Entrada",
+        "nSysTLDRequiereContenedor": 1,
+        "cSysTLDetNombreContenedor": "AdmModalidad",
+        "cSysTLDetClaveValor": "prueba",
+        "cSysTLDetNombreColumnaValidate": "ggax2",
+        "nSysTLDetEstado": 1,
+        "cSysTLDetUsuUpdate": "Cristian dominguez ",
+        "cSysTLDetUsuRegistro": "Agente0006",
+        "dSysTLDetUsuUpdate": "2024-03-09T01:33:12.42",
+        "dSysTLDetUsuRegistro": "2024-03-09T05:51:27.5",
+        "cSysTLDetIpRegistro": null
+    }
+]

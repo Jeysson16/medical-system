@@ -1,0 +1,14 @@
+[
+    {
+        "id": "2d09b475-73ba-4da0-114d-08dae6d1bf51",
+        "codeFile": "Hoja Resumen.txt",
+        "nameFile": "Hoja Resumen",
+        "tipeFile": 1,
+        "nameTipeFile": "txt",
+        "rutaFisica": "H:\\File_System\\FilePlanificacion\\Hoja Resumen1672011888.txt",
+        "rutaVirtual": "/FileSystem/FilePlanificacion/Hoja Resumen1672011888.txt",
+        "sizeFile": 0,
+        "status": 1,
+        "nFechaRegistro": "2022-12-25T23:44:48.2093133Z"
+    }
+]

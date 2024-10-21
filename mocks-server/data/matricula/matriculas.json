@@ -1,0 +1,42 @@
+[
+    {
+        "nAcdMatCodigo": 1,
+        "cPerJurCodigo": "1000012320",
+        "nPrdCodigo": 1,
+        "dAcdMatFecha": "2022-10-01T00:00:00",
+        "nAcdPerEstCodigo": 1,
+        "cPerCodigo": "1009121972",
+        "nAcdProCodigo": 1,
+        "nAcdMatCondicion": 1,
+        "nacdMatMotivoAnulado": 1,
+        "nAcdMatEstado": 1,
+        "nAcdMatMedRegistro": 1,
+        "cAcdMatCurObservacion": "NINGUNA",
+        "dAcdMatFechaRegistro": "2023-07-07T18:02:00.667",
+        "cAcdMatUsuRegistro": "1000012312",
+        "cAcdMatHostRegistro": "194.55.14.245",
+        "dAcdMatFechaUpd": null,
+        "cAcdMatUsuUpd": null,
+        "cAcdMatHostUpd": null
+    },
+    {
+        "nAcdMatCodigo": 2,
+        "cPerJurCodigo": "1000000002",
+        "nPrdCodigo": 2,
+        "dAcdMatFecha": "2022-10-20T23:04:54.98",
+        "nAcdPerEstCodigo": 1,
+        "cPerCodigo": "1000000006",
+        "nAcdProCodigo": 2,
+        "nAcdMatCondicion": 0,
+        "nacdMatMotivoAnulado": 0,
+        "nAcdMatEstado": 0,
+        "nAcdMatMedRegistro": 0,
+        "cAcdMatCurObservacion": "string",
+        "dAcdMatFechaRegistro": "2023-09-03T18:02:00.667",
+        "cAcdMatUsuRegistro": "1000012312",
+        "cAcdMatHostRegistro": "194.55.14.245",
+        "dAcdMatFechaUpd": null,
+        "cAcdMatUsuUpd": null,
+        "cAcdMatHostUpd": null
+    }
+]

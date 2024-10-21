@@ -1,0 +1,34 @@
+[
+    {
+        "nAcdSubGruEstCodigo": 1,
+        "nAcdGruEstCodigo": 1,
+        "nAcdSubGruNombre": "Prueba 1",
+        "nAcdSubGruTipo": 1,
+        "nAcdSubGruModalidadEstudio": 1,
+        "nAcdSubgGruVacantesMin": 1,
+        "nAcdSubGruVacantesMax": 1,
+        "nAcdSubGruEstado": 0,
+        "nAcdSubGruFechaRegistro": "2023-06-26T15:59:25.643",
+        "cAcdSubGruUsuRegistro": null,
+        "cAcdSubGruHostRegistro": null,
+        "nAcdSubGruFechaUpd": "0001-01-01T00:00:00",
+        "cAcdSubGruUsuUpd": null,
+        "cAcdSubGruHostUpd": null
+    },
+    {
+        "nAcdSubGruEstCodigo": 2,
+        "nAcdGruEstCodigo": 3,
+        "nAcdSubGruNombre": "Prueba 2",
+        "nAcdSubGruTipo": 2,
+        "nAcdSubGruModalidadEstudio": 1,
+        "nAcdSubgGruVacantesMin": 1,
+        "nAcdSubGruVacantesMax": 1,
+        "nAcdSubGruEstado": 0,
+        "nAcdSubGruFechaRegistro": "2023-06-26T15:59:55.817",
+        "cAcdSubGruUsuRegistro": null,
+        "cAcdSubGruHostRegistro": null,
+        "nAcdSubGruFechaUpd": "0001-01-01T00:00:00",
+        "cAcdSubGruUsuUpd": null,
+        "cAcdSubGruHostUpd": null
+    }
+]

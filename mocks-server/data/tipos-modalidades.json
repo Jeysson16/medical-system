@@ -1,0 +1,67 @@
+[
+    {
+        "nAcdTipoCodigo": 1,
+        "cPerJurCodigo": "1000000002",
+        "cAcdTipoNombre": "Modalidad de Estudio",
+        "ncAcdTipoEstado": 0,
+        "bRemovible": true,
+        "dAcdTipoFecRegistro": "2022-06-01T00:00:00",
+        "cAcdTipoPerUsuRegistro": "1000000005",
+        "cAcdTipoHostRegistro": "190.237.30.121",
+        "dAcdTipoFecUpdate": "2023-01-01T00:00:00",
+        "cAcdTipoPerUsuUpdate": "1000000005",
+        "cAcdTipoHostUpdate": "190.237.30.121"
+    },
+    {
+        "nAcdTipoCodigo": 2,
+        "cPerJurCodigo": "1000000002",
+        "cAcdTipoNombre": "Modalidad de Admisión",
+        "ncAcdTipoEstado": 1,
+        "bRemovible": false,
+        "dAcdTipoFecRegistro": "2022-06-01T00:00:00",
+        "cAcdTipoPerUsuRegistro": "1000000005",
+        "cAcdTipoHostRegistro": "190.237.30.121",
+        "dAcdTipoFecUpdate": "2023-01-01T00:00:00",
+        "cAcdTipoPerUsuUpdate": "1000000005",
+        "cAcdTipoHostUpdate": "190.237.30.121"
+    },
+    {
+        "nAcdTipoCodigo": 3,
+        "cPerJurCodigo": "1000000002",
+        "cAcdTipoNombre": "Modalidad de Translado",
+        "ncAcdTipoEstado": 0,
+        "bRemovible": true,
+        "dAcdTipoFecRegistro": "2022-06-01T00:00:00",
+        "cAcdTipoPerUsuRegistro": "1000000005",
+        "cAcdTipoHostRegistro": "190.237.30.121",
+        "dAcdTipoFecUpdate": "2023-01-01T00:00:00",
+        "cAcdTipoPerUsuUpdate": "1000000005",
+        "cAcdTipoHostUpdate": "190.237.30.121"
+    },
+    {
+        "nAcdTipoCodigo": 4,
+        "cPerJurCodigo": "1000000002",
+        "cAcdTipoNombre": "Modalidad de Egreso",
+        "ncAcdTipoEstado": 0,
+        "bRemovible": true,
+        "dAcdTipoFecRegistro": "2022-06-01T00:00:00",
+        "cAcdTipoPerUsuRegistro": "1000000005",
+        "cAcdTipoHostRegistro": "190.237.30.121",
+        "dAcdTipoFecUpdate": "2023-01-01T00:00:00",
+        "cAcdTipoPerUsuUpdate": "1000000005",
+        "cAcdTipoHostUpdate": "190.237.30.121"
+    },
+    {
+        "nAcdTipoCodigo": 5,
+        "cPerJurCodigo": "1000000002",
+        "cAcdTipoNombre": "Modalidad de Académica",
+        "ncAcdTipoEstado": 1,
+        "bRemovible": false,
+        "dAcdTipoFecRegistro": "2022-06-01T00:00:00",
+        "cAcdTipoPerUsuRegistro": "1000000005",
+        "cAcdTipoHostRegistro": "190.237.30.121",
+        "dAcdTipoFecUpdate": "2023-01-01T00:00:00",
+        "cAcdTipoPerUsuUpdate": "1000000005",
+        "cAcdTipoHostUpdate": "190.237.30.121"
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {
+        "cPerJurCodigo": "1000012312",
+        "nCodRol": 1,
+        "cRolNombre": "Administrador",
+        "cDescripcion": "Administrador",
+        "nModTipo": 1,
+        "bEstado": 1,
+        "dRolFechaRegistro": "2022-10-10T21:56:58.257",
+        "dRolFechaUpdate": "0001-01-01T00:00:00",
+        "cRolUsuRegistro": "1000000005",
+        "cRolHostRegistro": "192.168.1.9",
+        "cRolUsuUpdate": null,
+        "cRolHostUpdate": null
+    },
+    {
+        "cPerJurCodigo": "1000012312",
+        "nCodRol": 2,
+        "cRolNombre": "Jefe de escuela",
+        "cDescripcion": "Jefe de escuela",
+        "nModTipo": 1,
+        "bEstado": 1,
+        "dRolFechaRegistro": "2022-10-10T21:56:58.257",
+        "dRolFechaUpdate": "0001-01-01T00:00:00",
+        "cRolUsuRegistro": "1000000005",
+        "cRolHostRegistro": "192.168.1.9",
+        "cRolUsuUpdate": null,
+        "cRolHostUpdate": null
+    },
+    {
+        "cPerJurCodigo": "1000012312",
+        "nCodRol": 3,
+        "cRolNombre": "Jefe académico",
+        "cDescripcion": "Jefe académico",
+        "nModTipo": 1,
+        "bEstado": 1,
+        "dRolFechaRegistro": "2022-10-10T21:56:58.257",
+        "dRolFechaUpdate": "0001-01-01T00:00:00",
+        "cRolUsuRegistro": "1000000005",
+        "cRolHostRegistro": "192.168.1.9",
+        "cRolUsuUpdate": null,
+        "cRolHostUpdate": null
+    },
+    {
+        "cPerJurCodigo": "1000012312",
+        "nCodRol": 4,
+        "cRolNombre": "Asistente",
+        "cDescripcion": "Asistente",
+        "nModTipo": 1,
+        "bEstado": 1,
+        "dRolFechaRegistro": "2022-10-10T21:56:58.257",
+        "dRolFechaUpdate": "0001-01-01T00:00:00",
+        "cRolUsuRegistro": "1000000005",
+        "cRolHostRegistro": "192.168.1.9",
+        "cRolUsuUpdate": null,
+        "cRolHostUpdate": null
+    }
+]

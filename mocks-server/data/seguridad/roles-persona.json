@@ -1,0 +1,146 @@
+[
+    {
+        "cPerCodigo": "1009121976",
+        "nCodRol": 12,
+        "cRolNombre": "Administrador",
+        "dRolPerFecRegistro": "2023-10-17T20:45:31.543",
+        "bEstado": 1,
+        "cRolPerUsuRegistro": "1009121976",
+        "cRolPerHostRegistro": "179.6.18.26",
+        "dRolPerFecUpdate": "0001-01-01T00:00:00",
+        "cRolPerUsuUpdate": null,
+        "cRolPerHostUpdate": null,
+        "cUserRegister": "TIMANA FLORES EDWARD ALEXIS BRAVO",
+        "lstRolListaPermisos": [
+            {
+                "nCodRol": 12,
+                "nCodListaPermiso": 21,
+                "cNombreLista": "Configuración",
+                "dRolLisPerFecRegistro": "2023-10-11T21:32:13.643",
+                "dRolLisPerFecUpdate": "0001-01-01T00:00:00",
+                "cRolLisPerUsuRegistro": "1009121976",
+                "cRolLisPerUsuUpdate": null,
+                "cRolLisPerHostRegistro": "179.6.18.26",
+                "cRolLisPerHostUpdate": null
+            },
+            {
+                "nCodRol": 12,
+                "nCodListaPermiso": 22,
+                "cNombreLista": "Instituciones Académicas",
+                "dRolLisPerFecRegistro": "2023-10-11T21:32:16.22",
+                "dRolLisPerFecUpdate": "0001-01-01T00:00:00",
+                "cRolLisPerUsuRegistro": "1009121976",
+                "cRolLisPerUsuUpdate": null,
+                "cRolLisPerHostRegistro": "179.6.18.26",
+                "cRolLisPerHostUpdate": null
+            },
+            {
+                "nCodRol": 12,
+                "nCodListaPermiso": 23,
+                "cNombreLista": "Administración",
+                "dRolLisPerFecRegistro": "2023-10-11T21:32:18.367",
+                "dRolLisPerFecUpdate": "0001-01-01T00:00:00",
+                "cRolLisPerUsuRegistro": "1009121976",
+                "cRolLisPerUsuUpdate": null,
+                "cRolLisPerHostRegistro": "179.6.18.26",
+                "cRolLisPerHostUpdate": null
+            },
+            {
+                "nCodRol": 12,
+                "nCodListaPermiso": 24,
+                "cNombreLista": "Admisión",
+                "dRolLisPerFecRegistro": "2023-10-11T21:32:20.533",
+                "dRolLisPerFecUpdate": "0001-01-01T00:00:00",
+                "cRolLisPerUsuRegistro": "1009121976",
+                "cRolLisPerUsuUpdate": null,
+                "cRolLisPerHostRegistro": "179.6.18.26",
+                "cRolLisPerHostUpdate": null
+            },
+            {
+                "nCodRol": 12,
+                "nCodListaPermiso": 25,
+                "cNombreLista": "Programación académica",
+                "dRolLisPerFecRegistro": "2023-10-11T21:32:22.843",
+                "dRolLisPerFecUpdate": "0001-01-01T00:00:00",
+                "cRolLisPerUsuRegistro": "1009121976",
+                "cRolLisPerUsuUpdate": null,
+                "cRolLisPerHostRegistro": "179.6.18.26",
+                "cRolLisPerHostUpdate": null
+            },
+            {
+                "nCodRol": 12,
+                "nCodListaPermiso": 26,
+                "cNombreLista": "Gestión de Ambientes",
+                "dRolLisPerFecRegistro": "2023-10-11T21:32:25.44",
+                "dRolLisPerFecUpdate": "0001-01-01T00:00:00",
+                "cRolLisPerUsuRegistro": "1009121976",
+                "cRolLisPerUsuUpdate": null,
+                "cRolLisPerHostRegistro": "179.6.18.26",
+                "cRolLisPerHostUpdate": null
+            }
+        ]
+    },
+    {
+        "cPerCodigo": "1009121976",
+        "nCodRol": 13,
+        "cRolNombre": "Jefe de escuela",
+        "dRolPerFecRegistro": "2023-10-17T20:45:33.907",
+        "bEstado": 1,
+        "cRolPerUsuRegistro": "1009121976",
+        "cRolPerHostRegistro": "179.6.18.26",
+        "dRolPerFecUpdate": "0001-01-01T00:00:00",
+        "cRolPerUsuUpdate": null,
+        "cRolPerHostUpdate": null,
+        "cUserRegister": "TIMANA FLORES EDWARD ALEXIS BRAVO",
+        "lstRolListaPermisos": [
+            {
+                "nCodRol": 13,
+                "nCodListaPermiso": 21,
+                "cNombreLista": "Configuración",
+                "dRolLisPerFecRegistro": "2023-10-11T21:32:41.147",
+                "dRolLisPerFecUpdate": "0001-01-01T00:00:00",
+                "cRolLisPerUsuRegistro": "1009121976",
+                "cRolLisPerUsuUpdate": null,
+                "cRolLisPerHostRegistro": "179.6.18.26",
+                "cRolLisPerHostUpdate": null
+            },
+            {
+                "nCodRol": 13,
+                "nCodListaPermiso": 25,
+                "cNombreLista": "Programación académica",
+                "dRolLisPerFecRegistro": "2023-10-11T21:32:57.56",
+                "dRolLisPerFecUpdate": "0001-01-01T00:00:00",
+                "cRolLisPerUsuRegistro": "1009121976",
+                "cRolLisPerUsuUpdate": null,
+                "cRolLisPerHostRegistro": "179.6.18.26",
+                "cRolLisPerHostUpdate": null
+            }
+        ]
+    },
+    {
+        "cPerCodigo": "1009121976",
+        "nCodRol": 14,
+        "cRolNombre": "Jefe académico",
+        "dRolPerFecRegistro": "2023-10-17T20:45:42.533",
+        "bEstado": 1,
+        "cRolPerUsuRegistro": "1009121976",
+        "cRolPerHostRegistro": "179.6.18.26",
+        "dRolPerFecUpdate": "0001-01-01T00:00:00",
+        "cRolPerUsuUpdate": null,
+        "cRolPerHostUpdate": null,
+        "cUserRegister": "TIMANA FLORES EDWARD ALEXIS BRAVO",
+        "lstRolListaPermisos": [
+            {
+                "nCodRol": 14,
+                "nCodListaPermiso": 24,
+                "cNombreLista": "Admisión",
+                "dRolLisPerFecRegistro": "2023-10-11T21:33:06.953",
+                "dRolLisPerFecUpdate": "0001-01-01T00:00:00",
+                "cRolLisPerUsuRegistro": "1009121976",
+                "cRolLisPerUsuUpdate": null,
+                "cRolLisPerHostRegistro": "179.6.18.26",
+                "cRolLisPerHostUpdate": null
+            }
+        ]
+    }
+]

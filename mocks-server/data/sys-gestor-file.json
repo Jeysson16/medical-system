@@ -1,0 +1,41 @@
+[
+    {
+        "nIdGestorCodigo": 3,
+        "cPerJurCodigo": "1000012312",
+        "cNombre": "Académico",
+        "nModulo": 20,
+        "cModulo": "Configuración",
+        "dGesFileFecRegistro": "2023-05-18T00:00:00",
+        "cGesFilePerUsuRegistro": "1000000005",
+        "cGesFileHostRegistro": "100.21.22.132",
+        "dGesFileFecUpdate": "2023-05-18T00:00:00",
+        "cGesFilePerUsuUpdate": null,
+        "cGesFileHostUpdate": null
+    },
+    {
+        "nIdGestorCodigo": 4,
+        "cPerJurCodigo": "1000012312",
+        "cNombre": "Finanzas",
+        "nModulo": 70,
+        "cModulo": "Administración",
+        "dGesFileFecRegistro": "2023-05-18T00:00:00",
+        "cGesFilePerUsuRegistro": "1000000005",
+        "cGesFileHostRegistro": "100.21.22.132",
+        "dGesFileFecUpdate": "2023-05-18T00:00:00",
+        "cGesFilePerUsuUpdate": null,
+        "cGesFileHostUpdate": null
+    },
+    {
+        "nIdGestorCodigo": 6,
+        "cPerJurCodigo": "1000012312",
+        "cNombre": "Certificados",
+        "nModulo": 80,
+        "cModulo": "Configuraciones del Sistema",
+        "dGesFileFecRegistro": "2023-05-18T00:00:00",
+        "cGesFilePerUsuRegistro": "1000000005",
+        "cGesFileHostRegistro": "100.21.22.132",
+        "dGesFileFecUpdate": "2023-05-18T00:00:00",
+        "cGesFilePerUsuUpdate": null,
+        "cGesFileHostUpdate": null
+    }
+]

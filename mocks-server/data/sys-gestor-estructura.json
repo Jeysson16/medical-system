@@ -1,0 +1,50 @@
+[
+    {
+        "idEstGestorCodigo": 1,
+        "idGestorCodigopadre": 2,
+        "idGestorCodigo": 3,
+        "Jerarquia": "001",
+        "NombreCorto": "DNI",
+        "NombreLargo": "Documento de Identidad",
+        "Estado": 1,
+        "GestEstFecRegistro": "2022-06-14T14:40:58.333",
+        "GesEstPerUsuRegistro": "aaa",
+        "GestEstHostRegistro": "193.87.56.1"
+    },
+    {
+        "idEstGestorCodigo": 2,
+        "idGestorCodigopadre": 2,
+        "idGestorCodigo": 4,
+        "Jerarquia": "001",
+        "NombreCorto": "fotos",
+        "NombreLargo": "Fotografias",
+        "Estado": 1,
+        "GestEstFecRegistro": "2022-06-14T19:00:37.953",
+        "GesEstPerUsuRegistro": "ccccccc",
+        "GestEstHostRegistro": "189.45.65.1"
+    },
+    {
+        "idEstGestorCodigo": 4,
+        "idGestorCodigopadre": 2,
+        "idGestorCodigo": 6,
+        "Jerarquia": "001",
+        "NombreCorto": "CV",
+        "NombreLargo": "Curriculum",
+        "Estado": 0,
+        "GestEstFecRegistro": "2022-06-14T21:56:12.250",
+        "GesEstPerUsuRegistro": "ddddddd",
+        "GestEstHostRegistro": "195.34.21.1"
+    },
+    {
+        "idEstGestorCodigo": 5,
+        "idGestorCodigopadre": 0,
+        "idGestorCodigo": 7,
+        "Jerarquia": "0101",
+        "NombreCorto": "Exp",
+        "NombreLargo": "Expedientes",
+        "Estado": 1,
+        "GestEstFecRegistro": "2022-06-20T14:33:37.080",
+        "GesEstPerUsuRegistro": "string",
+        "GestEstHostRegistro": "string"
+    }
+]

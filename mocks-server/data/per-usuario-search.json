@@ -1,0 +1,38 @@
+[
+    {
+        "cPerJuridica": "1000012312",
+        "cPerCodigo": "1009121976",
+        "cPerUsuCodigo": "william",
+        "cPerUsuClave": "I(E@Y,9",
+        "cPerUsuEstado": 1,
+        "dPerUsuFecha": "2023-06-08T19:49:00",
+        "dPerUsuFecRegistro": "2023-04-21T23:30:48.877",
+        "dPerUsuHosRegistro": "",
+        "cPerUsuUsuRegistro": "",
+        "dPerUsuFecUpdate": "2023-06-08T19:48:41.793",
+        "dPerUsuHosUpdate": "179.6.18.26",
+        "cPerUsuUsuUpdate": "1009121976",
+        "cToken": null,
+        "cNombreCompletoDes": "TIMANA FLORES EDWARD ALEXIS BRAVO",
+        "nDocumentoDes": "77777777",
+        "cTipoDoscumentoDes": null
+    },
+    {
+        "cPerJuridica": "1000012312",
+        "cPerCodigo": "1009122001",
+        "cPerUsuCodigo": "OLARTE",
+        "cPerUsuClave": "%]6HK(",
+        "cPerUsuEstado": 1,
+        "dPerUsuFecha": "2023-10-10T19:27:00",
+        "dPerUsuFecRegistro": "2023-10-10T19:26:10.91",
+        "dPerUsuHosRegistro": "179.6.18.26",
+        "cPerUsuUsuRegistro": "1009121976",
+        "dPerUsuFecUpdate": "2023-10-10T19:27:26.37",
+        "dPerUsuHosUpdate": "179.6.18.26",
+        "cPerUsuUsuUpdate": "1009121976",
+        "cToken": null,
+        "cNombreCompletoDes": "VALENTINEZ PANIAGUA EDWARD OLARTE ",
+        "nDocumentoDes": "41124578",
+        "cTipoDoscumentoDes": null
+    }
+]

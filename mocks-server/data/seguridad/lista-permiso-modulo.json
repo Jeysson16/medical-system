@@ -1,0 +1,42 @@
+{
+    "nCodListaPermiso": 2,
+    "cnombreLista": "Reportes Académicos",
+    "lstPermisoModulo": [
+        {
+            "nCodModulo": 1,
+            "nCodListaPermiso": 2,
+            "cNombreModulo": "Configuración",
+            "bPermitirAgregar": false,
+            "dLisPerModFecRegistro": "2022-10-10T21:56:58.257",
+            "dLisPerModFecUpdate": "2022-10-10T21:56:58.257",
+            "dLisPerModUsuRegistro": "1000000005",
+            "dLisPerModUsuUpdate": "1000000005",
+            "dLisPerModHostRegistro": "192.168.1.9",
+            "dLisPerModHostUpdate": "192.168.1.9"
+        },
+        {
+            "nCodModulo": 3,
+            "nCodListaPermiso": 2,
+            "cNombreModulo": "General",
+            "bPermitirAgregar": true,
+            "dLisPerModFecRegistro": "2022-10-10T21:56:58.257",
+            "dLisPerModFecUpdate": "2022-10-10T21:56:58.257",
+            "dLisPerModUsuRegistro": "1000000005",
+            "dLisPerModUsuUpdate": "1000000005",
+            "dLisPerModHostRegistro": "192.168.1.9",
+            "dLisPerModHostUpdate": "192.168.1.9"
+        },
+        {
+            "nCodModulo": 4,
+            "nCodListaPermiso": 2,
+            "cNombreModulo": "Plan de Equivalencias",
+            "bPermitirAgregar": true,
+            "dLisPerModFecRegistro": "2022-10-10T21:56:58.257",
+            "dLisPerModFecUpdate": "2022-10-10T21:56:58.257",
+            "dLisPerModUsuRegistro": "1000000005",
+            "dLisPerModUsuUpdate": "1000000005",
+            "dLisPerModHostRegistro": "192.168.1.9",
+            "dLisPerModHostUpdate": "192.168.1.9"
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+<mat-nav-list>
+    <a
+        *ngFor="let mensaje of listaMensaje; let i = index"
+        mat-list-item
+        (click)="emitirClick(mensaje, $event)">
+        <span mat-line>{{ mensaje.descripcion }}</span>
+    </a>
+</mat-nav-list>

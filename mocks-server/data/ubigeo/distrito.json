@@ -1,0 +1,68 @@
+[
+    {
+        "cUbigDistrito": "01",
+        "cConstDescripcion": "TRUJILLO",
+        "cUbigCodigo": 120101,
+        "nContValor": 1
+    },
+    {
+        "cUbigDistrito": "02",
+        "cConstDescripcion": "HUANCHACO",
+        "cUbigCodigo": 120102,
+        "nContValor": 2
+    },
+    {
+        "cUbigDistrito": "03",
+        "cConstDescripcion": "LAREDO",
+        "cUbigCodigo": 120103,
+        "nContValor": 3
+    },
+    {
+        "cUbigDistrito": "04",
+        "cConstDescripcion": "MOCHE",
+        "cUbigCodigo": 120104,
+        "nContValor": 4
+    },
+    {
+        "cUbigDistrito": "05",
+        "cConstDescripcion": "SALAVERRY",
+        "cUbigCodigo": 120105,
+        "nContValor": 5
+    },
+    {
+        "cUbigDistrito": "06",
+        "cConstDescripcion": "SIMBAL",
+        "cUbigCodigo": 120106,
+        "nContValor": 6
+    },
+    {
+        "cUbigDistrito": "07",
+        "cConstDescripcion": "VICTOR LARCO HERRERA",
+        "cUbigCodigo": 120107,
+        "nContValor": 7
+    },
+    {
+        "cUbigDistrito": "09",
+        "cConstDescripcion": "POROTO",
+        "cUbigCodigo": 120109,
+        "nContValor": 8
+    },
+    {
+        "cUbigDistrito": "10",
+        "cConstDescripcion": "EL PORVENIR",
+        "cUbigCodigo": 120110,
+        "nContValor": 9
+    },
+    {
+        "cUbigDistrito": "11",
+        "cConstDescripcion": "LA ESPERANZA",
+        "cUbigCodigo": 120111,
+        "nContValor": 10
+    },
+    {
+        "cUbigDistrito": "12",
+        "cConstDescripcion": "FLORENCIA DE MORA",
+        "cUbigCodigo": 120112,
+        "nContValor": 11
+    }
+]

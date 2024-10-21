@@ -1,0 +1,29 @@
+export class PerDomicilioList {
+    nPerDirCodigo?: number;
+    cPerCodigo?: string;
+    nPerDomTipo?: number;
+    cPerDomDireccion?: string;
+    cPerDomNumero?: string;
+    cPerDomManzana?: string;
+    cPerDomLote?: string;
+    nPerDomSubTipo?: number;
+    cPerDomSubTipoNumero?: string;
+    nPerDomResTipo?: number;
+    cPerDomResNombre?: string;
+    nPerDomSecTipo?: number;
+    cPerDomSecNombre?: string;
+    cUbiGeoCodigo?: string;
+    nPerDomCarta?: number;
+    nPerDomActual?: number;
+    nPerDomStatus?: number;
+    nUbiCodigo?: number;
+    nUbiGeoCodigo?: number;
+    cPerDomFullDireccion?: string;
+    dEffDate?: Date;
+    dPerDomFechaRegistro?: Date;
+    dPerDomFechaUpdate?: Date;
+    cPerDomHostRegistro?: string;
+    cPerDomHostUpdate?: string;
+    cPerDomUsuarioRegistro?: string;
+    cPerDomUsuarioUpdate?: string;
+}

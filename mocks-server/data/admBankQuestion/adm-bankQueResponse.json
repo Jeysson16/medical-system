@@ -1,0 +1,30 @@
+[
+    {
+        "nAdmBankQueResCodigo": 1,
+        "nAdmBankQueCodigo": 1,
+        "nAdmBankQueResSecuencia": 1,
+        "cAdmBankQueResDescripcion": "Blasco Núñez de Vela",
+        "nAdmBankQueResValida": 1
+    },
+    {
+        "nAdmBankQueResCodigo": 2,
+        "nAdmBankQueCodigo": 1,
+        "nAdmBankQueResSecuencia": 2,
+        "cAdmBankQueResDescripcion": "Don Antonio de Mendoza",
+        "nAdmBankQueResValida": 0
+    },
+    {
+        "nAdmBankQueResCodigo": 3,
+        "nAdmBankQueCodigo": 2,
+        "nAdmBankQueResSecuencia": 1,
+        "cAdmBankQueResDescripcion": "Alfonso Ugarte",
+        "nAdmBankQueResValida": 1
+    },
+    {
+        "nAdmBankQueResCodigo": 4,
+        "nAdmBankQueCodigo": 2,
+        "nAdmBankQueResSecuencia": 2,
+        "cAdmBankQueResDescripcion": "Andrés Avelino Cáceres",
+        "nAdmBankQueResValida": 0
+    }
+]
