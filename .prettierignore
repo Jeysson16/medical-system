@@ -1,5 +1,11 @@
+.angular
+angular.json
+mock-server
+node_modules
 dist
 coverage
+package.json
 package-lock.json
 vscode
 scannerwork
+src/@fuse
