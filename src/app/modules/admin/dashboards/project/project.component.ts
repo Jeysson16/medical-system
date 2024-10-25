@@ -8,6 +8,14 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { Router } from '@angular/router';
+import { AnomaliesComponent } from '@components/anomalies/anomalies.component';
+import { DigestiveMapComponent } from '@components/digestive-map/digestive-map.component';
+import { DoctorsNotesComponent } from '@components/doctors-notes/doctors-notes.component';
+import { HeaderComponent } from '@components/header/header.component';
+import { ImageGalleryComponent } from '@components/image-gallery/image-gallery.component';
+import { LiveProgressComponent } from '@components/live-progress/live-progress.component';
+import { PatientProfileComponent } from '@components/patient-profile/patient-profile.component';
+import { VitalSignsComponent } from '@components/vital-signs/vital-signs.component';
 import { TranslocoModule } from '@jsverse/transloco';
 import { ProjectService } from 'app/modules/admin/dashboards/project/project.service';
 import { ApexOptions, NgApexchartsModule } from 'ng-apexcharts';
@@ -19,7 +27,7 @@ import { Subject, takeUntil } from 'rxjs';
     encapsulation  : ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone     : true,
-    imports        : [TranslocoModule, MatIconModule, MatButtonModule, MatRippleModule, MatMenuModule, MatTabsModule, MatButtonToggleModule, NgApexchartsModule, NgFor, NgIf, MatTableModule, NgClass, CurrencyPipe],
+    imports        : [TranslocoModule, MatIconModule, MatButtonModule, MatRippleModule, MatMenuModule, MatTabsModule, MatButtonToggleModule, NgApexchartsModule, NgFor, NgIf, MatTableModule, NgClass, CurrencyPipe, AnomaliesComponent, HeaderComponent, LiveProgressComponent, PatientProfileComponent, VitalSignsComponent, DigestiveMapComponent, ImageGalleryComponent, DoctorsNotesComponent],
 })
 export class ProjectComponent implements OnInit, OnDestroy
 {

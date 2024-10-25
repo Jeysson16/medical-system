@@ -1,0 +1,13 @@
+:host {
+    display: block;
+    .aspect-square {
+      width: 100%;
+      padding-top: 100%; // Mantener la proporción cuadrada
+      position: relative;
+    }
+  
+    svg {
+      max-width: 80%; // Ajuste de tamaño
+      height: auto;
+    }
+  }
