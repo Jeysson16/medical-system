@@ -3,13 +3,16 @@
         <div class="w-full max-w-80 sm:w-80 mx-auto sm:mx-0">
             <!-- Logo -->
             <div class="w-12">
-                <img src="assets/images/logo/logo.svg">
+                <img src="assets/images/logo/logo.png" />
             </div>
 
             <!-- Title -->
-            <div class="mt-8 text-4xl font-extrabold tracking-tight leading-tight">Almost there!</div>
+            <div class="mt-8 text-4xl font-extrabold tracking-tight leading-tight">
+                Almost there!
+            </div>
             <div class="mt-0.5">
-                Do you want to be notified when we are ready? Register below so we can notify you about the launch!
+                Do you want to be notified when we are ready? Register below so we can notify you
+                about the launch!
             </div>
 
             <!-- Alert -->
@@ -20,22 +23,15 @@
                 [showIcon]="false"
                 [type]="alert.type"
                 [@shake]="alert.type === 'error'">
-                {{alert.message}}
+                {{ alert.message }}
             </fuse-alert>
 
             <!-- Coming soon form -->
-            <form
-                class="mt-8"
-                [formGroup]="comingSoonForm"
-                #comingSoonNgForm="ngForm">
-
+            <form class="mt-8" [formGroup]="comingSoonForm" #comingSoonNgForm="ngForm">
                 <!-- Email field -->
                 <mat-form-field class="w-full">
                     <mat-label>Email address</mat-label>
-                    <input
-                        id="email"
-                        matInput
-                        [formControlName]="'email'">
+                    <input id="email" matInput [formControlName]="'email'" />
                     <mat-error *ngIf="comingSoonForm.get('email').hasError('required')">
                         Email address is required
                     </mat-error>
@@ -52,9 +48,7 @@
                     [color]="'primary'"
                     [disabled]="comingSoonForm.disabled"
                     (click)="register()">
-                    <span *ngIf="!comingSoonForm.disabled">
-                        Notify me when you launch
-                    </span>
+                    <span *ngIf="!comingSoonForm.disabled"> Notify me when you launch </span>
                     <mat-progress-spinner
                         *ngIf="comingSoonForm.disabled"
                         [diameter]="24"
@@ -63,10 +57,9 @@
 
                 <!-- Form footer -->
                 <div class="mt-8 text-md font-medium text-secondary">
-                    This isn't a newsletter subscription. We will send one email to you when
-                    we launch and then you will be removed from the list.
+                    This isn't a newsletter subscription. We will send one email to you when we
+                    launch and then you will be removed from the list.
                 </div>
-
             </form>
         </div>
     </div>

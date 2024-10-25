@@ -1,0 +1,49 @@
+{
+    "welcome-back": "Bienvenido de nuevo",
+    "home": {
+        "title": "Inicio",
+        "overview": "Vista general del estado actual del paciente e información de la cápsula"
+    },
+    "patients": {
+        "title": "Pacientes",
+        "list": "Lista de Pacientes",
+        "history": "Historial del Paciente"
+    },
+    "real-time-images": {
+        "title": "Imágenes en Tiempo Real",
+        "capture": "Captura en Vivo",
+        "filters": "Filtros por Sección"
+    },
+    "anomaly-analysis": {
+        "title": "Análisis de Anomalías",
+        "detected": "Anomalías Detectadas",
+        "reports": "Reportes Automáticos"
+    },
+    "study-progress": {
+        "title": "Progreso del Estudio",
+        "map": "Mapa Interactivo",
+        "graphs": "Gráficos de Progreso"
+    },
+    "study-comparison": {
+        "title": "Comparativa de Estudios",
+        "current": "Comparativa del Estudio Actual",
+        "similar": "Comparación con Casos Similares"
+    },
+    "vital-signs": {
+        "title": "Signos Vitales",
+        "ph": "Niveles de pH",
+        "temperature": "Temperatura",
+        "pressure": "Presión Interna"
+    },
+    "reports": {
+        "title": "Reportes",
+        "generate": "Generar Informes",
+        "export": "Exportar Datos"
+    },
+    "support": {
+        "title": "Soporte",
+        "guides": "Guías de Uso",
+        "faq": "Preguntas Frecuentes",
+        "contact": "Contacto con Soporte"
+    }
+}

@@ -3,16 +3,15 @@
         <div class="w-full max-w-80 sm:w-80 mx-auto sm:mx-0">
             <!-- Logo -->
             <div class="w-12">
-                <img src="assets/images/logo/logo.svg">
+                <img src="assets/images/logo/logo.png" />
             </div>
 
             <!-- Title -->
             <div class="mt-8 text-4xl font-extrabold tracking-tight leading-tight">Sign in</div>
             <div class="flex items-baseline mt-0.5 font-medium">
                 <div>Don't have an account?</div>
-                <a
-                    class="ml-1 text-primary-500 hover:underline"
-                    [routerLink]="['/sign-up']">Sign up
+                <a class="ml-1 text-primary-500 hover:underline" [routerLink]="['/sign-up']"
+                    >Sign up
                 </a>
             </div>
 
@@ -24,22 +23,15 @@
                 [showIcon]="false"
                 [type]="alert.type"
                 [@shake]="alert.type === 'error'">
-                {{alert.message}}
+                {{ alert.message }}
             </fuse-alert>
 
             <!-- Sign in form -->
-            <form
-                class="mt-8"
-                [formGroup]="signInForm"
-                #signInNgForm="ngForm">
-
+            <form class="mt-8" [formGroup]="signInForm" #signInNgForm="ngForm">
                 <!-- Email field -->
                 <mat-form-field class="w-full">
                     <mat-label>Email address</mat-label>
-                    <input
-                        id="email"
-                        matInput
-                        [formControlName]="'email'">
+                    <input id="email" matInput [formControlName]="'email'" />
                     <mat-error *ngIf="signInForm.get('email').hasError('required')">
                         Email address is required
                     </mat-error>
@@ -56,11 +48,15 @@
                         matInput
                         type="password"
                         [formControlName]="'password'"
-                        #passwordField>
+                        #passwordField />
                     <button
                         mat-icon-button
                         type="button"
-                        (click)="passwordField.type === 'password' ? passwordField.type = 'text' : passwordField.type = 'password'"
+                        (click)="
+                            passwordField.type === 'password'
+                                ? (passwordField.type = 'text')
+                                : (passwordField.type = 'password')
+                        "
                         matSuffix>
                         <mat-icon
                             class="icon-size-5"
@@ -71,9 +67,7 @@
                             *ngIf="passwordField.type === 'text'"
                             [svgIcon]="'heroicons_solid:eye-slash'"></mat-icon>
                     </button>
-                    <mat-error>
-                        Password is required
-                    </mat-error>
+                    <mat-error> Password is required </mat-error>
                 </mat-form-field>
 
                 <!-- Actions -->
@@ -86,7 +80,8 @@
                     </mat-checkbox>
                     <a
                         class="text-md font-medium text-primary-500 hover:underline"
-                        [routerLink]="['/forgot-password']">Forgot password?
+                        [routerLink]="['/forgot-password']"
+                        >Forgot password?
                     </a>
                 </div>
 
@@ -97,9 +92,7 @@
                     [color]="'primary'"
                     [disabled]="signInForm.disabled"
                     (click)="signIn()">
-                    <span *ngIf="!signInForm.disabled">
-                        Sign in
-                    </span>
+                    <span *ngIf="!signInForm.disabled"> Sign in </span>
                     <mat-progress-spinner
                         *ngIf="signInForm.disabled"
                         [diameter]="24"
@@ -115,29 +108,14 @@
 
                 <!-- Single sign-on buttons -->
                 <div class="flex items-center mt-8 space-x-4">
-                    <button
-                        class="flex-auto"
-                        type="button"
-                        mat-stroked-button>
-                        <mat-icon
-                            class="icon-size-5"
-                            [svgIcon]="'feather:facebook'"></mat-icon>
+                    <button class="flex-auto" type="button" mat-stroked-button>
+                        <mat-icon class="icon-size-5" [svgIcon]="'feather:facebook'"></mat-icon>
                     </button>
-                    <button
-                        class="flex-auto"
-                        type="button"
-                        mat-stroked-button>
-                        <mat-icon
-                            class="icon-size-5"
-                            [svgIcon]="'feather:twitter'"></mat-icon>
+                    <button class="flex-auto" type="button" mat-stroked-button>
+                        <mat-icon class="icon-size-5" [svgIcon]="'feather:twitter'"></mat-icon>
                     </button>
-                    <button
-                        class="flex-auto"
-                        type="button"
-                        mat-stroked-button>
-                        <mat-icon
-                            class="icon-size-5"
-                            [svgIcon]="'feather:github'"></mat-icon>
+                    <button class="flex-auto" type="button" mat-stroked-button>
+                        <mat-icon class="icon-size-5" [svgIcon]="'feather:github'"></mat-icon>
                     </button>
                 </div>
             </form>
