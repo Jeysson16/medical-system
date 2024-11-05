@@ -8,9 +8,9 @@
     "scripts": {
         "ng": "ng",
         "version": "ng v",
-        "start": "cross-env --configuration=production",
+        "start": "ng serve --port 4900 --configuration=development",
         "start:local": "ng serve --port 4900 --configuration=local",
-        "build": "ng build",
+        "build": "ng build --configuration=production",
         "watch": "ng build --watch --configuration development",
         "format": "prettier --write .",
         "test": "ng test --no-watch",
@@ -38,6 +38,7 @@
         "apexcharts": "3.47.0",
         "crypto-js": "4.2.0",
         "d3": "^7.9.0",
+        "dotenv": "^16.4.5",
         "highlight.js": "11.9.0",
         "lodash-es": "4.17.21",
         "luxon": "3.4.4",
@@ -74,8 +75,5 @@
         "postcss": "8.4.35",
         "tailwindcss": "3.4.1",
         "typescript": "5.3.3"
-    },
-    "optionalDependencies": {
-        "win-node-env": "^0.6.1"
     }
 }
