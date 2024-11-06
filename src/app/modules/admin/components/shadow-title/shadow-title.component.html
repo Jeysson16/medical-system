@@ -1,0 +1,14 @@
+<div class="hidden sm:flex flex-wrap items-center font-medium">
+    <div class="flex items-center ml-1 whitespace-nowrap">
+        <button mat-mini-fab class="btnVolver" (click)="eventClick()" *ngIf="canBack">
+            <mat-icon class="iconColor">keyboard_backspace</mat-icon>
+        </button>
+        <!-- <mat-icon class="icon-size-5 text-secondary"></mat-icon> -->
+        <span
+            class="ml-1 opa"
+            [ngClass]="{ 'text-secondary': !color }"
+            [ngStyle]="{ color: color ?? null }"
+            >{{ title }}</span
+        >
+    </div>
+</div>

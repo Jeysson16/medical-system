@@ -1,0 +1,50 @@
+{
+    "welcome-back": "Welcome back",
+    "home": {
+        "title": "Home",
+        "overview": "Overview of the patient's current status and capsule information"
+    },
+
+    "patients": {
+        "title": "Patients",
+        "list": "List of Patients",
+        "history": "Patient History"
+    },
+    "real-time-images": {
+        "title": "Real-Time Images",
+        "capture": "Live Capture",
+        "filters": "Filters by Section"
+    },
+    "anomaly-analysis": {
+        "title": "Anomaly Analysis",
+        "detected": "Detected Anomalies",
+        "reports": "Automated Reports"
+    },
+    "study-progress": {
+        "title": "Study Progress",
+        "map": "Interactive Map",
+        "graphs": "Progress Graphs"
+    },
+    "study-comparison": {
+        "title": "Study Comparison",
+        "current": "Current Study Comparison",
+        "similar": "Comparison with Similar Cases"
+    },
+    "vital-signs": {
+        "title": "Vital Signs",
+        "ph": "pH Levels",
+        "temperature": "Temperature",
+        "pressure": "Internal Pressure"
+    },
+    "reports": {
+        "title": "Reports",
+        "generate": "Generate Reports",
+        "export": "Export Data"
+    },
+    "support": {
+        "title": "Support",
+        "guides": "User Guides",
+        "faq": "FAQ",
+        "contact": "Contact Support"
+    }
+}

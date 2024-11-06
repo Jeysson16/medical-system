@@ -13,7 +13,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 title: "home.title",
                 type: "basic",
                 icon: "heroicons_outline:home",
-                link: "/dashboards/project"
+                link: "/inicio"
             }
         ]
     },
