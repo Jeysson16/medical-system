@@ -1,0 +1,8 @@
+{
+    "title": "Perfil del Paciente",
+    "name": "Nombre",
+    "age": "Edad",
+    "gender": "Género",
+    "medicalHistory": "Historia Médica",
+    "viewHistory": "Ver Historial"
+}

@@ -1,0 +1,17 @@
+<!-- <ec-cont-body class="w-full" [titleBody]="'Capsula Endoscopica'"> -->
+<div class="flex-grow p-4 w-full">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 w-full">
+        <!-- Primera columna -->
+        <ec-patient-profile class="col-span-12 md:col-span-3"></ec-patient-profile>
+        <ec-live-progress class="col-span-12 md:col-span-5"></ec-live-progress>
+        <ec-vital-signs class="col-span-12 md:col-span-4"></ec-vital-signs>
+
+        <!-- Segunda columna -->
+        <ec-anomalies class="col-span-12 md:col-span-12" [title]="'anomalies.title'"></ec-anomalies>
+
+        <!-- Tercera columna -->
+        <ec-image-gallery class="col-span-12 md:col-span-7"></ec-image-gallery>
+        <ec-notes class="col-span-12 md:col-span-5"></ec-notes>
+    </div>
+</div>
+<!-- </ec-cont-body> -->

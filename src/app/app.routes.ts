@@ -81,18 +81,7 @@ export const appRoutes: Route[] = [
         },
         children: [
             // Home
-            { path: "inicio", loadChildren: () => import("app/modules/admin/dashboards/project/project.routes") },
-            // Dashboards
-            {
-                path: "dashboards",
-                children: [
-                    { path: "home", loadChildren: () => import("app/modules/admin/dashboards/project/project.routes") },
-                    { path: "analytics", loadChildren: () => import("app/modules/admin/dashboards/analytics/analytics.routes") },
-                    { path: "finance", loadChildren: () => import("app/modules/admin/dashboards/finance/finance.routes") },
-                    { path: "crypto", loadChildren: () => import("app/modules/admin/dashboards/crypto/crypto.routes") }
-                ]
-            },
-
+            { path: "inicio", loadChildren: () => import("app/modules/admin/pages/home/home.routes") },
             // Apps
             {
                 path: "apps",

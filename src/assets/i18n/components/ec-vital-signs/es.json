@@ -1,0 +1,9 @@
+{
+    "capsuleStatus": "Estado de la Cápsula",
+    "signal": "Señal",
+    "battery": "Batería",
+    "imageQuality": "Calidad de la Imagen",
+    "patientVitalSigns": "Signos Vitales del Paciente",
+    "temperature": "Temperatura",
+    "phLevel": "Nivel de pH"
+}

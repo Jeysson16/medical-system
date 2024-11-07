@@ -1,0 +1,9 @@
+{
+    "title": "Anomalías Detectadas",
+    "viewAll": "Ver todas las Anomalias",
+    "risks": {
+        "2": "Severo",
+        "1": "Moderado",
+        "0": "Leve"
+    }
+}

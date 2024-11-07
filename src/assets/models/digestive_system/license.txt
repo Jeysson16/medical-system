@@ -1,0 +1,11 @@
+Model Information:
+* title:	EVE3D Sistema Digestivo Humano
+* source:	https://sketchfab.com/3d-models/eve3d-sistema-digestivo-humano-9bbf4e99ca864038829c8d3cc7dc3714
+* author:	EVE3D UNAM (https://sketchfab.com/eve3d_unam)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "EVE3D Sistema Digestivo Humano" (https://sketchfab.com/3d-models/eve3d-sistema-digestivo-humano-9bbf4e99ca864038829c8d3cc7dc3714) by EVE3D UNAM (https://sketchfab.com/eve3d_unam) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

@@ -1,0 +1,17 @@
+{
+    "title": "Live Progress Tracker",
+    "timeElapsed": "Time Elapsed: ",
+    "currentLocation": "Current Location: ",
+    "estimatedCompletion": "Estimated Completion: ",
+    "organs": {
+        "esophagus": "Esophagus",
+        "stomach": "Stomach",
+        "smallIntestine": "Small Intestine",
+        "largeIntestine": "Large Intestine"
+    },
+    "severity": {
+        "severe": "Severe",
+        "moderate": "Moderate",
+        "mild": "Mild"
+    }
+}

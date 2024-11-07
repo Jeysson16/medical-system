@@ -1,0 +1,8 @@
+{
+    "title": "Detected Anomalies",
+    "risks": {
+        "2": "Severe",
+        "1": "Moderate",
+        "0": "Mild"
+    }
+}

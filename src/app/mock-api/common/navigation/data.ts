@@ -87,7 +87,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
         id: "study-progress",
         title: "study-progress.title",
         type: "group",
-        icon: "heroicons_outline:trending-up",
+        icon: "heroicons_outline:chart-bar",
         children: [
             {
                 id: "study-progress.map",

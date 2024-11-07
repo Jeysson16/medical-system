@@ -1,0 +1,8 @@
+{
+    "title": "Patient Profile",
+    "name": "Name",
+    "age": "Age",
+    "gender": "Gender",
+    "medicalHistory": "Medical History",
+    "viewHistory": "View History"
+}

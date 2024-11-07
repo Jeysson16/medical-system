@@ -2,3 +2,52 @@
 /*  @ Import/write your custom styles here.
 /*  @ Styles from this file will override 'vendors.scss' and Fuse's base styles.
 /* ----------------------------------------------------------------------------------------------------- */
+
+@font-face {
+    font-family: "RobotoBold";
+    src: url("../assets/fonts/inter/Inter-roman.var.woff2");
+}
+
+@font-face {
+    font-family: "RobotoMedium";
+    src: url("../assets/fonts/roboto/Roboto-Medium.ttf");
+}
+
+@font-face {
+    src: url("../assets/fonts/inter/Inter-roman.var.woff2");
+    font-family: "inter-head-table";
+    font-weight: 600;
+    font-size: 14px;
+}
+
+@font-face {
+    src: url("../assets/fonts/inter/Inter-roman.var.woff2");
+    font-family: "inter-regular";
+}
+
+@font-face {
+    font-family: "inter_roman";
+    src: url("../assets/fonts/inter/Inter-roman.var.woff2");
+}
+
+@font-face {
+    font-family: "AmaranthBold";
+    src: url("../assets/fonts/Amaranth/Amaranth-Bold.ttf");
+}
+
+@font-face {
+    font-family: "AmaranthRegular";
+    src: url("../assets/fonts/Amaranth/Amaranth-Regular.ttf");
+}
+
+.inter-title-modal {
+    font-family: "inter_roman";
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.inter-title {
+    font-family: "inter_roman";
+    font-weight: 600;
+    font-size: 18px;
+}

@@ -1,0 +1,17 @@
+{
+    "title": "Rastreador de Progreso en Vivo",
+    "timeElapsed": "Tiempo Transcurrido: ",
+    "currentLocation": "Ubicación Actual: ",
+    "estimatedCompletion": "Finaliza en: ",
+    "organs": {
+        "esophagus": "Esófago",
+        "stomach": "Estómago",
+        "smallIntestine": "Intestino Delgado",
+        "largeIntestine": "Intestino Grueso"
+    },
+    "severity": {
+        "severe": "Severo",
+        "moderate": "Moderado",
+        "mild": "Leve"
+    }
+}

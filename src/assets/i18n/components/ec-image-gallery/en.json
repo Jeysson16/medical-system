@@ -1,0 +1,10 @@
+{
+    "title": "Image Gallery",
+    "tabs": {
+        "all": "All",
+        "anomalies": "Anomalies",
+        "normal": "Normal"
+    },
+    "anomalies_content": "Anomalies content",
+    "normal_content": "Normal content"
+}
