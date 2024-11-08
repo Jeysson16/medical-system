@@ -1,0 +1,16 @@
+{
+    "title": "Patients",
+    "subtitle": {
+        "noContacts": "No patients",
+        "singleContact": "patient",
+        "multipleContacts": "patients"
+    },
+    "searchPlaceholder": "Search patients",
+    "addButton": "Add",
+    "noContactsMessage": "There are no patients!",
+    "groupHeader": "Patients starting with",
+    "contact": {
+        "namePlaceholder": "N/A",
+        "titlePlaceholder": "No title available"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "title": "Patient History",
+    "description": "Here you can find all medical history records.",
+    "loading": "Loading...",
+    "noHistory": "There is no patient history available at the moment.",
+    "searchPlaceholder": "Search patient"
+}

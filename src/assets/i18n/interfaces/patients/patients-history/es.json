@@ -1,0 +1,7 @@
+{
+    "title": "Historial del Paciente",
+    "description": "Aquí puedes encontrar todos los registros médicos listados.",
+    "loading": "Cargando...",
+    "noHistory": "No hay historial disponible en este momento.",
+    "searchPlaceholder": "Buscar paciente"
+}

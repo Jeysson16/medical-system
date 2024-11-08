@@ -28,14 +28,14 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 title: "patients.list",
                 type: "basic",
                 icon: "heroicons_outline:user-group",
-                link: "/patients/list"
+                link: "/pacientes/lista"
             },
             {
                 id: "patients.history",
                 title: "patients.history",
                 type: "basic",
                 icon: "heroicons_outline:book-open",
-                link: "/patients/history"
+                link: "/pacientes/historia"
             }
         ]
     },

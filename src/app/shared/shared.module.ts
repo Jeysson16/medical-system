@@ -13,7 +13,6 @@ import { MatBottomSheetModule } from "@angular/material/bottom-sheet";
 import { BottomSheetComponent } from "./components/bottom-sheet/bottom-sheet.component";
 import { PipesModule } from "./pipe/pipes.module";
 
-import { FilterSelectionListPipe } from "./pipe/filter-selection-list.pipe";
 import { DynamicComponentDirective } from "./directives/dynamic-component.directive";
 
 @NgModule({
@@ -31,7 +30,7 @@ import { DynamicComponentDirective } from "./directives/dynamic-component.direct
         MatBottomSheetModule,
         PipesModule
     ],
-    exports: [CommonModule, FormsModule, ReactiveFormsModule, PipesModule, FilterSelectionListPipe, DynamicComponentDirective],
+    exports: [CommonModule, FormsModule, ReactiveFormsModule, PipesModule, DynamicComponentDirective],
     declarations: [BottomSheetComponent, DynamicComponentDirective, ]
 })
 export class SharedModule {}

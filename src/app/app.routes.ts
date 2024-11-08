@@ -82,6 +82,8 @@ export const appRoutes: Route[] = [
         children: [
             // Home
             { path: "inicio", loadChildren: () => import("app/modules/admin/pages/home/home.routes") },
+            // Pacientes
+            { path: "pacientes", loadChildren: () => import("app/modules/admin/pages/patients/patients-list.routes") },
             // Apps
             {
                 path: "apps",
