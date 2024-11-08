@@ -21,9 +21,6 @@ import { TRANSLOCO_SCOPE, TranslocoPipe } from "@jsverse/transloco";
                         <div class="flex items-center space-x-2">
                             <span>🔋</span><span>{{ "vitalSigns.battery" | transloco }}: {{ battery }}%</span>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <span>📸</span><span>{{ "vitalSigns.imageQuality" | transloco }}: {{ imageQuality }}</span>
-                        </div>
                     </div>
                 </div>
 
@@ -36,9 +33,6 @@ import { TRANSLOCO_SCOPE, TranslocoPipe } from "@jsverse/transloco";
                     <div class="mt-2 space-y-2">
                         <div class="flex items-center space-x-2">
                             <span>🌡️</span><span>{{ "vitalSigns.temperature" | transloco }}: {{ temperature }}°C</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <span>🧪</span><span>{{ "vitalSigns.phLevel" | transloco }}: {{ pHLevel }}</span>
                         </div>
                     </div>
                 </div>
@@ -55,10 +49,8 @@ import { TRANSLOCO_SCOPE, TranslocoPipe } from "@jsverse/transloco";
 })
 export class EcVitalSignsComponent {
     @Input() capsuleCode: string = "EI-04981-0995";
-    @Input() signalStrength: string = "Moderate";
+    @Input() signalStrength: string = "Moderado";
     @Input() progress: number = 0;
     @Input() battery: number = 100;
-    @Input() imageQuality: string = "High";
     @Input() temperature: number = 37.0;
-    @Input() pHLevel: number = 7.0;
 }
