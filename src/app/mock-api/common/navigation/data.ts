@@ -50,14 +50,14 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 title: "real-time-images.capture",
                 type: "basic",
                 icon: "heroicons_outline:video-camera",
-                link: "/real-time-images/capture"
+                link: "/tiempo-real/"
             },
             {
                 id: "real-time-images.filters",
                 title: "real-time-images.filters",
                 type: "basic",
                 icon: "heroicons_outline:adjustments-horizontal",
-                link: "/real-time-images/filters"
+                link: "/tiempo-real/filtros"
             }
         ]
     },

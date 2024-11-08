@@ -31,6 +31,6 @@ import { DynamicComponentDirective } from "./directives/dynamic-component.direct
         PipesModule
     ],
     exports: [CommonModule, FormsModule, ReactiveFormsModule, PipesModule, DynamicComponentDirective],
-    declarations: [BottomSheetComponent, DynamicComponentDirective, ]
+    declarations: [BottomSheetComponent, DynamicComponentDirective]
 })
 export class SharedModule {}

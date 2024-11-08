@@ -84,6 +84,8 @@ export const appRoutes: Route[] = [
             { path: "inicio", loadChildren: () => import("app/modules/admin/pages/home/home.routes") },
             // Pacientes
             { path: "pacientes", loadChildren: () => import("app/modules/admin/pages/patients/patients-list.routes") },
+            // Pacientes
+            { path: "tiempo-real", loadChildren: () => import("app/modules/admin/pages/time-real/time-real.routes") },
             // Apps
             {
                 path: "apps",
