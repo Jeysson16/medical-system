@@ -1,29 +1,32 @@
 <div
     class="flex flex-col sm:flex-row items-center md:items-start sm:justify-center md:justify-start flex-auto min-w-0">
+    <!-- Formulario -->
     <div
         class="md:flex md:items-center md:justify-end w-full sm:w-auto md:h-full md:w-1/2 py-8 px-4 sm:p-12 md:p-16 sm:rounded-2xl md:rounded-none sm:shadow md:shadow-none sm:bg-card">
         <div class="w-full max-w-80 sm:w-80 mx-auto sm:mx-0">
             <!-- Logo -->
             <div class="w-12">
-                <img src="assets/images/logo/logo.png" />
+                <img src="assets/images/logo/logo.png" alt="Logotipo del Panel Médico" />
             </div>
 
-            <!-- Title -->
-            <div class="mt-8 text-4xl font-extrabold tracking-tight leading-tight">Sign in</div>
+            <!-- Título -->
+            <div class="mt-8 text-4xl font-extrabold tracking-tight leading-tight">
+                Inicia sesión en el Panel Médico
+            </div>
             <div class="flex items-baseline mt-0.5 font-medium">
-                <div>Don't have an account?</div>
+                <div>¿Eres nuevo en la plataforma?</div>
                 <a class="ml-1 text-primary-500 hover:underline" [routerLink]="['/sign-up']"
-                    >Sign up
-                </a>
+                    >Regístrate</a
+                >
             </div>
 
-            <!-- Alert -->
+            <!-- Alerta -->
             <fuse-alert class="mt-8" [appearance]="'outline'" [showIcon]="false" [type]="'info'">
-                You are browsing <strong>Fuse Demo</strong>. Click on the "Sign in" button to access
-                the Demo and Documentation.
+                Bienvenido al <strong>Panel Médico</strong>. Accede a registros de pacientes,
+                imágenes y análisis en tiempo real iniciando sesión a continuación.
             </fuse-alert>
 
-            <!-- Alert -->
+            <!-- Alerta -->
             <fuse-alert
                 class="mt-8"
                 *ngIf="showAlert"
@@ -34,23 +37,23 @@
                 {{ alert.message }}
             </fuse-alert>
 
-            <!-- Sign in form -->
+            <!-- Formulario de inicio de sesión -->
             <form class="mt-8" [formGroup]="signInForm" #signInNgForm="ngForm">
-                <!-- Email field -->
+                <!-- Campo de correo -->
                 <mat-form-field class="w-full">
-                    <mat-label>Email address</mat-label>
+                    <mat-label>Correo electrónico</mat-label>
                     <input id="email" matInput [formControlName]="'email'" />
                     <mat-error *ngIf="signInForm.get('email').hasError('required')">
-                        Email address is required
+                        El correo electrónico es obligatorio
                     </mat-error>
                     <mat-error *ngIf="signInForm.get('email').hasError('email')">
-                        Please enter a valid email address
+                        Por favor, introduce una dirección de correo válida
                     </mat-error>
                 </mat-form-field>
 
-                <!-- Password field -->
+                <!-- Campo de contraseña -->
                 <mat-form-field class="w-full">
-                    <mat-label>Password</mat-label>
+                    <mat-label>Contraseña</mat-label>
                     <input
                         id="password"
                         matInput
@@ -75,64 +78,45 @@
                             *ngIf="passwordField.type === 'text'"
                             [svgIcon]="'heroicons_solid:eye-slash'"></mat-icon>
                     </button>
-                    <mat-error> Password is required </mat-error>
+                    <mat-error>La contraseña es obligatoria</mat-error>
                 </mat-form-field>
 
-                <!-- Actions -->
+                <!-- Acciones -->
                 <div class="inline-flex items-center justify-between w-full mt-1.5">
                     <mat-checkbox
                         class="-ml-2"
                         [color]="'primary'"
                         [formControlName]="'rememberMe'">
-                        Remember me
+                        Recuérdame
                     </mat-checkbox>
                     <a
                         class="text-md font-medium text-primary-500 hover:underline"
                         [routerLink]="['/forgot-password']"
-                        >Forgot password?
-                    </a>
+                        >¿Olvidaste tu contraseña?</a
+                    >
                 </div>
 
-                <!-- Submit button -->
+                <!-- Botón de enviar -->
                 <button
                     class="fuse-mat-button-large w-full mt-6"
                     mat-flat-button
                     [color]="'primary'"
                     [disabled]="signInForm.disabled"
                     (click)="signIn()">
-                    <span *ngIf="!signInForm.disabled"> Sign in </span>
+                    <span *ngIf="!signInForm.disabled">Iniciar sesión</span>
                     <mat-progress-spinner
                         *ngIf="signInForm.disabled"
                         [diameter]="24"
                         [mode]="'indeterminate'"></mat-progress-spinner>
                 </button>
-
-                <!-- Separator -->
-                <div class="flex items-center mt-8">
-                    <div class="flex-auto mt-px border-t"></div>
-                    <div class="mx-2 text-secondary">Or continue with</div>
-                    <div class="flex-auto mt-px border-t"></div>
-                </div>
-
-                <!-- Single sign-on buttons -->
-                <div class="flex items-center mt-8 space-x-4">
-                    <button class="flex-auto" type="button" mat-stroked-button>
-                        <mat-icon class="icon-size-5" [svgIcon]="'feather:facebook'"></mat-icon>
-                    </button>
-                    <button class="flex-auto" type="button" mat-stroked-button>
-                        <mat-icon class="icon-size-5" [svgIcon]="'feather:twitter'"></mat-icon>
-                    </button>
-                    <button class="flex-auto" type="button" mat-stroked-button>
-                        <mat-icon class="icon-size-5" [svgIcon]="'feather:github'"></mat-icon>
-                    </button>
-                </div>
             </form>
         </div>
     </div>
+
+    <!-- Visualización contextual -->
     <div
         class="relative hidden md:flex flex-auto items-center justify-center w-1/2 h-full p-16 lg:px-28 overflow-hidden bg-gray-800 dark:border-l">
-        <!-- Background - @formatter:off -->
-        <!-- Rings -->
+        <!-- Fondo -->
         <svg
             class="absolute inset-0 pointer-events-none"
             viewBox="0 0 960 540"
@@ -149,54 +133,92 @@
                 <circle r="234" cx="790" cy="491"></circle>
             </g>
         </svg>
-        <!-- Dots -->
-        <svg
-            class="absolute -top-16 -right-16 text-gray-700"
-            viewBox="0 0 220 192"
-            width="220"
-            height="192"
-            fill="none">
-            <defs>
-                <pattern
-                    id="837c3e70-6c3a-44e6-8854-cc48c737b659"
-                    x="0"
-                    y="0"
-                    width="20"
-                    height="20"
-                    patternUnits="userSpaceOnUse">
-                    <rect x="0" y="0" width="4" height="4" fill="currentColor"></rect>
-                </pattern>
-            </defs>
-            <rect width="220" height="192" fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"></rect>
-        </svg>
-        <!-- @formatter:on -->
-        <!-- Content -->
+        <!-- Contenido -->
         <div class="z-10 relative w-full max-w-2xl">
             <div class="text-7xl font-bold leading-none text-gray-100">
-                <div>Welcome to</div>
-                <div>our community</div>
+                <div>Bienvenido a</div>
+                <div>Tu Portal Médico</div>
             </div>
             <div class="mt-6 text-lg tracking-tight leading-6 text-gray-400">
-                Fuse helps developers to build organized and well coded dashboards full of beautiful
-                and rich modules. Join us and start building your application today.
+                Accede a informes detallados, imágenes de cápsulas y análisis. Diseñado para que
+                médicos y pacientes colaboren en datos de salud.
             </div>
             <div class="flex items-center mt-8">
-                <div class="flex flex-0 items-center -space-x-1.5">
-                    <img
-                        class="flex-0 w-10 h-10 rounded-full ring-4 ring-offset-1 ring-gray-800 ring-offset-gray-800 object-cover"
-                        src="assets/images/avatars/female-18.jpg" />
-                    <img
-                        class="flex-0 w-10 h-10 rounded-full ring-4 ring-offset-1 ring-gray-800 ring-offset-gray-800 object-cover"
-                        src="assets/images/avatars/female-11.jpg" />
-                    <img
-                        class="flex-0 w-10 h-10 rounded-full ring-4 ring-offset-1 ring-gray-800 ring-offset-gray-800 object-cover"
-                        src="assets/images/avatars/male-09.jpg" />
-                    <img
-                        class="flex-0 w-10 h-10 rounded-full ring-4 ring-offset-1 ring-gray-800 ring-offset-gray-800 object-cover"
-                        src="assets/images/avatars/male-16.jpg" />
-                </div>
-                <div class="ml-4 font-medium tracking-tight text-gray-400">
-                    More than 17k people joined us, it's your turn
+                <div class="flex-auto text-gray-100">
+                    <!-- Título descriptivo -->
+                    <div class="text-2xl font-bold leading-tight">
+                        ¿Por qué elegir nuestro Panel Médico?
+                    </div>
+                    <p class="mt-2 text-lg leading-tight text-gray-400">
+                        Descubre los beneficios de usar nuestro avanzado sistema de revisión de
+                        endoscopias, diseñado para médicos y pacientes.
+                    </p>
+
+                    <!-- Lista de características -->
+                    <ul class="mt-6 space-y-4">
+                        <li class="flex items-start">
+                            <span
+                                class="flex items-center justify-center w-8 h-8 bg-blue-600 text-white rounded-full">
+                                <mat-icon
+                                    class="text-white"
+                                    svgIcon="heroicons_solid:check-circle"></mat-icon>
+                            </span>
+                            <div class="ml-4">
+                                <div class="text-lg font-semibold">Información en tiempo real</div>
+                                <p class="text-gray-400 text-sm">
+                                    Accede a un seguimiento de cápsulas en tiempo real y a imágenes
+                                    para tomar mejores decisiones.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span
+                                class="flex items-center justify-center w-8 h-8 bg-green-600 text-white rounded-full">
+                                <mat-icon
+                                    class="text-white"
+                                    svgIcon="heroicons_solid:check-circle"></mat-icon>
+                            </span>
+                            <div class="ml-4">
+                                <div class="text-lg font-semibold">Análisis impulsado por IA</div>
+                                <p class="text-gray-400 text-sm">
+                                    Utiliza IA avanzada para detectar anomalías y ayudar en los
+                                    diagnósticos.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span
+                                class="flex items-center justify-center w-8 h-8 bg-yellow-600 text-white rounded-full">
+                                <mat-icon
+                                    class="text-white"
+                                    svgIcon="heroicons_solid:check-circle"></mat-icon>
+                            </span>
+                            <div class="ml-4">
+                                <div class="text-lg font-semibold">
+                                    Accesibilidad para pacientes
+                                </div>
+                                <p class="text-gray-400 text-sm">
+                                    Permite que los pacientes visualicen sus propios informes de
+                                    forma segura, fomentando la transparencia.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span
+                                class="flex items-center justify-center w-8 h-8 bg-red-600 text-white rounded-full">
+                                <mat-icon
+                                    class="text-white"
+                                    svgIcon="heroicons_solid:check-circle"></mat-icon>
+                            </span>
+                            <div class="ml-4">
+                                <div class="text-lg font-semibold">Seguro y privado</div>
+                                <p class="text-gray-400 text-sm">
+                                    Priorizamos la privacidad de los pacientes con almacenamiento de
+                                    datos encriptados y acceso seguro.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

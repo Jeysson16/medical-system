@@ -103,9 +103,9 @@ export class EcImageGalleryComponent {
     ];
     @Input() selectedTab: string = "all";
     @Input() imagesByTab: { [key: string]: string[] } = {
-        all: Array.from({ length: 12 }).map((_, index) => `/assets/images/ui/components/placeholder.svg?height=100&width=100&image=${index + 1}`),
-        anomalies: Array.from({ length: 6 }).map((_, index) => `/assets/images/ui/components/anomalies-placeholder.svg?height=100&width=100&image=${index + 1}`),
-        normal: Array.from({ length: 6 }).map((_, index) => `/assets/images/ui/components/normal-placeholder.svg?height=100&width=100&image=${index + 1}`)
+        all: Array.from({ length: 12 }).map((_, index) => `/assets/images/ui/components/placeholder${Math.floor(Math.random() * 50)}.jpg`),
+        anomalies: Array.from({ length: 6 }).map((_, index) => `/assets/images/ui/components/placeholder${Math.floor(Math.random() * 50)}.jpg`),
+        normal: Array.from({ length: 6 }).map((_, index) => `/assets/images/ui/components/placeholder${Math.floor(Math.random() * 50)}.jpg`)
     };
 
     currentSlide: number = 0;

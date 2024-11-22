@@ -1,226 +1,152 @@
 <div class="container mx-auto p-4">
-    <h1 class="text-3xl font-bold text-center mb-6">Panel de Visualización Endoscópica</h1>
+    <h1 class="text-3xl font-bold text-center mb-6">Visualización Endoscópica</h1>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <div class="bg-white shadow-md rounded-lg overflow-hidden lg:col-span-2">
-            <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
-                <h2 class="text-lg font-semibold text-gray-900">Vista Principal</h2>
+        <!-- Vista Principal -->
+        <div
+            class="bg-white shadow-md rounded-lg overflow-hidden lg:col-span-2 dark:bg-gray-800 dark:text-white h-[550px]">
+            <div
+                class="px-6 py-4 bg-gray-50 border-b border-gray-200 dark:bg-gray-700 dark:border-gray-600">
+                <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Vista Principal</h2>
             </div>
             <div class="p-3">
-                <div class="relative w-full bg-gray-200 rounded-lg overflow-hidden mb-2">
-                    <!-- Usamos 'w-full' para que ocupe el 100% del contenedor y ajustamos la altura en función del aspect ratio -->
+                <div
+                    class="relative w-full bg-gray-200 rounded-lg overflow-hidden mb-2 dark:bg-gray-600 h-[450px]">
                     <img
                         [src]="
-                            'assets/images/ui/components/placeholder.svg?height=200&width=300&text=Interior ' +
+                            'assets/images/ui/components/placeholder' +
+                            currentImage +
+                            '.jpg?height=200&width=300' +
                             currentImage
                         "
                         [alt]="'Vista interior ' + currentImage"
-                        class="w-full h-80 object-contain" />
+                        class="w-full h-full object-contain" />
                     <span
                         class="px-2 py-1 text-xs font-semibold rounded-full bg-primary text-white absolute top-2 left-2">
                         Imagen {{ currentImage }}
                     </span>
-
                     <div class="absolute bottom-2 left-2 right-2 flex justify-between">
                         <button
-                            mat-flat-button
-                            class="bg-primary text-white h-4 w-4"
+                            class="h-12 w-12 rounded-full flex items-center justify-center bg-white shadow-md mat-button-base dark:bg-gray-700 dark:text-white"
                             (click)="previousImage()"
                             [disabled]="isCapturing"
                             aria-label="Imagen anterior">
-                            <mat-icon>chevron_left</mat-icon>
+                            <mat-icon class="text-primary-600 dark:text-primary-300"
+                                >chevron_left</mat-icon
+                            >
                         </button>
                         <button
-                            mat-flat-button
-                            class="bg-primary text-white"
+                            class="h-12 w-12 rounded-full flex items-center justify-center bg-white shadow-md mat-button-base dark:bg-gray-700 dark:text-white"
                             (click)="togglePlay()"
-                            [disabled]="isCapturing"
                             [attr.aria-label]="
                                 isPlaying ? 'Pausar reproducción' : 'Iniciar reproducción'
                             ">
-                            @if(!isPlaying){
-                            <mat-icon>play_arrow</mat-icon> } @else{ <mat-icon>pause</mat-icon> }
+                            <mat-icon class="text-primary-600 dark:text-primary-300">
+                                {{ isPlaying ? "pause" : "play_arrow" }}
+                            </mat-icon>
                         </button>
-
                         <button
-                            mat-flat-button
-                            class="bg-primary text-white"
+                            class="h-12 w-12 rounded-full flex items-center justify-center bg-white shadow-md mat-button-base dark:bg-gray-700 dark:text-white"
                             (click)="nextImage()"
                             [disabled]="isCapturing"
                             aria-label="Siguiente imagen">
-                            <mat-icon>chevron_right</mat-icon>
-                        </button>
-                    </div>
-                </div>
-                <div class="flex justify-between items-center">
-                    <div class="flex items-center space-x-2">
-                        <mat-icon color="warn">favorite</mat-icon>
-                        <span class="text-sm font-medium"
-                            >Estado:
-                            {{
-                                isCapturing
-                                    ? "Capturando"
-                                    : isPlaying
-                                    ? "Reproduciendo"
-                                    : "En espera"
-                            }}</span
-                        >
-                    </div>
-                    <div class="flex space-x-2">
-                        <button
-                            mat-flat-button
-                            color="primary"
-                            class="flex items-center space-x-1 text-white"
-                            (click)="toggleCapture()">
-                            <mat-icon *ngIf="!isCapturing">play_arrow</mat-icon>
-                            <mat-icon *ngIf="isCapturing">pause</mat-icon>
-                            <span>{{ isCapturing ? "Pausar" : "Iniciar" }} Captura</span>
-                        </button>
-
-                        <button
-                            mat-flat-button
-                            color="primary"
-                            class="flex items-center space-x-1 text-white"
-                            (click)="resetCapture()">
-                            <mat-icon>autorenew</mat-icon>
-                            <span>Reiniciar</span>
+                            <mat-icon class="text-primary-600 dark:text-primary-300"
+                                >chevron_right</mat-icon
+                            >
                         </button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="bg-white shadow-md rounded-lg overflow-hidden">
-            <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
-                <h2 class="text-lg font-semibold text-gray-900">
-                    Datos Vitales y Detalles de la Imagen
+        <!-- Información de la Imagen -->
+        <div
+            class="bg-white shadow-md rounded-lg overflow-hidden dark:bg-gray-800 dark:text-white h-[550px]">
+            <div
+                class="px-6 py-4 bg-gray-50 border-b border-gray-200 dark:bg-gray-700 dark:border-gray-600">
+                <h2 class="text-lg font-semibold text-gray-900 dark:text-white">
+                    Información de la Imagen
                 </h2>
             </div>
             <div class="p-6">
                 <div class="space-y-4">
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span class="text-sm font-medium">Temperatura</span>
-                            <span class="text-sm font-medium">{{ temperature.toFixed(1) }}°C</span>
-                        </div>
-                        <progress
-                            class="progress"
-                            [value]="(temperature - 35) * 20"
-                            max="100"></progress>
+                    <div class="flex justify-between mb-1">
+                        <span class="text-sm font-medium">Progreso</span>
+                        <span class="text-sm font-medium">{{ progress.toFixed(1) }}%</span>
                     </div>
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span class="text-sm font-medium">Ritmo Cardíaco</span>
-                            <span class="text-sm font-medium">{{ heartRate }} BPM</span>
-                        </div>
-                        <progress class="progress" [value]="heartRate" max="100"></progress>
-                    </div>
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span class="text-sm font-medium">Progreso</span>
-                            <span class="text-sm font-medium">{{ progress.toFixed(1) }}%</span>
-                        </div>
-                        <progress class="progress" [value]="progress" max="100"></progress>
-                    </div>
-                    <div class="pt-4 border-t">
-                        <h3 class="font-semibold mb-2">Detalles de la Imagen</h3>
-                        <p><strong>Número de imagen:</strong> {{ currentImage }}</p>
-                        <p>
-                            <strong>Tiempo de captura:</strong> {{ formatTime(currentImage * 5) }}
-                        </p>
-                        <p>
-                            <strong>Ubicación estimada:</strong>
-                            {{ getImageLocation(currentImage) }}
-                        </p>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold mb-2">Observaciones</h3>
-                        <p class="text-sm">{{ getObservation(currentImage) }}</p>
+                    <progress class="progress" [value]="progress" max="100"></progress>
+                    <div class="pt-4 border-t dark:border-gray-600">
+                        <mat-tab-group>
+                            <mat-tab label="Detalles">
+                                <p><strong>Número de imagen:</strong> {{ currentImage }}</p>
+                                <p>
+                                    <strong>Tiempo de captura:</strong>
+                                    {{ formatTime(currentImage) }}
+                                </p>
+                                <p>
+                                    <strong>Ubicación estimada:</strong>
+                                    {{ getImageLocation(currentImage) }}
+                                </p>
+                                <div>
+                                    <h3 class="font-semibold mb-2">Observaciones</h3>
+                                    <p class="text-sm">{{ getObservation(currentImage) }}</p>
+                                </div>
+                            </mat-tab>
+                            <mat-tab label="Eventos">
+                                <div>
+                                    <div class="overflow-auto h-[100px]">
+                                        <ul class="space-y-2">
+                                            <li *ngFor="let event of events" class="text-sm">
+                                                {{ event }}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </mat-tab>
+                        </mat-tab-group>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="bg-white shadow-md rounded-lg overflow-hidden lg:col-span-3">
-            <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
-                <h2 class="text-lg font-semibold text-gray-900">Timeline de Imágenes</h2>
-            </div>
+        <!-- Timeline -->
+        <div
+            class="bg-white shadow-md rounded-lg overflow-hidden lg:col-span-3 dark:bg-gray-800 dark:text-white">
             <div class="p-6">
-                <div class="overflow-auto w-full whitespace-nowrap rounded-md border">
+                <div
+                    class="overflow-auto w-full whitespace-nowrap rounded-md border dark:border-gray-600">
                     <div class="flex p-4" #timelineRef>
-                        <div
-                            *ngFor="let img of capturedImages"
-                            class="flex flex-col items-center mr-4 last:mr-0"
-                            [attr.data-image]="img">
-                            <button
-                                class="btn btn-ghost p-0 h-20 w-20"
-                                [ngClass]="{ 'ring-2 ring-primary': currentImage === img }"
-                                (click)="updateImage(img); isPlaying = false">
-                                <img
-                                    [src]="
-                                        'assets/images/ui/components/placeholder.svg?height=80&width=80&text=' +
-                                        img
-                                    "
-                                    [alt]="'Imagen ' + img"
-                                    class="w-full h-full object-cover rounded" />
-                            </button>
-                            <span class="text-xs mt-1">{{ formatTime(img * 5) }}</span>
-                            <span class="text-xs text-muted-foreground">
-                                {{ getImageLocation(img) }}
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                        <ng-container *ngIf="capturedImages.length > 0; else emptyTimeline">
+                            <div
+                                *ngFor="let img of capturedImages"
+                                class="flex flex-col items-center mr-4 last:mr-0"
+                                [attr.data-image]="img">
+                                <button
+                                    @zoomIn
+                                    class="btn btn-ghost p-0 h-20 w-20 dark:ring-2 dark:ring-primary"
+                                    [ngClass]="{ 'ring-2 ring-primary': currentImage === img }"
+                                    (click)="updateImage(img); isPlaying = false">
+                                    <img
+                                        [src]="
+                                            'assets/images/ui/components/placeholder' +
+                                            img +
+                                            '.jpg?height=200&width=300'
+                                        "
+                                        [alt]="'Imagen ' + img"
+                                        class="w-full h-full object-cover rounded" />
+                                </button>
+                                <span class="text-xs mt-1">{{ formatTime(img) }}</span>
+                                <span class="text-xs text-muted-foreground">
+                                    {{ getImageLocation(img) }}
+                                </span>
+                            </div>
+                        </ng-container>
 
-        <div class="bg-white shadow-md rounded-lg overflow-hidden lg:col-span-2">
-            <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
-                <h2 class="text-lg font-semibold text-gray-900">Registro de Eventos</h2>
-            </div>
-            <div class="p-6">
-                <div class="overflow-auto h-[200px]">
-                    <ul class="space-y-2">
-                        <li *ngFor="let event of events" class="text-sm">{{ event }}</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="bg-white shadow-md rounded-lg overflow-hidden">
-            <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
-                <h2 class="text-lg font-semibold text-gray-900">Información</h2>
-            </div>
-            <div class="p-6">
-                <div class="w-full">
-                    <ul class="mb-4 grid w-full grid-cols-2">
-                        <li>
-                            <a
-                                class="tab-link rounded-lg"
-                                [ngClass]="{ active: activeTab === 'location' }"
-                                (click)="activeTab = 'location'"
-                                >Ubicación</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                class="tab-link rounded-lg"
-                                [ngClass]="{ active: activeTab === 'time' }"
-                                (click)="activeTab = 'time'"
-                                >Tiempo</a
-                            >
-                        </li>
-                    </ul>
-                    <div class="p-4" *ngIf="activeTab === 'location'">
-                        <div class="flex items-center space-x-2">
-                            <mat-icon>location_on</mat-icon>
-                            <span>{{ getImageLocation(currentImage) }}</span>
-                        </div>
-                    </div>
-                    <div class="p-4" *ngIf="activeTab === 'time'">
-                        <div class="flex items-center space-x-2">
-                            <mat-icon>schedule</mat-icon>
-                            <span>Tiempo transcurrido: {{ formatTime(elapsedTime) }}</span>
-                        </div>
+                        <ng-template #emptyTimeline>
+                            <div
+                                class="flex items-center justify-center w-full h-[100px] text-gray-500 dark:text-gray-400">
+                                <p>No hay imágenes capturadas aún.</p>
+                            </div>
+                        </ng-template>
                     </div>
                 </div>
             </div>

@@ -1,33 +1,32 @@
-import { AsyncPipe, NgClass, NgFor, NgForOf, NgIf } from "@angular/common";
+import { NgClass, NgFor, NgForOf, NgIf } from "@angular/common";
 import { AfterViewChecked, Component, ElementRef, OnDestroy, OnInit, ViewChild } from "@angular/core";
-import { MatButton } from "@angular/material/button";
 import { MatIcon } from "@angular/material/icon";
+import { MatTabsModule } from "@angular/material/tabs";
+import { fuseAnimations } from "@fuse/animations";
 import { interval, Subscription } from "rxjs";
 
 @Component({
     selector: "ui-time-real-capture-list",
     standalone: true,
-    imports: [AsyncPipe, NgIf, NgFor, NgForOf, NgClass, MatIcon, MatButton],
+    animations: fuseAnimations,
+    imports: [NgIf, NgFor, NgForOf, NgClass, MatIcon, MatTabsModule],
     templateUrl: "./time-real-capture-list.component.html",
     styleUrl: "./time-real-capture-list.component.scss"
 })
 export class TimeRealCaptureListComponent implements OnInit, OnDestroy, AfterViewChecked {
     @ViewChild("timelineRef") timelineRef!: ElementRef;
 
-    // New property to track the active tab
     activeTab: string = "location";
-
     isCapturing = false;
     currentImage = 1;
     elapsedTime = 0;
-    temperature = 37;
     heartRate = 70;
     progress = 0;
     events: string[] = [];
     capturedImages: number[] = [];
     isPlaying = false;
 
-    maxImages = 20;
+    maxImages = 50;
     captureInterval?: Subscription;
     playInterval?: Subscription;
 
@@ -58,55 +57,40 @@ export class TimeRealCaptureListComponent implements OnInit, OnDestroy, AfterVie
     }
 
     toggleCapture(): void {
-        this.isCapturing = !this.isCapturing;
-        this.isPlaying = false;
-        if (this.isCapturing) {
+        if (!this.isCapturing) {
             this.events.unshift(`${this.formatTime(this.elapsedTime)} - Captura iniciada`);
-            this.startCapture();
-        } else {
-            this.events.unshift(`${this.formatTime(this.elapsedTime)} - Captura pausada`);
             this.stopCapture();
         }
     }
 
-    startCapture(): void {
-        this.captureInterval = interval(1000).subscribe(() => {
-            this.nextImage();
-            this.elapsedTime++;
-            this.temperature += (Math.random() - 0.5) * 0.1;
-            this.heartRate = parseFloat(Math.max(60, Math.min(100, this.heartRate + (Math.random() - 0.5) * 5)).toFixed(2));
-            this.progress = Math.min(100, this.progress + 0.1);
-            if (Math.random() < 0.1) {
-                this.events.unshift(`${this.formatTime(this.elapsedTime)} - Evento detectado`);
-                this.events = this.events.slice(0, 10);
-            }
-        });
-    }
-
     stopCapture(): void {
         this.captureInterval?.unsubscribe();
-    }
-
-    resetCapture(): void {
-        this.stopCapture();
         this.isCapturing = false;
-        this.currentImage = 1;
-        this.elapsedTime = 0;
-        this.temperature = 37;
-        this.heartRate = 70;
-        this.progress = 0;
-        this.events = [];
-        this.capturedImages = [];
-        this.isPlaying = false;
     }
 
     togglePlay(): void {
-        if (this.isCapturing) return;
+        if (this.isCapturing) return; // No permitir reproducir si está capturando.
+
         this.isPlaying = !this.isPlaying;
+
         if (this.isPlaying) {
-            this.playInterval = interval(500).subscribe(() => this.nextImage());
+            this.toggleCapture();
+            this.playInterval = interval(500).subscribe(() => {
+                this.nextImage();
+                this.elapsedTime++;
+                this.progress = Math.min(100, this.progress + 0.5);
+                if (Math.random() < 0.1) {
+                    this.events.unshift(`${this.formatTime(this.elapsedTime)} - Evento detectado`);
+                    if (this.events.length > 10) {
+                        this.events = this.events.slice(0, 10);
+                    }
+                }
+            });
         } else {
+            // Detener reproducción
+            this.isCapturing = false;
             this.playInterval?.unsubscribe();
+            this.playInterval = undefined;
         }
     }
 
@@ -124,7 +108,24 @@ export class TimeRealCaptureListComponent implements OnInit, OnDestroy, AfterVie
     }
 
     getImageLocation(image: number): string {
-        return image % 3 === 0 ? "Estómago" : image % 3 === 1 ? "Intestino delgado" : "Colon";
+        const maxImages = 50;
+        const esophagusImages = 20; // Cantidad de imágenes para "Esófago"
+        const stomachImages = 20; // Cantidad de imágenes para "Estómago"
+        const lastIntestineImages = 5; // Últimas imágenes asignadas al "Intestino delgado"
+
+        if (image > maxImages - lastIntestineImages) {
+            return "Intestino delgado";
+        }
+
+        if (image <= esophagusImages) {
+            return "Esófago";
+        }
+
+        if (image <= esophagusImages + stomachImages) {
+            return "Estómago";
+        }
+
+        return "Intestino delgado";
     }
 
     getObservation(image: number): string {
