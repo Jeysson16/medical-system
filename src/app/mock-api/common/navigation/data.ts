@@ -22,11 +22,13 @@ export const defaultNavigation: FuseNavigationItem[] = [
         title: "patients.title",
         type: "group",
         icon: "heroicons_outline:user-group",
+        userType: "doctor",
         children: [
             {
                 id: "patients.list",
                 title: "patients.list",
                 type: "basic",
+                userType: "doctor",
                 icon: "heroicons_outline:user-group",
                 link: "/pacientes/lista"
             },
@@ -34,6 +36,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 id: "patients.history",
                 title: "patients.history",
                 type: "basic",
+                userType: "doctor",
                 icon: "heroicons_outline:book-open",
                 link: "/pacientes/historia"
             }
@@ -80,28 +83,6 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 type: "basic",
                 icon: "heroicons_outline:clipboard-document-list",
                 link: "/anomaly-analysis/reports"
-            }
-        ]
-    },
-    {
-        id: "reports",
-        title: "reports.title",
-        type: "group",
-        icon: "heroicons_outline:document-text",
-        children: [
-            {
-                id: "reports.generate",
-                title: "reports.generate",
-                type: "basic",
-                icon: "heroicons_outline:document-plus",
-                link: "/reports/generate"
-            },
-            {
-                id: "reports.export",
-                title: "reports.export",
-                type: "basic",
-                icon: "heroicons_outline:arrow-top-right-on-square",
-                link: "/reports/export"
             }
         ]
     },
@@ -143,6 +124,7 @@ export const compactNavigation: FuseNavigationItem[] = [
         subtitle: "home.overview",
         type: "group",
         icon: "heroicons_outline:home",
+        userType: "patient",
         children: [
             {
                 id: "dashboards.home",
@@ -158,10 +140,12 @@ export const compactNavigation: FuseNavigationItem[] = [
         title: "patients.title",
         type: "group",
         icon: "heroicons_outline:user-group",
+        userType: "doctor",
         children: [
             {
                 id: "patients.list",
                 title: "patients.list",
+                userType: "doctor",
                 type: "basic",
                 icon: "heroicons_outline:user-group",
                 link: "/pacientes/lista"
@@ -169,6 +153,7 @@ export const compactNavigation: FuseNavigationItem[] = [
             {
                 id: "patients.history",
                 title: "patients.history",
+                userType: "doctor",
                 type: "basic",
                 icon: "heroicons_outline:book-open",
                 link: "/pacientes/historia"
@@ -216,298 +201,6 @@ export const compactNavigation: FuseNavigationItem[] = [
                 type: "basic",
                 icon: "heroicons_outline:clipboard-document-list",
                 link: "/anomaly-analysis/reports"
-            }
-        ]
-    },
-    {
-        id: "reports",
-        title: "reports.title",
-        type: "group",
-        icon: "heroicons_outline:document-text",
-        children: [
-            {
-                id: "reports.generate",
-                title: "reports.generate",
-                type: "basic",
-                icon: "heroicons_outline:document-plus",
-                link: "/reports/generate"
-            },
-            {
-                id: "reports.export",
-                title: "reports.export",
-                type: "basic",
-                icon: "heroicons_outline:arrow-top-right-on-square",
-                link: "/reports/export"
-            }
-        ]
-    },
-    {
-        id: "support",
-        title: "support.title",
-        type: "group",
-        icon: "heroicons_outline:question-mark-circle",
-        children: [
-            {
-                id: "support.guides",
-                title: "support.guides",
-                type: "basic",
-                icon: "heroicons_outline:book-open",
-                link: "/support/guides"
-            },
-            {
-                id: "support.faq",
-                title: "support.faq",
-                type: "basic",
-                icon: "heroicons_outline:question-mark-circle",
-                link: "/support/faq"
-            },
-            {
-                id: "support.contact",
-                title: "support.contact",
-                type: "basic",
-                icon: "heroicons_outline:chat-bubble-bottom-center-text",
-                link: "/support/contact"
-            }
-        ]
-    }
-];
-export const futuristicNavigation: FuseNavigationItem[] = [
-    {
-        id: "home",
-        title: "home.title",
-        subtitle: "home.overview",
-        type: "group",
-        icon: "heroicons_outline:home",
-        children: [
-            {
-                id: "dashboards.home",
-                title: "home.title",
-                type: "basic",
-                icon: "heroicons_outline:home",
-                link: "/inicio"
-            }
-        ]
-    },
-    {
-        id: "patients",
-        title: "patients.title",
-        type: "group",
-        icon: "heroicons_outline:user-group",
-        children: [
-            {
-                id: "patients.list",
-                title: "patients.list",
-                type: "basic",
-                icon: "heroicons_outline:user-group",
-                link: "/pacientes/lista"
-            },
-            {
-                id: "patients.history",
-                title: "patients.history",
-                type: "basic",
-                icon: "heroicons_outline:book-open",
-                link: "/pacientes/historia"
-            }
-        ]
-    },
-    {
-        id: "real-time-images",
-        title: "real-time-images.title",
-        type: "group",
-        icon: "heroicons_outline:camera",
-        children: [
-            {
-                id: "real-time-images.capture",
-                title: "real-time-images.capture",
-                type: "basic",
-                icon: "heroicons_outline:video-camera",
-                link: "/tiempo-real/"
-            },
-            {
-                id: "real-time-images.filters",
-                title: "real-time-images.filters",
-                type: "basic",
-                icon: "heroicons_outline:adjustments-horizontal",
-                link: "/tiempo-real/filtros"
-            }
-        ]
-    },
-    {
-        id: "anomaly-analysis",
-        title: "anomaly-analysis.title",
-        type: "group",
-        icon: "heroicons_outline:exclamation-circle",
-        children: [
-            {
-                id: "anomaly-analysis.detected",
-                title: "anomaly-analysis.detected",
-                type: "basic",
-                icon: "heroicons_outline:magnifying-glass-circle",
-                link: "/anomaly-analysis/detected"
-            },
-            {
-                id: "anomaly-analysis.reports",
-                title: "anomaly-analysis.reports",
-                type: "basic",
-                icon: "heroicons_outline:clipboard-document-list",
-                link: "/anomaly-analysis/reports"
-            }
-        ]
-    },
-    {
-        id: "reports",
-        title: "reports.title",
-        type: "group",
-        icon: "heroicons_outline:document-text",
-        children: [
-            {
-                id: "reports.generate",
-                title: "reports.generate",
-                type: "basic",
-                icon: "heroicons_outline:document-plus",
-                link: "/reports/generate"
-            },
-            {
-                id: "reports.export",
-                title: "reports.export",
-                type: "basic",
-                icon: "heroicons_outline:arrow-top-right-on-square",
-                link: "/reports/export"
-            }
-        ]
-    },
-    {
-        id: "support",
-        title: "support.title",
-        type: "group",
-        icon: "heroicons_outline:question-mark-circle",
-        children: [
-            {
-                id: "support.guides",
-                title: "support.guides",
-                type: "basic",
-                icon: "heroicons_outline:book-open",
-                link: "/support/guides"
-            },
-            {
-                id: "support.faq",
-                title: "support.faq",
-                type: "basic",
-                icon: "heroicons_outline:question-mark-circle",
-                link: "/support/faq"
-            },
-            {
-                id: "support.contact",
-                title: "support.contact",
-                type: "basic",
-                icon: "heroicons_outline:chat-bubble-bottom-center-text",
-                link: "/support/contact"
-            }
-        ]
-    }
-];
-export const horizontalNavigation: FuseNavigationItem[] = [
-    {
-        id: "home",
-        title: "home.title",
-        subtitle: "home.overview",
-        type: "group",
-        icon: "heroicons_outline:home",
-        children: [
-            {
-                id: "dashboards.home",
-                title: "home.title",
-                type: "basic",
-                icon: "heroicons_outline:home",
-                link: "/inicio"
-            }
-        ]
-    },
-    {
-        id: "patients",
-        title: "patients.title",
-        type: "group",
-        icon: "heroicons_outline:user-group",
-        children: [
-            {
-                id: "patients.list",
-                title: "patients.list",
-                type: "basic",
-                icon: "heroicons_outline:user-group",
-                link: "/pacientes/lista"
-            },
-            {
-                id: "patients.history",
-                title: "patients.history",
-                type: "basic",
-                icon: "heroicons_outline:book-open",
-                link: "/pacientes/historia"
-            }
-        ]
-    },
-    {
-        id: "real-time-images",
-        title: "real-time-images.title",
-        type: "group",
-        icon: "heroicons_outline:camera",
-        children: [
-            {
-                id: "real-time-images.capture",
-                title: "real-time-images.capture",
-                type: "basic",
-                icon: "heroicons_outline:video-camera",
-                link: "/tiempo-real/"
-            },
-            {
-                id: "real-time-images.filters",
-                title: "real-time-images.filters",
-                type: "basic",
-                icon: "heroicons_outline:adjustments-horizontal",
-                link: "/tiempo-real/filtros"
-            }
-        ]
-    },
-    {
-        id: "anomaly-analysis",
-        title: "anomaly-analysis.title",
-        type: "group",
-        icon: "heroicons_outline:exclamation-circle",
-        children: [
-            {
-                id: "anomaly-analysis.detected",
-                title: "anomaly-analysis.detected",
-                type: "basic",
-                icon: "heroicons_outline:magnifying-glass-circle",
-                link: "/anomaly-analysis/detected"
-            },
-            {
-                id: "anomaly-analysis.reports",
-                title: "anomaly-analysis.reports",
-                type: "basic",
-                icon: "heroicons_outline:clipboard-document-list",
-                link: "/anomaly-analysis/reports"
-            }
-        ]
-    },
-    {
-        id: "reports",
-        title: "reports.title",
-        type: "group",
-        icon: "heroicons_outline:document-text",
-        children: [
-            {
-                id: "reports.generate",
-                title: "reports.generate",
-                type: "basic",
-                icon: "heroicons_outline:document-plus",
-                link: "/reports/generate"
-            },
-            {
-                id: "reports.export",
-                title: "reports.export",
-                type: "basic",
-                icon: "heroicons_outline:arrow-top-right-on-square",
-                link: "/reports/export"
             }
         ]
     },

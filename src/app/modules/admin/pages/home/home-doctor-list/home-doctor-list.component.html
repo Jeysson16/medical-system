@@ -1,0 +1,144 @@
+<div class="patient-dashboard p-6 bg-gray-50 min-h-screen">
+    <!-- Encabezado -->
+    <div class="p-6 mb-6 flex justify-between items-center">
+        <h1 class="text-3xl font-bold text-gray-800">
+            Bienvenido, <span class="text-primary-600">{{ user.name }}</span>
+        </h1>
+        <div class="flex space-x-4">
+            <a
+                href="/perfil-medico"
+                class="flex items-center text-sm bg-primary-600 hover:bg-primary-700 text-white py-2 px-4 rounded-lg">
+                <span class="material-icons mr-2">person</span> Ver Perfil Médico
+            </a>
+            <a
+                href="/soporte"
+                class="flex items-center text-sm bg-gray-200 hover:bg-gray-300 text-gray-800 py-2 px-4 rounded-lg">
+                <span class="material-icons mr-2">support</span> Contactar Soporte
+            </a>
+        </div>
+    </div>
+
+    <!-- Notificaciones -->
+    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-lg mb-6">
+        <p class="text-sm text-yellow-700">
+            <strong>Recordatorio:</strong> Tienes una cita programada con el Dr. Juan Pérez el
+            <strong>30 de noviembre</strong> a las 10:00 AM.
+        </p>
+    </div>
+
+    <!-- Contenedor Principal -->
+    <main class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Columna Izquierda -->
+        <section class="lg:col-span-4 space-y-6">
+            <!-- Perfil del Paciente -->
+            <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+                <h2 class="text-lg font-bold text-gray-800 mb-4">Perfil del Paciente</h2>
+                <div class="space-y-2">
+                    <p class="text-gray-600 text-sm">
+                        <span class="font-medium">Edad:</span> {{ user.age || "No especificado" }}
+                    </p>
+                    <p class="text-gray-600 text-sm">
+                        <span class="font-medium">Género:</span>
+                        {{ user.gender === "male" ? "Masculino" : "Femenino" }}
+                    </p>
+                    <p class="text-gray-600 text-sm">
+                        <span class="font-medium">DNI:</span>
+                        {{ user.identityDocument?.[0]?.value || "No especificado" }}
+                    </p>
+                    <p class="text-gray-600 text-sm">
+                        <span class="font-medium">Correo:</span>
+                        <a href="mailto:{{ user.email }}" class="text-primary-600 hover:underline">
+                            {{ user.email }}
+                        </a>
+                    </p>
+                    <p class="text-gray-600 text-sm">
+                        <span class="font-medium">Teléfono:</span>
+                        <a
+                            href="tel:{{ user.contactInfo?.[0]?.value }}"
+                            class="text-primary-600 hover:underline">
+                            {{ user.contactInfo?.[1]?.value || "No especificado" }}
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Doctores Asignados -->
+            <div class="doctors-section bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-lg font-bold text-gray-800 mb-4">Doctores Asignados</h2>
+                <div class="space-y-4">
+                    <div class="doctor-card bg-gray-50 p-4 rounded-lg shadow-md">
+                        <h3 class="text-lg font-bold text-gray-800">Dr. Juan Pérez</h3>
+                        <p class="text-gray-600 text-sm">Especialidad: Gastroenterología</p>
+                        <p class="text-gray-600 text-sm">
+                            <span class="font-medium">Correo:</span>
+                            <a
+                                href="mailto:juan.perez hospital.com"
+                                class="text-primary-600 hover:underline">
+                                juan.perez hospital.com</a
+                            >
+                        </p>
+                        <p class="text-gray-600 text-sm">
+                            <span class="font-medium">Teléfono:</span>
+                            <a href="tel:+123456789" class="text-primary-600 hover:underline"
+                                >+1 234 567 890</a
+                            >
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Columna Derecha -->
+        <section class="lg:col-span-8 space-y-6">
+            <!-- Indicadores -->
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                <div class="stats-card bg-white p-4 rounded-lg shadow-md text-center">
+                    <h3 class="text-sm font-medium text-gray-500">Cápsulas Procesadas</h3>
+                    <p class="text-2xl font-bold text-primary-600">{{ capsulesProcessed }}</p>
+                </div>
+                <div class="stats-card bg-white p-4 rounded-lg shadow-md text-center">
+                    <h3 class="text-sm font-medium text-gray-500">Anomalías Detectadas</h3>
+                    <p class="text-2xl font-bold text-red-600">{{ anomaliesDetected }}</p>
+                </div>
+                <div class="stats-card bg-white p-4 rounded-lg shadow-md text-center">
+                    <h3 class="text-sm font-medium text-gray-500">Cápsulas Activas</h3>
+                    <p class="text-2xl font-bold text-green-600">{{ activeCapsules }}</p>
+                </div>
+            </div>
+
+            <!-- Evolución de Anomalías -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-lg font-bold text-gray-800 mb-4">Evolución de Anomalías</h2>
+                <div
+                    id="chart"
+                    class="h-48 bg-gray-100 rounded-lg flex items-center justify-center">
+                    <p class="text-gray-400 text-sm">Gráfico en construcción</p>
+                </div>
+            </div>
+
+            <!-- Cápsulas Endoscópicas -->
+            <div class="capsules-section bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-lg font-bold text-gray-800 mb-4">Mis Cápsulas Endoscópicas</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="capsule-card bg-gray-50 p-4 rounded-lg shadow-md">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Cápsula #1</h3>
+                        <p class="text-gray-600 text-sm">ID: Px7y0ksJKr2FxWpo1eoW</p>
+                        <p class="text-gray-600 text-sm">
+                            Estado: <span class="text-green-600">Activa</span>
+                        </p>
+                        <p class="text-gray-600 text-sm">
+                            Anomalías: <span class="text-red-600">2 detectadas</span>
+                        </p>
+                        <p class="text-gray-600 text-sm">Diagnóstico: Úlcera gástrica</p>
+                        <a
+                            href="/capsulas/1/detalle"
+                            class="text-sm mt-4 bg-primary-600 text-white py-2 px-4 rounded-lg block text-center">
+                            Ver Detalles
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>

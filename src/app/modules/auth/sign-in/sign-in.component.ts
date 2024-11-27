@@ -41,6 +41,7 @@ export class AuthSignInComponent implements OnInit {
     };
     signInForm: UntypedFormGroup;
     showAlert: boolean = false;
+    userType: "patient" | "doctor" = "patient";
 
     /**
      * Constructor
@@ -67,6 +68,10 @@ export class AuthSignInComponent implements OnInit {
     // @ Public methods
     // -----------------------------------------------------------------------------------------------------
 
+    selectUserType(type: "patient" | "doctor"): void {
+        this.userType = type;
+    }
+
     /**
      * Sign in
      */
@@ -83,7 +88,7 @@ export class AuthSignInComponent implements OnInit {
         this.showAlert = false;
 
         // Sign in
-        this._authService.signIn(this.signInForm.value).subscribe(
+        this._authService.signIn(this.signInForm.value, this.userType).subscribe(
             () => {
                 // Set the redirect url.
                 // The '/signed-in-redirect' is a dummy url to catch the request and redirect the user

@@ -1,5 +1,4 @@
 <div class="fuse-vertical-navigation-wrapper">
-
     <!-- Header -->
     <div class="fuse-vertical-navigation-header">
         <ng-content select="[fuseVerticalNavigationHeader]"></ng-content>
@@ -9,9 +8,8 @@
     <div
         class="fuse-vertical-navigation-content"
         fuseScrollbar
-        [fuseScrollbarOptions]="{wheelPropagation: inner, suppressScrollX: true}"
+        [fuseScrollbarOptions]="{ wheelPropagation: inner, suppressScrollX: true }"
         #navigationContent>
-
         <!-- Content header -->
         <div class="fuse-vertical-navigation-content-header">
             <ng-content select="[fuseVerticalNavigationContentHeader]"></ng-content>
@@ -19,10 +17,11 @@
 
         <!-- Items -->
         <ng-container *ngFor="let item of navigation; trackBy: trackByFn">
-
-            <!-- Skip the hidden items -->
-            <ng-container *ngIf="(item.hidden && !item.hidden(item)) || !item.hidden">
-
+            <!-- Mostrar ítems solo si cumplen las condiciones -->
+            <ng-container
+                *ngIf="
+                    userType !== 'doctor' || (userType === 'doctor' && item.userType === 'doctor')
+                ">
                 <!-- Aside -->
                 <ng-container *ngIf="item.type === 'aside'">
                     <fuse-vertical-navigation-aside-item
@@ -70,23 +69,19 @@
                         [item]="item"
                         [name]="name"></fuse-vertical-navigation-spacer-item>
                 </ng-container>
-
             </ng-container>
-
         </ng-container>
 
         <!-- Content footer -->
         <div class="fuse-vertical-navigation-content-footer">
             <ng-content select="[fuseVerticalNavigationContentFooter]"></ng-content>
         </div>
-
     </div>
 
     <!-- Footer -->
     <div class="fuse-vertical-navigation-footer">
         <ng-content select="[fuseVerticalNavigationFooter]"></ng-content>
     </div>
-
 </div>
 
 <!-- Aside -->
@@ -94,18 +89,15 @@
     <div
         class="fuse-vertical-navigation-aside-wrapper"
         fuseScrollbar
-        [fuseScrollbarOptions]="{wheelPropagation: false, suppressScrollX: true}"
+        [fuseScrollbarOptions]="{ wheelPropagation: false, suppressScrollX: true }"
         [@fadeInLeft]="position === 'left'"
         [@fadeInRight]="position === 'right'"
         [@fadeOutLeft]="position === 'left'"
         [@fadeOutRight]="position === 'right'">
-
         <!-- Items -->
         <ng-container *ngFor="let item of navigation; trackBy: trackByFn">
-
             <!-- Skip the hidden items -->
             <ng-container *ngIf="(item.hidden && !item.hidden(item)) || !item.hidden">
-
                 <!-- Aside -->
                 <ng-container *ngIf="item.type === 'aside' && item.id === activeAsideItemId">
                     <fuse-vertical-navigation-aside-item
@@ -113,10 +105,7 @@
                         [name]="name"
                         [autoCollapse]="autoCollapse"></fuse-vertical-navigation-aside-item>
                 </ng-container>
-
             </ng-container>
-
         </ng-container>
-
     </div>
 </ng-container>

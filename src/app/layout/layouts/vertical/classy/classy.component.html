@@ -24,11 +24,9 @@
         <!-- User -->
         <div class="flex flex-col items-center w-full p-4">
             <div class="relative w-24 h-24">
-                <img
-                    class="w-full h-full rounded-full"
-                    *ngIf="user.avatar"
-                    [src]="user.avatar"
-                    alt="User avatar" />
+                @if (user.avatar) {
+                <img class="w-full h-full rounded-full" [src]="user.avatar" alt="User avatar" />
+                }
                 <mat-icon
                     class="icon-size-24"
                     *ngIf="!user.avatar"

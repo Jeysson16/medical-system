@@ -4,11 +4,19 @@
     <div
         class="md:flex md:items-center md:justify-end w-full sm:w-auto md:h-full md:w-1/2 py-8 px-4 sm:p-12 md:p-16 sm:rounded-2xl md:rounded-none sm:shadow md:shadow-none sm:bg-card">
         <div class="w-full max-w-80 sm:w-80 mx-auto sm:mx-0">
-            <!-- Logo -->
-            <div class="w-12">
-                <img src="assets/images/logo/logo.png" alt="Logotipo del Panel Médico" />
+            <!-- Logo and text container -->
+            <div class="flex items-center h-20 pt-8 pb-0">
+                <!-- Logo -->
+                <img
+                    class="w-16 h-16 rounded-full"
+                    src="assets/images/logo/logo.png"
+                    alt="Logo GastroSense" />
+                <!-- Name -->
+                <span
+                    class="ml-4 text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-green-500 drop-shadow-md">
+                    Gastro<span class="text-blue-900 dark:text-gray-100 drop-shadow-md">Sense</span>
+                </span>
             </div>
-
             <!-- Título -->
             <div class="mt-8 text-4xl font-extrabold tracking-tight leading-tight">
                 Inicia sesión en el Panel Médico
@@ -20,10 +28,28 @@
                 >
             </div>
 
+            <!-- Selección de rol -->
+            <div class="mt-6 flex justify-center">
+                <button
+                    class="flex items-center justify-center w-32 h-12 border border-primary-500 text-primary-500 rounded-l-lg hover:bg-primary-500 hover:text-white"
+                    [class.bg-primary-500]="userType === 'patient'"
+                    [class.text-white]="userType === 'patient'"
+                    (click)="selectUserType('patient')">
+                    Paciente
+                </button>
+                <button
+                    class="flex items-center justify-center w-32 h-12 border border-primary-500 text-primary-500 rounded-r-lg hover:bg-primary-500 hover:text-white"
+                    [class.bg-primary-500]="userType === 'doctor'"
+                    [class.text-white]="userType === 'doctor'"
+                    (click)="selectUserType('doctor')">
+                    Doctor
+                </button>
+            </div>
+
             <!-- Alerta -->
-            <fuse-alert class="mt-8" [appearance]="'outline'" [showIcon]="false" [type]="'info'">
-                Bienvenido al <strong>Panel Médico</strong>. Accede a registros de pacientes,
-                imágenes y análisis en tiempo real iniciando sesión a continuación.
+            <fuse-alert class="mt-8" [appearance]="'outline'" [showIcon]="false">
+                <strong>¡Bienvenido!</strong> Accede a registros de imágenes y análisis en tiempo
+                real iniciando sesión a continuación.
             </fuse-alert>
 
             <!-- Alerta -->
@@ -103,7 +129,9 @@
                     [color]="'primary'"
                     [disabled]="signInForm.disabled"
                     (click)="signIn()">
-                    <span *ngIf="!signInForm.disabled">Iniciar sesión</span>
+                    <span *ngIf="!signInForm.disabled" class="text-white">
+                        Iniciar sesión como {{ userType === "doctor" ? "Doctor" : "Paciente" }}
+                    </span>
                     <mat-progress-spinner
                         *ngIf="signInForm.disabled"
                         [diameter]="24"
@@ -135,7 +163,7 @@
         </svg>
         <!-- Contenido -->
         <div class="z-10 relative w-full max-w-2xl">
-            <div class="text-7xl font-bold leading-none text-gray-100">
+            <div class="text-7xl font-bold leading-none items-center text-gray-100">
                 <div>Bienvenido a</div>
                 <div>Tu Portal Médico</div>
             </div>

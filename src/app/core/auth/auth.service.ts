@@ -1,31 +1,46 @@
-import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
-import { AuthUtils } from 'app/core/auth/auth.utils';
-import { UserService } from 'app/core/user/user.service';
-import { catchError, Observable, of, switchMap, throwError } from 'rxjs';
+import { HttpClient } from "@angular/common/http";
+import { inject, Injectable } from "@angular/core";
+import { PatientEntity } from "@entities/IPatientEntity";
+import { DoctorEntity } from "@entities/IDoctorEntity";
+import { User } from "../user/user.types";
+import { DoctorService } from "@services/doctor.service";
+import { PatientService } from "@services/patient.service";
+import { ResponseModel } from "@shared/models/IResponseModel";
+import { AuthUtils } from "app/core/auth/auth.utils";
+import { UserService } from "app/core/user/user.service";
+import { Observable, of, switchMap, throwError } from "rxjs";
+import { PatientAdapter } from "@adapters/PatientAdapter";
+import { DoctorAdapter } from "@adapters/DoctorAdapter";
+import { Doctor } from "@models/IDoctor";
+import { Patient, PatientUser } from "@models/IPatient";
+import { UserAdapter } from "@adapters/UserAdapter";
 
-@Injectable({providedIn: 'root'})
-export class AuthService
-{
+@Injectable({ providedIn: "root" })
+export class AuthService {
     private _authenticated: boolean = false;
     private _httpClient = inject(HttpClient);
     private _userService = inject(UserService);
+    private _doctorService = inject(DoctorService);
+    private _patientService = inject(PatientService);
+
+    private _patientAdapter = new PatientAdapter();
+    private _doctorAdapter = new DoctorAdapter();
+    private _userAdapter = new UserAdapter();
 
     // -----------------------------------------------------------------------------------------------------
     // @ Accessors
     // -----------------------------------------------------------------------------------------------------
 
     /**
-     * Setter & getter for access token
+     * Setter & getter for user
      */
-    set accessToken(token: string)
-    {
-        localStorage.setItem('accessToken', token);
+    set user(user: User) {
+        localStorage.setItem("user", JSON.stringify(user));
     }
 
-    get accessToken(): string
-    {
-        return localStorage.getItem('accessToken') ?? '';
+    get user(): User | null {
+        const storedUser = localStorage.getItem("user");
+        return storedUser ? (JSON.parse(storedUser) as User) : null;
     }
 
     // -----------------------------------------------------------------------------------------------------
@@ -34,154 +49,122 @@ export class AuthService
 
     /**
      * Forgot password
-     *
-     * @param email
      */
-    forgotPassword(email: string): Observable<any>
-    {
-        return this._httpClient.post('api/auth/forgot-password', email);
+    forgotPassword(email: string): Observable<any> {
+        return this._httpClient.post("api/auth/forgot-password", email);
     }
 
     /**
      * Reset password
-     *
-     * @param password
      */
-    resetPassword(password: string): Observable<any>
-    {
-        return this._httpClient.post('api/auth/reset-password', password);
+    resetPassword(password: string): Observable<any> {
+        return this._httpClient.post("api/auth/reset-password", password);
     }
 
     /**
      * Sign in
-     *
-     * @param credentials
      */
-    signIn(credentials: { email: string; password: string }): Observable<any>
-    {
-        // Throw error, if the user is already logged in
-        if ( this._authenticated )
-        {
-            return throwError('User is already logged in.');
+    signIn(credentials: { email: string; password: string }, type: string): Observable<any> {
+        if (this._authenticated) {
+            return throwError("User is already logged in.");
         }
 
-        return this._httpClient.post('api/auth/sign-in', credentials).pipe(
-            switchMap((response: any) =>
-            {
-                // Store the access token in the local storage
-                this.accessToken = response.accessToken;
+        if (type === "patient") {
+            return this._patientService.loginPatient(credentials).pipe(
+                switchMap((response: ResponseModel<PatientEntity>) => {
+                    const patient = this._patientAdapter.convertEntityToModel(response.item);
+                    const user: User = { ...patient, email: credentials.email, type: "patient" };
 
-                // Set the authenticated flag to true
-                this._authenticated = true;
+                    this.user = user;
+                    this._authenticated = true;
+                    this._userService.user = user;
 
-                // Store the user on the user service
-                this._userService.user = response.user;
+                    return of(user);
+                })
+            );
+        } else if (type === "doctor") {
+            return this._doctorService.loginDoctor(credentials).pipe(
+                switchMap((response: ResponseModel<DoctorEntity>) => {
+                    const doctor = this._doctorAdapter.convertEntityToModel(response.item);
+                    const user: User = { ...doctor, email: credentials.email, type: "doctor" };
 
-                // Return a new observable with the response
-                return of(response);
-            }),
-        );
-    }
+                    this.user = user;
+                    this._authenticated = true;
+                    this._userService.user = user;
 
-    /**
-     * Sign in using the access token
-     */
-    signInUsingToken(): Observable<any>
-    {
-        // Sign in using the token
-        return this._httpClient.post('api/auth/sign-in-with-token', {
-            accessToken: this.accessToken,
-        }).pipe(
-            catchError(() =>
+                    return of(user);
+                })
+            );
+        }
 
-                // Return false
-                of(false),
-            ),
-            switchMap((response: any) =>
-            {
-                // Replace the access token with the new one if it's available on
-                // the response object.
-                //
-                // This is an added optional step for better security. Once you sign
-                // in using the token, you should generate a new one on the server
-                // side and attach it to the response object. Then the following
-                // piece of code can replace the token with the refreshed one.
-                if ( response.accessToken )
-                {
-                    this.accessToken = response.accessToken;
-                }
-
-                // Set the authenticated flag to true
-                this._authenticated = true;
-
-                // Store the user on the user service
-                this._userService.user = response.user;
-
-                // Return true
-                return of(true);
-            }),
-        );
+        return throwError("Invalid user type.");
     }
 
     /**
      * Sign out
      */
-    signOut(): Observable<any>
-    {
-        // Remove the access token from the local storage
-        localStorage.removeItem('accessToken');
-
-        // Set the authenticated flag to false
+    signOut(): Observable<any> {
+        localStorage.removeItem("user");
         this._authenticated = false;
-
-        // Return the observable
         return of(true);
     }
-
     /**
-     * Sign up
+     * Sign up Patient
      *
-     * @param user
+     * @param patient
      */
-    signUp(user: { name: string; email: string; password: string; company: string }): Observable<any>
-    {
-        return this._httpClient.post('api/auth/sign-up', user);
+    signUpPatient(patient: PatientUser): Observable<PatientUser> {
+        const patientEntity = this._patientAdapter.convertModelToEntity(patient);
+        return this._patientService.registerPatient(patientEntity).pipe(
+            switchMap((response: ResponseModel<PatientEntity>) => {
+                // Convertir PatientEntity a PatientUser usando el adaptador
+                const newPatient = this._patientAdapter.convertEntityToModel(response.item);
+
+                // Asignar el paciente autenticado al servicio de usuario
+                const user = this._userAdapter.convertEntityToModel(newPatient); // Convertir a modelo User
+                this.user = user;
+                this._userService.user = user; // Asigna al servicio de usuario como User
+                this._authenticated = true;
+
+                return of(newPatient);
+            })
+        );
     }
 
     /**
-     * Unlock session
+     * Sign up Doctor
      *
-     * @param credentials
+     * @param doctor
      */
-    unlockSession(credentials: { email: string; password: string }): Observable<any>
-    {
-        return this._httpClient.post('api/auth/unlock-session', credentials);
+    signUpDoctor(doctor: Doctor): Observable<Doctor> {
+        const doctorEntity = this._doctorAdapter.convertModelToEntity(doctor);
+        return this._doctorService.registerDoctor(doctorEntity).pipe(
+            switchMap((response: ResponseModel<DoctorEntity>) => {
+                // Convertir DoctorEntity a Doctor usando el adaptador
+                const newDoctor = this._doctorAdapter.convertEntityToModel(response.item);
+
+                // Asignar el doctor autenticado al servicio de usuario
+                const user = this._userAdapter.convertEntityToModel(newDoctor); // Convertir a modelo User
+                this._userService.user = user; // Asigna al servicio de usuario como User
+                this._authenticated = true;
+
+                return of(newDoctor);
+            })
+        );
     }
 
     /**
-     * Check the authentication status
+     * Check authentication status
      */
-    check(): Observable<boolean>
-    {
-        // Check if the user is logged in
-        if ( this._authenticated )
-        {
+    check(): Observable<boolean> {
+        if (this._authenticated) {
             return of(true);
         }
 
-        // Check the access token availability
-        if ( !this.accessToken )
-        {
+        if (!this.user) {
             return of(false);
         }
 
-        // Check the access token expire date
-        if ( AuthUtils.isTokenExpired(this.accessToken) )
-        {
-            return of(false);
-        }
-
-        // If the access token exists, and it didn't expire, sign in using it
-        return this.signInUsingToken();
+        return of(true);
     }
 }

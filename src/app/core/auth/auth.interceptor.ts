@@ -24,13 +24,6 @@ export const authInterceptor = (req: HttpRequest<unknown>, next: HttpHandlerFn):
     // This will force the server to return a "401 Unauthorized" response
     // for the protected API routes which our response interceptor will
     // catch and delete the access token from the local storage while logging
-    // the user out from the app.
-    if ( authService.accessToken && !AuthUtils.isTokenExpired(authService.accessToken) )
-    {
-        newReq = req.clone({
-            headers: req.headers.set('Authorization', 'Bearer ' + authService.accessToken),
-        });
-    }
 
     // Response
     return next(newReq).pipe(

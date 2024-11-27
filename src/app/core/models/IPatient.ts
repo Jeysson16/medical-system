@@ -20,6 +20,24 @@ export interface Patient {
     tags: string[];
 }
 
+export interface PatientUser {
+    id: string;
+    name: string;
+    age: number;
+    gender: string;
+    contactInfo: {
+        type: string;
+        value: string;
+    }[];
+    password: string;
+    identityDocument: {
+        type: string;
+        value: string;
+    }[];
+    doctors: string[];
+    capsules: string[];
+}
+
 export interface Country {
     id: string;
     iso: string;

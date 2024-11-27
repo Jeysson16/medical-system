@@ -1,55 +1,57 @@
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable, inject } from "@angular/core";
-import { HttpClient, HttpParams } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { RequestOption } from "../interfaces/IRequestOption";
 import { ResponseModel } from "@shared/models/IResponseModel";
-import { Usuario } from "@shared/interfaces/IUsuario";
-import { Parameter } from "@shared/models/http/Parameter";
-import { RecursoConfig } from "@shared/apis/apiConf";
 
 @Injectable({
     providedIn: "root"
 })
 export class HttpRequestService<T> {
-    user: Usuario = JSON.parse(localStorage.getItem("user"));
+    private _http = inject(HttpClient);
 
-    protected _http = inject(HttpClient);
+    constructor() {}
 
-    constructor(private _api: string, private _endpoint: RecursoConfig) {}
+    public http(request: RequestOption): Observable<ResponseModel<T>> {
+        return this._callHttpClient(request);
+    }
 
-    getAll(param: Parameter): Observable<ResponseModel> {
-        let url: string = `${this._api}${this._endpoint.getByPagination}`;
-        let params: HttpParams = new HttpParams();
-        const pathsJoin = param.pathVariables.join("/");
-        if (pathsJoin) url += `/${pathsJoin}`;
+    private _callHttpClient(request: RequestOption): Observable<ResponseModel<T>> {
+        let rpta: Observable<ResponseModel<T>>;
 
-        param.queryParams.forEach(query => {
-            params = params.append(query.clave, query.valor);
+        switch (request.method) {
+            case "GET":
+                rpta = this._http.get<ResponseModel<T>>(request.url, { params: this._getHttpParams(request.queryParams) });
+                break;
+            case "DELETE":
+                rpta = this._http.delete<ResponseModel<T>>(request.url, { params: this._getHttpParams(request.queryParams) });
+                break;
+            case "PUT":
+                rpta = this._http.put<ResponseModel<T>>(request.url, request.request);
+                break;
+            case "POST":
+                rpta = this._http.post<ResponseModel<T>>(request.url, request.request);
+                break;
+        }
+        return rpta;
+    }
+
+    private _getHttpParams(queryParams: { key: string; value: string | number }[]): HttpParams {
+        let paramsHttp: HttpParams = new HttpParams();
+        queryParams.forEach(query => {
+            paramsHttp = paramsHttp.append(query.key, query.value);
         });
 
-        return this._http.get<ResponseModel>(url, { params });
+        return paramsHttp;
     }
 
-    create(request: T): Observable<ResponseModel> {
-        const url = `${this._api}${this._endpoint.create}`;
-        return this._http.post<ResponseModel>(url, request);
-    }
-
-    update(request: T): Observable<ResponseModel> {
-        const url = `${this._api}${this._endpoint.update}`;
-        return this._http.put<ResponseModel>(url, request);
-    }
-
-    delete(param: Parameter): Observable<ResponseModel> {
-        let url = `${this._api}${this._endpoint.delete}`;
-
-        let params: HttpParams = new HttpParams();
-        const pathsJoin = param.pathVariables.join("/");
+    callHttpParameters(request: RequestOption): Observable<ResponseModel<T>> {
+        let url: string = request.url;
+        const pathsJoin = request.pathVariables.join("/");
         if (pathsJoin) url += `/${pathsJoin}`;
 
-        param.queryParams.forEach(query => {
-            params = params.append(query.clave, query.valor);
-        });
+        request.url = url;
 
-        return this._http.delete<ResponseModel>(url, { params });
+        return this.http(request);
     }
 }
