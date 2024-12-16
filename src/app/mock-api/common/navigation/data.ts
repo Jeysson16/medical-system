@@ -62,28 +62,6 @@ export const defaultNavigation: FuseNavigationItem[] = [
         ]
     },
     {
-        id: "anomaly-analysis",
-        title: "anomaly-analysis.title",
-        type: "group",
-        icon: "heroicons_outline:exclamation-circle",
-        children: [
-            {
-                id: "anomaly-analysis.detected",
-                title: "anomaly-analysis.detected",
-                type: "basic",
-                icon: "heroicons_outline:magnifying-glass-circle",
-                link: "/anomaly-analysis/detected"
-            },
-            {
-                id: "anomaly-analysis.reports",
-                title: "anomaly-analysis.reports",
-                type: "basic",
-                icon: "heroicons_outline:clipboard-document-list",
-                link: "/anomaly-analysis/reports"
-            }
-        ]
-    },
-    {
         id: "support",
         title: "support.title",
         type: "group",
@@ -166,35 +144,6 @@ export const compactNavigation: FuseNavigationItem[] = [
                 type: "basic",
                 icon: "heroicons_outline:video-camera",
                 link: "/tiempo-real/"
-            },
-            {
-                id: "real-time-images.filters",
-                title: "real-time-images.filters",
-                type: "basic",
-                icon: "heroicons_outline:adjustments-horizontal",
-                link: "/tiempo-real/filtros"
-            }
-        ]
-    },
-    {
-        id: "anomaly-analysis",
-        title: "anomaly-analysis.title",
-        type: "group",
-        icon: "heroicons_outline:exclamation-circle",
-        children: [
-            {
-                id: "anomaly-analysis.detected",
-                title: "anomaly-analysis.detected",
-                type: "basic",
-                icon: "heroicons_outline:magnifying-glass-circle",
-                link: "/anomaly-analysis/detected"
-            },
-            {
-                id: "anomaly-analysis.reports",
-                title: "anomaly-analysis.reports",
-                type: "basic",
-                icon: "heroicons_outline:clipboard-document-list",
-                link: "/anomaly-analysis/reports"
             }
         ]
     },
