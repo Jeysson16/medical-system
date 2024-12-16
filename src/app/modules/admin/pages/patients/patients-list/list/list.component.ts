@@ -12,6 +12,7 @@ import { filter, fromEvent, Observable, Subject, switchMap, takeUntil } from "rx
 import { Country, Patient } from "@models/IPatient";
 import { PatientsService } from "@services/patients-list.service";
 import { TranslocoPipe } from "@jsverse/transloco";
+import { Contact } from "app/layout/common/quick-chat/quick-chat.types";
 
 @Component({
     selector: "patients-list",
@@ -40,14 +41,14 @@ import { TranslocoPipe } from "@jsverse/transloco";
 export class PatientsViewListComponent implements OnInit, OnDestroy {
     @ViewChild("matDrawer", { static: true }) matDrawer: MatDrawer;
 
-    contacts$: Observable<Patient[]>;
+    contacts$: Observable<Contact[]>;
 
     contactsCount: number = 0;
     contactsTableColumns: string[] = ["name", "email", "phoneNumber", "job"];
     countries: Country[];
     drawerMode: "side" | "over";
     searchInputControl: UntypedFormControl = new UntypedFormControl();
-    selectedContact: Patient;
+    selectedContact: Contact;
     private _unsubscribeAll: Subject<any> = new Subject<any>();
 
     /**
@@ -179,7 +180,7 @@ export class PatientsViewListComponent implements OnInit, OnDestroy {
         // Create the contact
         this._patientsListService.createContact().subscribe(newContact => {
             // Go to the new contact
-            this._router.navigate(["./", newContact.id], { relativeTo: this._activatedRoute });
+            this._router.navigate(["pacientes/nuevo"]);
 
             // Mark for check
             this._changeDetectorRef.markForCheck();

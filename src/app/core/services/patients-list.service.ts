@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Contact, Country, Tag } from "app/modules/admin/apps/contacts/contacts.types";
+import { Country, Tag } from "@models/IPatient";
+import { Contact } from "app/layout/common/quick-chat/quick-chat.types";
 import { BehaviorSubject, filter, map, Observable, of, switchMap, take, tap, throwError } from "rxjs";
 
 @Injectable({ providedIn: "root" })
@@ -275,54 +276,6 @@ export class PatientsService {
                             return updatedTag;
                         })
                     )
-            )
-        );
-    }
-
-    /**
-     * Delete the tag
-     *
-     * @param id
-     */
-    deleteTag(id: string): Observable<boolean> {
-        return this.tags$.pipe(
-            take(1),
-            switchMap(tags =>
-                this._httpClient.delete("api/apps/contacts/tag", { params: { id } }).pipe(
-                    map((isDeleted: boolean) => {
-                        // Find the index of the deleted tag
-                        const index = tags.findIndex(item => item.id === id);
-
-                        // Delete the tag
-                        tags.splice(index, 1);
-
-                        // Update the tags
-                        this._tags.next(tags);
-
-                        // Return the deleted status
-                        return isDeleted;
-                    }),
-                    filter(isDeleted => isDeleted),
-                    switchMap(isDeleted =>
-                        this.contacts$.pipe(
-                            take(1),
-                            map(contacts => {
-                                // Iterate through the contacts
-                                contacts.forEach(contact => {
-                                    const tagIndex = contact.tags.findIndex(tag => tag === id);
-
-                                    // If the contact has the tag, remove it
-                                    if (tagIndex > -1) {
-                                        contact.tags.splice(tagIndex, 1);
-                                    }
-                                });
-
-                                // Return the deleted status
-                                return isDeleted;
-                            })
-                        )
-                    )
-                )
             )
         );
     }

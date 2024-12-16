@@ -18,10 +18,7 @@
         <!-- Items -->
         <ng-container *ngFor="let item of navigation; trackBy: trackByFn">
             <!-- Mostrar ítems solo si cumplen las condiciones -->
-            <ng-container
-                *ngIf="
-                    userType !== 'doctor' || (userType === 'doctor' && item.userType === 'doctor')
-                ">
+            <ng-container>
                 <!-- Aside -->
                 <ng-container *ngIf="item.type === 'aside'">
                     <fuse-vertical-navigation-aside-item
@@ -70,6 +67,7 @@
                         [name]="name"></fuse-vertical-navigation-spacer-item>
                 </ng-container>
             </ng-container>
+            @if (item.id) { }
         </ng-container>
 
         <!-- Content footer -->

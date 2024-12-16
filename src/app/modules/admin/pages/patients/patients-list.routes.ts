@@ -7,6 +7,7 @@ import { PatientsService } from "@services/patients-list.service";
 import { PatientsListComponent } from "./patients-list/patients-list.component";
 import { PatientsDetailsComponent } from "./patients-list/details/details.component";
 import { PatientsViewListComponent } from "./patients-list/list/list.component";
+import { PatientsNewComponent } from "./patients-new/patients-new.component";
 
 /**
  * Contact resolver
@@ -102,6 +103,10 @@ export default [
                 ]
             }
         ]
+    },
+    {
+        path: "nuevo",
+        component: PatientsNewComponent,
     },
     {
         path: "historia",

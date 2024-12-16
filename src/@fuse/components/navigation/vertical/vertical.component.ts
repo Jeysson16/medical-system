@@ -86,7 +86,6 @@ export class FuseVerticalNavigationComponent implements OnChanges, OnInit, After
     onCollapsableItemCollapsed: ReplaySubject<FuseNavigationItem> = new ReplaySubject<FuseNavigationItem>(1);
     onCollapsableItemExpanded: ReplaySubject<FuseNavigationItem> = new ReplaySubject<FuseNavigationItem>(1);
     onRefreshed: ReplaySubject<boolean> = new ReplaySubject<boolean>(1);
-    private userType: string;
     private _animationsEnabled: boolean = false;
     private _asideOverlay: HTMLElement;
     private readonly _handleAsideOverlayClick: any;
@@ -115,7 +114,6 @@ export class FuseVerticalNavigationComponent implements OnChanges, OnInit, After
         private _fuseUtilsService: FuseUtilsService
     ) {
         const user: User = JSON.parse(localStorage.getItem("user"));
-        this.userType = user.type;
         this._handleAsideOverlayClick = (): void => {
             this.closeAside();
         };
@@ -156,6 +154,10 @@ export class FuseVerticalNavigationComponent implements OnChanges, OnInit, After
         };
     }
 
+    // Getter para obtener el último ítem de la navegación
+    get lastItem(): FuseNavigationItem | undefined {
+        return this.navigation[this.navigation.length - 1];
+    }
     /**
      * Setter for fuseScrollbarDirectives
      */
@@ -341,14 +343,10 @@ export class FuseVerticalNavigationComponent implements OnChanges, OnInit, After
     }
 
     filterNavigation(items: FuseNavigationItem[]): FuseNavigationItem[] {
-        return items
-            .filter(item => !item.userType || item.userType === this.userType) // Filtrar ítems principales
-            .map(item => ({
-                ...item,
-                children: item.children
-                    ? item.children.filter(child => !child.userType || child.userType === this.userType) // Filtrar hijos
-                    : undefined
-            }));
+        return items.map(item => ({
+            ...item,
+            children: item.children
+        }));
     }
 
     /**

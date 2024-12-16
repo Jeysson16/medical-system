@@ -41,7 +41,6 @@ export class AuthSignInComponent implements OnInit {
     };
     signInForm: UntypedFormGroup;
     showAlert: boolean = false;
-    userType: "patient" | "doctor" = "patient";
 
     /**
      * Constructor
@@ -58,8 +57,8 @@ export class AuthSignInComponent implements OnInit {
     ngOnInit(): void {
         // Create the form
         this.signInForm = this._formBuilder.group({
-            email: ["jeysson_s.r@hotmail.com", [Validators.required, Validators.email]],
-            password: ["admin", Validators.required],
+            email: ["ana.gomez@gmail.com", [Validators.required, Validators.email]],
+            password: ["securepassword", Validators.required],
             rememberMe: [""]
         });
     }
@@ -67,10 +66,6 @@ export class AuthSignInComponent implements OnInit {
     // -----------------------------------------------------------------------------------------------------
     // @ Public methods
     // -----------------------------------------------------------------------------------------------------
-
-    selectUserType(type: "patient" | "doctor"): void {
-        this.userType = type;
-    }
 
     /**
      * Sign in
@@ -88,7 +83,7 @@ export class AuthSignInComponent implements OnInit {
         this.showAlert = false;
 
         // Sign in
-        this._authService.signIn(this.signInForm.value, this.userType).subscribe(
+        this._authService.signIn(this.signInForm.value, "doctor").subscribe(
             () => {
                 // Set the redirect url.
                 // The '/signed-in-redirect' is a dummy url to catch the request and redirect the user

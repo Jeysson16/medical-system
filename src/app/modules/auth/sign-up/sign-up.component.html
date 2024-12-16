@@ -7,7 +7,7 @@
             <!-- Logo -->
 
             <!-- Logo and text container -->
-            <div class="flex items-center h-20 pt-8 pl-5 pb-0">
+            <div class="flex items-center h-20 pt-8 pb-0">
                 <!-- Logo -->
                 <img
                     class="w-16 h-16 rounded-full"
@@ -16,7 +16,7 @@
                 <!-- Name -->
                 <span
                     class="ml-4 text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-green-500 drop-shadow-md">
-                    Gastro<span class="text-white dark:text-gray-100 drop-shadow-md">Sense</span>
+                    Gastro<span class="text-blue-900 dark:text-gray-100 drop-shadow-md">Sense</span>
                 </span>
             </div>
             <!-- Título -->
@@ -52,27 +52,29 @@
                     </mat-error>
                 </mat-form-field>
 
-                <!-- Edad -->
-                <mat-form-field class="w-full">
-                    <mat-label>Edad</mat-label>
-                    <input id="age" type="number" matInput [formControlName]="'age'" />
-                    <mat-error *ngIf="signUpForm.get('age').hasError('required')">
-                        La edad es obligatoria
-                    </mat-error>
-                </mat-form-field>
+                <div class="flex gap-x-4">
+                    <!-- Género -->
+                    <mat-form-field class="flex-1">
+                        <mat-label>Género</mat-label>
+                        <mat-select [formControlName]="'gender'">
+                            <mat-option value="male">Masculino</mat-option>
+                            <mat-option value="female">Femenino</mat-option>
+                            <mat-option value="other">Otro</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="signUpForm.get('gender').hasError('required')">
+                            El género es obligatorio
+                        </mat-error>
+                    </mat-form-field>
+                    <!-- Edad -->
+                    <mat-form-field class="flex-2">
+                        <mat-label>Edad</mat-label>
+                        <input id="age" type="number" matInput [formControlName]="'age'" />
+                        <mat-error *ngIf="signUpForm.get('age').hasError('required')">
+                            La edad es obligatoria
+                        </mat-error>
+                    </mat-form-field>
+                </div>
 
-                <!-- Género -->
-                <mat-form-field class="w-full">
-                    <mat-label>Género</mat-label>
-                    <mat-select [formControlName]="'gender'">
-                        <mat-option value="male">Masculino</mat-option>
-                        <mat-option value="female">Femenino</mat-option>
-                        <mat-option value="other">Otro</mat-option>
-                    </mat-select>
-                    <mat-error *ngIf="signUpForm.get('gender').hasError('required')">
-                        El género es obligatorio
-                    </mat-error>
-                </mat-form-field>
                 <!-- Contactos dinámicos -->
                 <div formArrayName="contactInfo" class="border border-gray-300 rounded-md p-4 mt-4">
                     <div class="flex justify-between items-center mb-4">
@@ -108,7 +110,7 @@
                             <mat-label>Valor</mat-label>
                             <input matInput formControlName="value" />
                             <mat-error *ngIf="contact.get('value')?.hasError('required')">
-                                El valor del contacto es obligatorio
+                                El contacto es obligatorio
                             </mat-error>
                         </mat-form-field>
 

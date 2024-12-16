@@ -22,13 +22,11 @@ export const defaultNavigation: FuseNavigationItem[] = [
         title: "patients.title",
         type: "group",
         icon: "heroicons_outline:user-group",
-        userType: "doctor",
         children: [
             {
                 id: "patients.list",
                 title: "patients.list",
                 type: "basic",
-                userType: "doctor",
                 icon: "heroicons_outline:user-group",
                 link: "/pacientes/lista"
             },
@@ -36,7 +34,6 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 id: "patients.history",
                 title: "patients.history",
                 type: "basic",
-                userType: "doctor",
                 icon: "heroicons_outline:book-open",
                 link: "/pacientes/historia"
             }
@@ -97,21 +94,21 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 title: "support.guides",
                 type: "basic",
                 icon: "heroicons_outline:book-open",
-                link: "/support/guides"
+                link: "/soporte/guias"
             },
             {
                 id: "support.faq",
                 title: "support.faq",
                 type: "basic",
                 icon: "heroicons_outline:question-mark-circle",
-                link: "/support/faq"
+                link: "/soporte/preguntas-frecuentes"
             },
             {
                 id: "support.contact",
                 title: "support.contact",
                 type: "basic",
                 icon: "heroicons_outline:chat-bubble-bottom-center-text",
-                link: "/support/contact"
+                link: "/soporte/contacto"
             }
         ]
     }
@@ -140,12 +137,10 @@ export const compactNavigation: FuseNavigationItem[] = [
         title: "patients.title",
         type: "group",
         icon: "heroicons_outline:user-group",
-        userType: "doctor",
         children: [
             {
                 id: "patients.list",
                 title: "patients.list",
-                userType: "doctor",
                 type: "basic",
                 icon: "heroicons_outline:user-group",
                 link: "/pacientes/lista"
@@ -153,7 +148,6 @@ export const compactNavigation: FuseNavigationItem[] = [
             {
                 id: "patients.history",
                 title: "patients.history",
-                userType: "doctor",
                 type: "basic",
                 icon: "heroicons_outline:book-open",
                 link: "/pacientes/historia"

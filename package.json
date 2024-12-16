@@ -9,7 +9,7 @@
         "ng": "ng",
         "version": "ng v",
         "start": "cross-env NODE_ENV=development ng serve --port 4900 ",
-        "start:local": "ng serve --port 4900 --configuration=local",
+        "start:local": "cross-env NODE_ENV=local ng serve --port 4900",
         "build": "cross-env NODE_ENV=production ng build",
         "watch": "ng build --watch --configuration development",
         "format": "prettier --write .",

@@ -3,7 +3,7 @@
     <!-- Formulario -->
     <div
         class="md:flex md:items-center md:justify-end w-full sm:w-auto md:h-full md:w-1/2 py-8 px-4 sm:p-12 md:p-16 sm:rounded-2xl md:rounded-none sm:shadow md:shadow-none sm:bg-card">
-        <div class="w-full max-w-80 sm:w-80 mx-auto sm:mx-0">
+        <div class="w-full max-w-100 sm:w-180 mx-auto sm:mx-0">
             <!-- Logo and text container -->
             <div class="flex items-center h-20 pt-8 pb-0">
                 <!-- Logo -->
@@ -20,30 +20,6 @@
             <!-- Título -->
             <div class="mt-8 text-4xl font-extrabold tracking-tight leading-tight">
                 Inicia sesión en el Panel Médico
-            </div>
-            <div class="flex items-baseline mt-0.5 font-medium">
-                <div>¿Eres nuevo en la plataforma?</div>
-                <a class="ml-1 text-primary-500 hover:underline" [routerLink]="['/sign-up']"
-                    >Regístrate</a
-                >
-            </div>
-
-            <!-- Selección de rol -->
-            <div class="mt-6 flex justify-center">
-                <button
-                    class="flex items-center justify-center w-32 h-12 border border-primary-500 text-primary-500 rounded-l-lg hover:bg-primary-500 hover:text-white"
-                    [class.bg-primary-500]="userType === 'patient'"
-                    [class.text-white]="userType === 'patient'"
-                    (click)="selectUserType('patient')">
-                    Paciente
-                </button>
-                <button
-                    class="flex items-center justify-center w-32 h-12 border border-primary-500 text-primary-500 rounded-r-lg hover:bg-primary-500 hover:text-white"
-                    [class.bg-primary-500]="userType === 'doctor'"
-                    [class.text-white]="userType === 'doctor'"
-                    (click)="selectUserType('doctor')">
-                    Doctor
-                </button>
             </div>
 
             <!-- Alerta -->
@@ -130,7 +106,7 @@
                     [disabled]="signInForm.disabled"
                     (click)="signIn()">
                     <span *ngIf="!signInForm.disabled" class="text-white">
-                        Iniciar sesión como {{ userType === "doctor" ? "Doctor" : "Paciente" }}
+                        Iniciar sesión como Doctor
                     </span>
                     <mat-progress-spinner
                         *ngIf="signInForm.disabled"

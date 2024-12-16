@@ -270,6 +270,15 @@ export class PatientsDetailsComponent implements OnInit, OnDestroy {
     }
 
     /**
+     * Toggle edit mode
+     *
+     * @param editMode
+     */
+    viewPacientHistorial(): void {
+        this._router.navigate(["/pacientes/historia"], { relativeTo: this._activatedRoute });
+    }
+
+    /**
      * Update the contact
      */
     updateContact(): void {
@@ -532,19 +541,6 @@ export class PatientsDetailsComponent implements OnInit, OnDestroy {
 
         // Update the tag on the server
         this._contactsService.updateTag(tag.id, tag).pipe(debounceTime(300)).subscribe();
-
-        // Mark for check
-        this._changeDetectorRef.markForCheck();
-    }
-
-    /**
-     * Delete the tag
-     *
-     * @param tag
-     */
-    deleteTag(tag: Tag): void {
-        // Delete the tag from the server
-        this._contactsService.deleteTag(tag.id).subscribe();
 
         // Mark for check
         this._changeDetectorRef.markForCheck();
