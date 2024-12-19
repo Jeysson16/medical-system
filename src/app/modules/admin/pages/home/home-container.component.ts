@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from "@angular/core";
-import { HomeListComponent } from "./home-list/home-list.component";
+import { HomeListComponent } from "../time-real/home-list/home-list.component";
 import { AuthService } from "app/core/auth/auth.service";
 import { User } from "app/core/user/user.types";
 import { HomeDoctorListComponent } from "./home-doctor-list/home-doctor-list.component";
@@ -14,8 +14,8 @@ import { CapsuleAdapter } from "@adapters/CapsuleAdapter";
     selector: "app-home-container",
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [HomeListComponent, HomeDoctorListComponent],
-    template: `@if(user.type=='patient'){ <ui-home-doctor-list class="w-full" [capsules]="capsules()"></ui-home-doctor-list>}@else{ <ui-home-list class="w-full"></ui-home-list>}`,
+    imports: [HomeDoctorListComponent],
+    template: ` <ui-home-doctor-list class="w-full" [capsules]="capsules()"></ui-home-doctor-list>`,
     styleUrl: "./home-container.component.scss"
 })
 export class HomeContainerComponent {
@@ -28,32 +28,32 @@ export class HomeContainerComponent {
 
     ngOnInit(): void {
         this.user = this._authService.user;
-        this.loadInfoForCapsules();
+        // this.loadInfoForCapsules();
     }
 
-    loadInfoForCapsules(): void {
-        const capsules: Capsule[] = [];
+    // loadInfoForCapsules(): void {
+    //     const capsules: Capsule[] = [];
 
-        for (let i = 0; i < this.user.capsules.length; i++) {
-            const requestOption = new RequestOption();
-            requestOption.resource = this.user.capsules[i];
+    //     for (let i = 0; i < this.user.capsules.length; i++) {
+    //         const requestOption = new RequestOption();
+    //         requestOption.resource = this.user.capsules[i];
 
-            this._capsuleService.get(requestOption).subscribe({
-                next: (data: ResponseModel<CapsuleEntity>) => {
-                    const converted = this._capsuleadapter.convertEntityToModel(data.item);
+    //         this._capsuleService.get(requestOption).subscribe({
+    //             next: (data: ResponseModel<CapsuleEntity>) => {
+    //                 const converted = this._capsuleadapter.convertEntityToModel(data.item);
 
-                    // Asegurar que siempre sea un array
-                    capsules.push(...(Array.isArray(converted) ? converted : [converted]));
-                    this.capsules.set(capsules);
-                    console.log(this.capsules());
-                },
-                error: err => {
-                    console.error("Error al obtener información de la cápsula:", err);
-                }
-            });
-        }
+    //                 // Asegurar que siempre sea un array
+    //                 capsules.push(...(Array.isArray(converted) ? converted : [converted]));
+    //                 this.capsules.set(capsules);
+    //                 console.log(this.capsules());
+    //             },
+    //             error: err => {
+    //                 console.error("Error al obtener información de la cápsula:", err);
+    //             }
+    //         });
+    //     }
 
-        // Actualizar la longitud de las cápsulas
-        this._capsuleService.capsuleLength.set(capsules.length);
-    }
+    //     // Actualizar la longitud de las cápsulas
+    //     this._capsuleService.capsuleLength.set(capsules.length);
+    // }
 }

@@ -18,13 +18,13 @@
         </div>
 
         <!-- Contact -->
-        <div class="relative flex flex-col flex-auto items-center p-6 pt-0 sm:p-12 sm:pt-0">
+        <div class="relative flex flex-col flex-auto items-center p-4 pt-0 sm:p-12 sm:pt-0">
             <div class="w-full max-w-3xl">
                 <!-- Avatar and actions -->
-                <div class="flex flex-auto items-end -mt-16">
+                <div class="flex flex-auto items-center justify-between -mt-16 flex-wrap">
                     <!-- Avatar -->
                     <div
-                        class="flex items-center justify-center w-32 h-32 rounded-full overflow-hidden ring-4 ring-bg-card">
+                        class="flex items-center justify-center w-32 h-32 rounded-full overflow-hidden ring-4 ring-bg-card mb-4 md:mb-0">
                         <img
                             class="object-cover w-full h-full"
                             *ngIf="contact.avatar"
@@ -35,14 +35,33 @@
                             {{ contact.name.charAt(0) }}
                         </div>
                     </div>
+
                     <!-- Actions -->
-                    <div class="flex items-center ml-auto mb-1">
-                        <button mat-stroked-button (click)="viewPacientHistorial()">
-                            <mat-icon
-                                class="icon-size-5"
-                                [svgIcon]="'heroicons_solid:pencil-square'"></mat-icon>
-                            <span class="ml-2">Ver Historial del Paciente</span>
+                    <div class="relative">
+                        <button
+                            mat-stroked-button
+                            [matMenuTriggerFor]="actionMenu"
+                            class="btn-small bg-white">
+                            <mat-icon class="icon-size-4">more_vert</mat-icon>
+                            <span class="ml-1">Opciones</span>
                         </button>
+                        <mat-menu #actionMenu="matMenu">
+                            <!-- Ver Historial del Paciente -->
+                            <button mat-menu-item (click)="viewPacientHistorial()">
+                                <mat-icon [svgIcon]="'heroicons_solid:pencil-square'"></mat-icon>
+                                <span>Ver Historial del Paciente</span>
+                            </button>
+                            <!-- Registrar Cápsula -->
+                            <button mat-menu-item (click)="registerCapsule()">
+                                <mat-icon [svgIcon]="'heroicons_solid:plus-circle'"></mat-icon>
+                                <span>Agregar Cápsula</span>
+                            </button>
+                            <!-- Ver Último Análisis Endoscópico -->
+                            <button mat-menu-item [routerLink]="'/tiempo-real/resultados'">
+                                <mat-icon [svgIcon]="'heroicons_solid:eye'"></mat-icon>
+                                <span>Ver Último Análisis</span>
+                            </button>
+                        </mat-menu>
                     </div>
                 </div>
 

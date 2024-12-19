@@ -1,185 +1,217 @@
-<div class="patient-dashboard p-6 bg-gray-50 min-h-screen">
+<div class="doctor-dashboard p-6 bg-gray-100 min-h-screen">
     <!-- Encabezado -->
-    <div class="p-6 mb-6 flex justify-between items-center">
-        <h1 class="text-3xl font-bold text-gray-800">
-            Bienvenido, <span class="text-primary-600">{{ user.name }}</span>
-        </h1>
-        <div class="flex space-x-4">
-            <a
-                href="/perfil-medico"
-                class="flex items-center text-sm bg-primary-600 hover:bg-primary-700 text-white py-2 px-4 rounded-lg">
-                <span class="material-icons mr-2">person</span> Ver Perfil Médico
-            </a>
-            <a
-                href="/soporte"
-                class="flex items-center text-sm bg-gray-200 hover:bg-gray-300 text-gray-800 py-2 px-4 rounded-lg">
-                <span class="material-icons mr-2">support</span> Contactar Soporte
-            </a>
+    <div class="p-6 mb-6 flex flex-col lg:flex-row justify-between items-start lg:items-center">
+        <div>
+            <h1 class="text-3xl font-bold text-gray-800 flex items-center">
+                <span class="material-icons text-primary-600 mr-2">medical_services</span>
+                Bienvenida, <span class="text-primary-600 ml-2">{{ doctor.name }}</span>
+            </h1>
+            <p class="text-lg text-gray-600 mt-2">{{ doctor.specialty }}</p>
+            <div class="mt-4">
+                <p class="text-sm text-gray-600">
+                    <span class="material-icons text-gray-600 mr-2">local_hospital</span>
+                    Hospital:
+                    <span class="text-gray-800 font-bold">{{ information.hospitalName }}</span>
+                </p>
+                <p class="text-sm text-gray-600">
+                    <span class="material-icons text-gray-600 mr-2">phone</span>
+                    Contacto: <span class="text-gray-800 font-bold">{{ information.contact }}</span>
+                </p>
+                <p class="text-sm text-gray-600">
+                    <span class="material-icons text-gray-600 mr-2">location_on</span>
+                    Dirección:
+                    <span class="text-gray-800 font-bold">{{ information.address }}</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Gráfico -->
+        <div class="bg-white p-6 rounded-lg shadow-md mt-6 lg:mt-0 lg:ml-20 flex-1 w-full">
+            <h2 class="text-lg font-bold text-gray-800 mb-4">
+                Tendencia semanal - Pacientes Atendidos
+            </h2>
+            <div class="mt-4">
+                <canvas id="weeklyChart" class="w-full h-32"></canvas>
+            </div>
         </div>
     </div>
 
-    <!-- Notificaciones -->
-    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-lg mb-6">
-        <p class="text-sm text-yellow-700">
-            <strong>Recordatorio:</strong> Tienes una cita programada con el Dr. Juan Pérez el
-            <strong>30 de noviembre</strong> a las 10:00 AM.
-        </p>
+    <!-- Indicadores Principales -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div class="stats-card bg-white p-6 rounded-lg shadow-md flex items-center">
+            <span class="material-icons text-green-600 text-4xl mr-4">group</span>
+            <div>
+                <h3 class="text-lg font-medium text-gray-500">Pacientes atendidos hoy</h3>
+                <p class="text-4xl font-bold text-green-600">{{ patientsToday }}</p>
+            </div>
+        </div>
+        <div class="stats-card bg-white p-6 rounded-lg shadow-md flex items-center">
+            <span class="material-icons text-blue-600 text-4xl mr-4">person_add</span>
+            <div>
+                <h3 class="text-lg font-medium text-gray-500">Nuevos Pacientes</h3>
+                <div class="flex items-center">
+                    <p class="text-4xl font-bold text-blue-600">{{ newPatients }}</p>
+                    <span class="ml-2 text-sm text-green-600">{{ newPatientsChange }}%</span>
+                </div>
+            </div>
+        </div>
+        <div class="stats-card bg-white p-6 rounded-lg shadow-md flex items-center">
+            <span class="material-icons text-red-600 text-4xl mr-4">analytics</span>
+            <div>
+                <h3 class="text-lg font-medium text-gray-500">Diagnósticos este mes</h3>
+                <div class="flex items-center">
+                    <p class="text-4xl font-bold text-red-600">{{ diagnosesThisMonth }}</p>
+                    <span class="ml-2 text-sm text-red-600">{{ diagnosesChange }}%</span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Contenedor Principal -->
     <main class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <!-- Columna Izquierda -->
-        <section class="lg:col-span-4 space-y-6">
-            <!-- Perfil del Paciente -->
-            <div class="bg-white p-6 rounded-lg shadow-md mb-6">
-                <h2 class="text-lg font-bold text-gray-800 mb-4">Perfil del Paciente</h2>
-                <div class="space-y-2">
-                    <p class="text-gray-600 text-sm">
-                        <span class="font-medium">Edad:</span> {{ user.age || "No especificado" }}
-                    </p>
-                    <p class="text-gray-600 text-sm">
-                        <span class="font-medium">Género:</span>
-                        {{ user.gender === "male" ? "Masculino" : "Femenino" }}
-                    </p>
-                    <p class="text-gray-600 text-sm">
-                        <span class="font-medium">DNI:</span>
-                        {{ user.identityDocument?.[0]?.value || "No especificado" }}
-                    </p>
-                    <p class="text-gray-600 text-sm">
-                        <span class="font-medium">Correo:</span>
-                        <a href="mailto:{{ user.email }}" class="text-primary-600 hover:underline">
-                            {{ user.email }}
-                        </a>
-                    </p>
-                    <p class="text-gray-600 text-sm">
-                        <span class="font-medium">Teléfono:</span>
-                        <a
-                            href="tel:{{ user.contactInfo?.[0]?.value }}"
-                            class="text-primary-600 hover:underline">
-                            {{ user.contactInfo?.[1]?.value || "No especificado" }}
-                        </a>
-                    </p>
+        <!-- Citas y Consultas -->
+        <section class="lg:col-span-8 space-y-6">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                    <span class="material-icons text-primary-600 mr-2">calendar_today</span>
+                    Citas de pacientes
+                </h2>
+                <div *ngFor="let appointment of upcomingAppointments" class="space-y-4">
+                    <div class="flex justify-between items-center border-b pb-2">
+                        <div>
+                            <p class="text-gray-800 font-bold">{{ appointment.patientName }}</p>
+                            <p class="text-sm text-gray-600">{{ appointment.reason }}</p>
+                        </div>
+                        <p class="text-sm text-gray-500">{{ appointment.time }}</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Doctores Asignados -->
-            <div class="doctors-section bg-white p-6 rounded-lg shadow-md">
-                <h2 class="text-lg font-bold text-gray-800 mb-4">Doctores Asignados</h2>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+                    <span class="material-icons text-primary-600 mr-2">history</span>
+                    Consultas recientes
+                </h2>
                 <div class="space-y-4">
-                    <div class="doctor-card bg-gray-50 p-4 rounded-lg shadow-md">
-                        <h3 class="text-lg font-bold text-gray-800">Dr. Juan Pérez</h3>
-                        <p class="text-gray-600 text-sm">Especialidad: Gastroenterología</p>
-                        <p class="text-gray-600 text-sm">
-                            <span class="font-medium">Correo:</span>
-                            <a
-                                href="mailto:juan.perez hospital.com"
-                                class="text-primary-600 hover:underline">
-                                juan.perez hospital.com</a
-                            >
-                        </p>
-                        <p class="text-gray-600 text-sm">
-                            <span class="font-medium">Teléfono:</span>
-                            <a href="tel:+123456789" class="text-primary-600 hover:underline"
-                                >+1 234 567 890</a
-                            >
-                        </p>
+                    <div *ngFor="let patient of patients" class="border p-4 rounded-lg flex">
+                        <span class="material-icons text-blue-600 text-2xl mr-4">person</span>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-800">{{ patient.name }}</h3>
+                            <p class="text-sm text-gray-600">
+                                Última visita: {{ patient.lastVisit }}
+                            </p>
+                            <p class="text-sm text-gray-600">
+                                Observación: {{ patient.observation }}
+                            </p>
+                            <p class="text-sm text-gray-600">Receta: {{ patient.prescription }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Columna Derecha -->
-        <section class="lg:col-span-8 space-y-6">
-            <!-- Indicadores Rápidos -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                <div class="stats-card bg-white p-4 rounded-lg shadow-md text-center">
-                    <h3 class="text-sm font-medium text-gray-500">Cápsulas Activas</h3>
-                    <p class="text-2xl font-bold text-green-600">{{ activeCapsules }}</p>
-                </div>
-                <div class="stats-card bg-white p-4 rounded-lg shadow-md text-center">
-                    <h3 class="text-sm font-medium text-gray-500">Anomalías Detectadas</h3>
-                    <p class="text-2xl font-bold text-red-600">{{ anomaliesDetected }}</p>
-                </div>
-                <div class="stats-card bg-white p-4 rounded-lg shadow-md text-center">
-                    <h3 class="text-sm font-medium text-gray-500">Último Diagnóstico</h3>
-                    <p class="text-2xl font-bold text-primary-600">a</p>
+        <!-- Calendario y eventos -->
+        <section class="lg:col-span-4 space-y-6">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-lg font-bold text-gray-800 mb-4">Calendario</h2>
+                <div class="calendar p-4 rounded-lg">
+                    <div class="flex justify-between items-center mb-4">
+                        <button class="text-sm text-gray-600 hover:text-gray-800">
+                            &lt; Anterior
+                        </button>
+                        <h3 class="text-md font-bold text-gray-800">Diciembre 2024</h3>
+                        <button class="text-sm text-gray-600 hover:text-gray-800">
+                            Siguiente &gt;
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-7 gap-2 text-center text-gray-700">
+                        <!-- Headers for Days of the Week -->
+                        <span class="font-bold">Dom</span>
+                        <span class="font-bold">Lun</span>
+                        <span class="font-bold">Mar</span>
+                        <span class="font-bold">Mié</span>
+                        <span class="font-bold">Jue</span>
+                        <span class="font-bold">Vie</span>
+                        <span class="font-bold">Sáb</span>
+
+                        <!-- Dates with events -->
+                        <span class="text-gray-400">26</span>
+                        <span class="text-gray-400">27</span>
+                        <span class="text-gray-400">28</span>
+                        <span class="text-gray-400">29</span>
+                        <span class="text-gray-400">30</span>
+                        <span class="text-gray-400">1</span>
+                        <span class="text-gray-400">2</span>
+
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                        <span>6</span>
+                        <span>7</span>
+                        <span>8</span>
+                        <!-- Highlighted Date -->
+                        <span class="bg-primary-600 text-white rounded-full relative group">
+                            9
+                            <div
+                                class="absolute top-8 right-0 w-40 bg-teal-600 text-white text-sm shadow-lg rounded-md p-2 hidden group-hover:block">
+                                Reunión con el equipo
+                            </div>
+                        </span>
+
+                        <span>10</span>
+                        <span>11</span>
+                        <span>12</span>
+                        <span>13</span>
+                        <span>14</span>
+                        <span>15</span>
+                        <span>16</span>
+
+                        <span>17</span>
+                        <span class="bg-primary-600 text-white rounded-full relative group">
+                            18
+                            <div
+                                class="absolute top-8 left-0 px-4 bg-teal-600 text-white text-sm shadow-lg rounded-md p-2 hidden group-hover:block">
+                                HOY
+                            </div>
+                        </span>
+
+                        <span>19</span>
+                        <span>20</span>
+                        <span class="bg-blue-600 text-white rounded-full relative group"
+                            >21
+                            <div
+                                class="absolute top-8 left-0 w-40 bg-blue-600 text-white text-sm shadow-lg rounded-md p-2 hidden group-hover:block">
+                                Reunión mensual
+                            </div>
+                        </span>
+                        <span>22</span>
+                        <span class="bg-blue-600 text-white rounded-full relative group"
+                            >23
+                            <div
+                                class="absolute top-8 right-0 w-40 bg-blue-600 text-white text-sm shadow-lg rounded-md p-2 hidden group-hover:block">
+                                Celebracion con el equipo por Navidad
+                            </div>
+                        </span>
+
+                        <span>24</span>
+                        <span>25</span>
+                        <span>26</span>
+                        <span>27</span>
+                        <span>28</span>
+                        <span>29</span>
+                        <span>30</span>
+                    </div>
                 </div>
             </div>
-            <!-- Visitors overview -->
-            <div
-                class="sm:col-span-2 lg:col-span-3 flex flex-col flex-auto bg-card shadow rounded-2xl overflow-hidden">
-                <div class="flex items-center justify-between mt-10 ml-10 mr-6 sm:mr-10">
-                    <div class="flex flex-col">
-                        <div
-                            class="mr-4 text-2xl md:text-3xl font-semibold tracking-tight leading-7">
-                            Anomalías detectadas
-                        </div>
-                        <div class="font-medium text-secondary">Número de anomalías detectadas</div>
-                    </div>
-                    <div class="ml-2">
-                        <mat-button-toggle-group
-                            class="hidden sm:inline-flex border-none space-x-1"
-                            value="this-year"
-                            #visitorsYearSelector="matButtonToggleGroup">
-                            <mat-button-toggle
-                                class="px-1.5 rounded-full overflow-hidden border-none font-medium"
-                                value="last-year"
-                                >Año pasado
-                            </mat-button-toggle>
-                            <mat-button-toggle
-                                class="px-1.5 rounded-full overflow-hidden border-none font-medium"
-                                value="this-year"
-                                >Este año
-                            </mat-button-toggle>
-                        </mat-button-toggle-group>
-                        <div class="sm:hidden">
-                            <button mat-icon-button [matMenuTriggerFor]="visitorsMenu">
-                                <mat-icon
-                                    [svgIcon]="'heroicons_outline:ellipsis-vertical'"></mat-icon>
-                            </button>
-                            <mat-menu #visitorsMenu="matMenu">
-                                <button mat-menu-item>Año pasado</button>
-                                <button mat-menu-item>Este año</button>
-                            </mat-menu>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex flex-col flex-auto h-80">
-                    <apx-chart
-                        class="flex-auto w-full h-full"
-                        [chart]="chartVisitors.chart"
-                        [colors]="chartVisitors.colors"
-                        [dataLabels]="chartVisitors.dataLabels"
-                        [fill]="chartVisitors.fill"
-                        [grid]="chartVisitors.grid"
-                        [series]="chartVisitors.series[visitorsYearSelector.value]"
-                        [stroke]="chartVisitors.stroke"
-                        [tooltip]="chartVisitors.tooltip"
-                        [xaxis]="chartVisitors.xaxis"
-                        [yaxis]="chartVisitors.yaxis"></apx-chart>
-                </div>
-            </div>
-            <!-- Cápsulas Endoscópicas -->
-            <div class="capsules-section bg-white p-6 rounded-lg shadow-md">
-                <h2 class="text-lg font-bold text-gray-800 mb-4">Mis Cápsulas Endoscópicas</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="capsule-card bg-gray-50 p-4 rounded-lg shadow-md">
-                        <h3 class="text-lg font-bold text-gray-800 mb-2">Cápsula #1</h3>
-                        <p class="text-gray-600 text-sm">ID: Px7y0ksJKr2FxWpo1eoW</p>
-                        <p class="text-gray-600 text-sm">
-                            Estado: <span class="text-green-600">Activa</span>
-                        </p>
-                        <p class="text-gray-600 text-sm">
-                            Anomalías: <span class="text-red-600">2 detectadas</span>
-                        </p>
-                        <p class="text-gray-600 text-sm">Diagnóstico: Úlcera gástrica</p>
-                        <a
-                            href="/capsulas/1/detalle"
-                            class="text-sm mt-4 bg-primary-600 text-white py-2 px-4 rounded-lg block text-center">
-                            Ver Detalles
-                        </a>
-                    </div>
-                </div>
+
+            <!-- Eventos próximos -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-lg font-bold text-gray-800 mb-4">Próximos eventos</h2>
+                <ul class="list-disc pl-4">
+                    <li *ngFor="let event of upcomingEvents" class="text-sm text-gray-600">
+                        {{ event.name }} - {{ event.date }}
+                    </li>
+                </ul>
             </div>
         </section>
     </main>

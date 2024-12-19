@@ -1,6 +1,7 @@
 import { AsyncPipe, DatePipe, NgFor, NgIf, TitleCasePipe } from "@angular/common";
 import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { FormControl, ReactiveFormsModule } from "@angular/forms";
+import { MatButtonModule } from "@angular/material/button";
 import { MatFormField } from "@angular/material/form-field";
 import { MatIconModule } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
@@ -17,7 +18,7 @@ import { Observable } from "rxjs";
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, NgFor, MatIconModule, MatFormField, MatInputModule, ReactiveFormsModule, RouterLink, AsyncPipe, TitleCasePipe, DatePipe, TranslocoPipe],
+    imports: [NgIf, NgFor, MatIconModule, MatButtonModule, MatFormField, MatInputModule, ReactiveFormsModule, RouterLink, AsyncPipe, TitleCasePipe, DatePipe, TranslocoPipe],
     providers: [
         {
             provide: TRANSLOCO_SCOPE,

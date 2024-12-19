@@ -75,12 +75,14 @@ export class AuthSignUpComponent implements OnInit {
             })
         });
     }
+
     createContactGroup(type: string, value: string): FormGroup {
         return this._formBuilder.group({
             type: [type, Validators.required],
             value: [value, Validators.required]
         });
     }
+
     get contactInfo(): FormArray {
         return this.signUpForm.get("contactInfo") as FormArray;
     }

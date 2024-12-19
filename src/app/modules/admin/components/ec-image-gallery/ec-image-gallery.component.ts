@@ -36,7 +36,7 @@ import { TRANSLOCO_SCOPE, TranslocoPipe } from "@jsverse/transloco";
                                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 duration-700 ease-in-out"
                                 [ngClass]="{ hidden: currentSlide !== $index }"
                                 data-carousel-item>
-                                <img [src]="image" alt="Gallery Image {{ $index + 1 }}" class="object-contain w-full max-h-52 rounded-lg" loading="lazy" />
+                                <img [src]="image.src" alt="Gallery Image {{ $index + 1 }}" class="object-contain w-full max-h-52 rounded-lg" loading="lazy" />
                             </div>
                             }
                         </div>
@@ -97,15 +97,32 @@ import { TRANSLOCO_SCOPE, TranslocoPipe } from "@jsverse/transloco";
 export class EcImageGalleryComponent {
     @Input() title: string = "imageGallery.title";
     @Input() tabs: { label: string; value: string }[] = [
-        { label: "imageGallery.tabs.all", value: "all" },
-        { label: "imageGallery.tabs.anomalies", value: "anomalies" },
-        { label: "imageGallery.tabs.normal", value: "normal" }
+        { label: "Todas", value: "all" },
+        { label: "Leves", value: "mild" },
+        { label: "Severas", value: "severe" },
+        { label: "Moderadas", value: "moderate" },
+        { label: "Normales", value: "normal" }
     ];
     @Input() selectedTab: string = "all";
-    @Input() imagesByTab: { [key: string]: string[] } = {
-        all: Array.from({ length: 12 }).map((_, index) => `/assets/images/ui/components/placeholder${Math.floor(Math.random() * 50)}.jpg`),
-        anomalies: Array.from({ length: 6 }).map((_, index) => `/assets/images/ui/components/placeholder${Math.floor(Math.random() * 50)}.jpg`),
-        normal: Array.from({ length: 6 }).map((_, index) => `/assets/images/ui/components/placeholder${Math.floor(Math.random() * 50)}.jpg`)
+    @Input() imagesByTab: { [key: string]: { src: string; alt: string; label: string; risk: string }[] } = {
+        all: [
+            { src: "/assets/images/ui/components/placeholder1.jpg", alt: "Image 1", label: "Leve", risk: "mild" },
+            { src: "/assets/images/ui/components/placeholder2.jpg", alt: "Image 2", label: "Severa", risk: "severe" },
+            { src: "/assets/images/ui/components/placeholder3.jpg", alt: "Image 3", label: "Moderada", risk: "moderate" },
+            { src: "/assets/images/ui/components/placeholder4.jpg", alt: "Image 4", label: "Normal", risk: "normal" },
+            { src: "/assets/images/ui/components/placeholder2.jpg", alt: "Image 2", label: "Severa", risk: "severe" },
+            { src: "/assets/images/ui/components/placeholder3.jpg", alt: "Image 3", label: "Moderada", risk: "moderate" },
+            { src: "/assets/images/ui/components/placeholder4.jpg", alt: "Image 4", label: "Normal", risk: "normal" }
+        ],
+        mild: [
+            { src: "/assets/images/ui/components/placeholder1.jpg", alt: "Image 1", label: "Leve", risk: "mild" },
+            { src: "/assets/images/ui/components/placeholder10.jpg", alt: "Image 1", label: "Leve", risk: "mild" },
+            { src: "/assets/images/ui/components/placeholder11.jpg", alt: "Image 1", label: "Leve", risk: "mild" },
+            { src: "/assets/images/ui/components/placeholder12.jpg", alt: "Image 1", label: "Leve", risk: "mild" }
+        ],
+        severe: [{ src: "/assets/images/ui/components/placeholder2.jpg", alt: "Image 2", label: "Severa", risk: "severe" }],
+        moderate: [{ src: "/assets/images/ui/components/placeholder3.jpg", alt: "Image 3", label: "Moderada", risk: "moderate" }],
+        normal: [{ src: "/assets/images/ui/components/placeholder4.jpg", alt: "Image 4", label: "Normal", risk: "normal" }]
     };
 
     currentSlide: number = 0;
@@ -127,5 +144,18 @@ export class EcImageGalleryComponent {
 
     goToSlide(slideIndex: number) {
         this.currentSlide = slideIndex;
+    }
+
+    getBadgeClass(risk: string) {
+        switch (risk) {
+            case "severe":
+                return "text-red-500";
+            case "moderate":
+                return "text-yellow-500";
+            case "mild":
+                return "text-green-500";
+            default:
+                return "text-gray-500";
+        }
     }
 }

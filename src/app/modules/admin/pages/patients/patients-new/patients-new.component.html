@@ -1,127 +1,107 @@
-<div class="w-full mx-20 my-5 p-8 bg-white rounded-xl shadow-lg">
-    <!-- Encabezado Principal -->
-    <div class="text-center mb-8">
-        <img
-            class="mx-auto w-16 h-16 rounded-full"
-            src="assets/images/logo/logo.png"
-            alt="Logo GastroSense" />
-        <h1 class="text-4xl font-extrabold text-gray-800 mt-4">Registro de Paciente</h1>
-        <p class="text-gray-500 mt-2">Complete los datos en las secciones correspondientes.</p>
+<div class="w-full max-w-7xl mx-auto p-8 bg-gray-100">
+    <!-- Encabezado -->
+    <div class="text-center mb-6">
+        <img class="mx-auto w-16 h-16 rounded-full" src="assets/images/logo/logo.png" alt="Logo" />
+        <h1 class="text-3xl font-bold text-gray-800 mt-4">Registro de Paciente</h1>
+        <p class="text-gray-500 text-sm">Complete los datos en las secciones correspondientes.</p>
     </div>
 
-    <!-- Contenedor Principal -->
-    <form [formGroup]="signUpForm" class="grid grid-cols-2 gap-5">
-        <!-- Columna Izquierda: Información General -->
-        <div class="p-6 bg-gray-50 rounded-lg shadow flex flex-col gap-2">
-            <h2 class="text-lg font-semibold text-gray-700 mb-2">Información General</h2>
+    <!-- Formulario -->
+    <form [formGroup]="signUpForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Información General -->
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h2 class="text-lg font-semibold text-gray-700 mb-4">Información General</h2>
+
             <!-- Nombre Completo -->
-            <label class="block text-gray-600 mb-2">Nombre completo</label>
-            <mat-form-field class="w-full">
-                <input matInput formControlName="name" placeholder="Nombre completo" />
+            <mat-form-field appearance="outline" class="w-full">
+                <mat-label>Nombre completo</mat-label>
+                <input matInput formControlName="name" />
             </mat-form-field>
-            <!-- Género -->
-            <label class="block text-gray-600">Género</label>
-            <mat-form-field class="w-full">
-                <mat-select formControlName="gender">
-                    <mat-option value="male">Masculino</mat-option>
-                    <mat-option value="female">Femenino</mat-option>
-                    <mat-option value="other">Otro</mat-option>
+
+            <div class="flex gap-4 mt-4">
+                <!-- Género -->
+                <mat-form-field appearance="outline" class="w-1/2">
+                    <mat-label>Género</mat-label>
+                    <mat-select formControlName="gender">
+                        <mat-option value="male">Masculino</mat-option>
+                        <mat-option value="female">Femenino</mat-option>
+                        <mat-option value="other">Otro</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <!-- Edad -->
+                <mat-form-field appearance="outline" class="w-1/2">
+                    <mat-label>Edad</mat-label>
+                    <input matInput type="number" formControlName="age" placeholder="Ej: 25" />
+                </mat-form-field>
+            </div>
+        </div>
+
+        <!-- Documento de Identidad -->
+        <div formGroupName="identityDocument" class="bg-white p-6 rounded-lg shadow-sm">
+            <h2 class="text-lg font-semibold text-gray-700 mb-4">Documento de Identidad</h2>
+
+            <!-- Tipo de Documento -->
+            <mat-form-field appearance="outline" class="w-full">
+                <mat-label>Tipo de Documento</mat-label>
+                <mat-select formControlName="type">
+                    <mat-option value="DNI">DNI</mat-option>
+                    <mat-option value="Pasaporte">Pasaporte</mat-option>
                 </mat-select>
-                <mat-error *ngIf="signUpForm.get('gender').hasError('required')">
-                    El género es obligatorio
-                </mat-error>
             </mat-form-field>
-            <!-- Edad -->
-            <div>
-                <label class="block text-gray-600 mb-2">Edad</label>
-                <input
-                    matInput
-                    type="number"
-                    formControlName="age"
-                    placeholder="Ej: 25"
-                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500" />
-            </div>
+
+            <!-- Número -->
+            <mat-form-field appearance="outline" class="w-full mt-4">
+                <mat-label>Número</mat-label>
+                <input matInput formControlName="value" placeholder="Número de documento" />
+            </mat-form-field>
         </div>
 
-        <!-- Columna Derecha: Documento de Identidad + Información de Contacto -->
-        <div class="flex flex-col gap-6">
-            <!-- Documento de Identidad -->
-            <div class="p-6 bg-gray-50 rounded-lg shadow flex flex-col gap-4">
-                <h2 class="text-lg font-semibold text-gray-700 mb-2">Documento de Identidad</h2>
-                <!-- Tipo -->
-                <div>
-                    <label class="block text-gray-600 mb-2">Tipo de Documento</label>
-                    <mat-select
-                        formControlName="identityDocument.type"
-                        placeholder="Tipo"
-                        class="w-full">
-                        <mat-option value="DNI">DNI</mat-option>
-                        <mat-option value="Pasaporte">Pasaporte</mat-option>
-                    </mat-select>
-                </div>
-                <!-- Número -->
-                <div>
-                    <label class="block text-gray-600 mb-2">Número</label>
-                    <input
-                        matInput
-                        formControlName="identityDocument.value"
-                        placeholder="Número de documento"
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500" />
-                </div>
-            </div>
+        <!-- Información de Contacto -->
+        <div class="col-span-2 bg-white p-6 rounded-lg shadow-sm">
+            <h2 class="text-lg font-semibold text-gray-700 mb-4 text-center">
+                Información de Contacto
+            </h2>
+            <ng-container
+                *ngFor="let contact of contactInfo.controls; let i = index; trackBy: trackByIndex">
+                <form [formGroup]="contact" class="flex items-center gap-4">
+                    <mat-form-field appearance="outline" class="w-1/3">
+                        <mat-label>Tipo de Contacto</mat-label>
+                        <mat-select formControlName="type">
+                            <mat-option value="email">Correo electrónico</mat-option>
+                            <mat-option value="phone">Teléfono</mat-option>
+                        </mat-select>
+                    </mat-form-field>
 
-            <!-- Información de Contacto -->
-            <div class="p-6 bg-gray-50 rounded-lg shadow flex flex-col gap-4">
-                <h2 class="text-lg font-semibold text-gray-700 mb-2 text-center">
-                    Información de Contacto
-                </h2>
-                <div
-                    *ngFor="
-                        let contact of contactInfo.controls;
-                        let i = index;
-                        trackBy: trackByIndex
-                    "
-                    [formGroupName]="i"
-                    class="flex items-center gap-4 animate-fade-in">
-                    <!-- Campos de Contacto -->
-                    <mat-select formControlName="type" placeholder="Tipo" class="flex-1">
-                        <mat-option value="email">Correo electrónico</mat-option>
-                        <mat-option value="phone">Teléfono</mat-option>
-                    </mat-select>
-                    <input
-                        matInput
-                        formControlName="value"
-                        placeholder="Valor"
-                        class="flex-1 p-3 border rounded-lg focus:ring-2 focus:ring-primary-500" />
-                    <!-- Botón de Eliminar -->
-                    <button
-                        type="button"
-                        mat-icon-button
-                        color="warn"
-                        (click)="removeContact(i)"
-                        class="w-10 h-10 flex items-center justify-center rounded-full">
-                        <mat-icon class="text-white">delete</mat-icon>
+                    <mat-form-field appearance="outline" class="flex-1">
+                        <mat-label>Valor</mat-label>
+                        <input matInput formControlName="value" placeholder="Valor" />
+                    </mat-form-field>
+
+                    <button type="button" mat-icon-button color="warn" (click)="removeContact(i)">
+                        <mat-icon>delete</mat-icon>
                     </button>
-                </div>
+                </form>
+            </ng-container>
 
-                <button
-                    type="button"
-                    mat-flat-button
-                    color="primary"
-                    (click)="addContact()"
-                    class="mt-2 mx-auto px-4 py-2 bg-teal-500 text-white rounded-lg hover:bg-teal-600">
-                    + Agregar contacto
-                </button>
-            </div>
-        </div>
-
-        <!-- Botón de Enviar -->
-        <div class="col-span-2 flex justify-center mt-8">
+            <!-- Botón de Agregar Contacto -->
             <button
                 type="button"
                 mat-flat-button
                 color="primary"
-                class="w-full max-w-xs p-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700">
+                (click)="addContact()"
+                class="mt-4 mx-auto block bg-tealt-600 text-white py-2 px-4 rounded-md hover:bg-tealt-700">
+                + Agregar contacto
+            </button>
+        </div>
+
+        <!-- Botón de Enviar -->
+        <div class="col-span-2 flex justify-center">
+            <button
+                type="submit"
+                mat-flat-button
+                color="primary"
+                class="w-full max-w-xs bg-tealt-600 text-white py-3 rounded-md hover:bg-tealt-700">
                 Registrar Paciente
             </button>
         </div>

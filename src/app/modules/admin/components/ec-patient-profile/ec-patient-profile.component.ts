@@ -1,11 +1,12 @@
 import { Component, Input } from "@angular/core";
 import { MatIcon } from "@angular/material/icon";
+import { RouterLink } from "@angular/router";
 import { TRANSLOCO_SCOPE, TranslocoPipe } from "@jsverse/transloco";
 
 @Component({
     selector: "ec-patient-profile",
     standalone: true,
-    imports: [TranslocoPipe, MatIcon],
+    imports: [TranslocoPipe, MatIcon, RouterLink],
     template: `
         <div class="bg-white dark:bg-gray-800 shadow rounded-lg p-4">
             <h2 class="text-lg font-semibold">{{ "patientProfile.title" | transloco }}</h2>
@@ -25,7 +26,7 @@ import { TRANSLOCO_SCOPE, TranslocoPipe } from "@jsverse/transloco";
                 <div class="flex justify-between items-center">
                     @if(patientMedicalHistory === true){
                     <span class="font-medium">{{ "patientProfile.medicalHistory" | transloco }}:</span>
-                    <button class="flex items-center text-primary-600 hover:underline focus:outline-none">
+                    <button class="flex items-center text-primary-600 hover:underline focus:outline-none" [routerLink]="'/pacientes/historia'">
                         <span>{{ "patientProfile.viewHistory" | transloco }}</span>
                         <mat-icon class="text-primary">chevron_right</mat-icon>
                     </button>
@@ -43,8 +44,8 @@ import { TRANSLOCO_SCOPE, TranslocoPipe } from "@jsverse/transloco";
     ]
 })
 export class EcPatientProfileComponent {
-    @Input() patientName: string = "Jeysson Sánchez"; // Nombre del paciente
-    @Input() patientAge: number = 19; // Edad del paciente
-    @Input() patientGender: string = "Masculino"; // Género del paciente
-    @Input() patientMedicalHistory: boolean | null = true; // Historia médica del paciente
+    @Input() patientName: string = "Antonela Alejos"; // Nombre del paciente
+    @Input() patientAge: number = 21; // Edad del paciente
+    @Input() patientGender: string = "Femenino"; // Género del paciente
+    @Input() patientMedicalHistory: boolean = true; // Historia médica del paciente
 }

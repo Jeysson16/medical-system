@@ -10,7 +10,7 @@ import { MatInputModule } from "@angular/material/input";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { MatSelectModule } from "@angular/material/select";
 import { Router } from "@angular/router";
-import { FuseAlertComponent, FuseAlertType } from "@fuse/components/alert";
+import { FuseAlertType } from "@fuse/components/alert";
 import { AuthService } from "app/core/auth/auth.service";
 
 @Component({
@@ -18,9 +18,7 @@ import { AuthService } from "app/core/auth/auth.service";
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [
-        NgIf,
         NgFor,
-        FuseAlertComponent,
         FormsModule,
         ReactiveFormsModule,
         MatFormFieldModule,
@@ -48,7 +46,6 @@ export class PatientsNewComponent {
     private _authService = inject(AuthService);
     private _formBuilder = inject(UntypedFormBuilder);
     private _router = inject(Router);
-    private _changeDetectorRef = inject(ChangeDetectorRef);
 
     ngOnInit(): void {
         // Create the form
@@ -61,7 +58,7 @@ export class PatientsNewComponent {
             contactInfo: this._formBuilder.array([this.createContactGroup("email", "")]), // Contactos del paciente
             password: ["", Validators.required],
             identityDocument: this._formBuilder.group({
-                type: ["", Validators.required], // Tipo de documento del paciente
+                type: ["DNI", Validators.required], // Tipo de documento del paciente
                 value: ["", Validators.required] // Número de documento
             })
         });

@@ -115,7 +115,7 @@ export class LanguagesComponent implements OnInit, OnDestroy {
             if (navItem) {
                 // Asignar el título traducido
                 this._translocoService
-                    .selectTranslate(titleKey)
+                    .selectTranslate(titleKey, {}, "es")
                     .pipe(take(1))
                     .subscribe(translation => {
                         navItem.title = translation;
@@ -125,7 +125,7 @@ export class LanguagesComponent implements OnInit, OnDestroy {
                 // Asignar el subtítulo traducido si existe
                 if (subtitleKey) {
                     this._translocoService
-                        .selectTranslate(subtitleKey)
+                        .selectTranslate(subtitleKey, {}, "es")
                         .pipe(take(1))
                         .subscribe(translation => {
                             navItem.subtitle = translation;

@@ -33,6 +33,7 @@ import { debounceTime, Subject, takeUntil } from "rxjs";
 import { PatientsService } from "@services/patients-list.service";
 import { PatientsViewListComponent } from "../list/list.component";
 import { Country, Patient, Tag } from "@models/IPatient";
+import { MatMenuModule } from "@angular/material/menu";
 
 @Component({
     selector: "contacts-details",
@@ -48,6 +49,7 @@ import { Country, Patient, Tag } from "@models/IPatient";
         MatIconModule,
         NgFor,
         FormsModule,
+        MatMenuModule,
         ReactiveFormsModule,
         MatRippleModule,
         MatFormFieldModule,
@@ -687,5 +689,13 @@ export class PatientsDetailsComponent implements OnInit, OnDestroy {
      */
     trackByFn(index: number, item: any): any {
         return item.id || index;
+    }
+
+    registerCapsule(): void {
+
+    }
+
+    viewLastEndoscopicAnalysis(): void {
+        
     }
 }

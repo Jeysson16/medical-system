@@ -3,14 +3,14 @@ import { FuseNavigationItem } from "@fuse/components/navigation";
 export const defaultNavigation: FuseNavigationItem[] = [
     {
         id: "home",
-        title: "home.title",
-        subtitle: "home.overview",
+        title: "Inicio",
+        subtitle: "Resumen general del sistema",
         type: "group",
         icon: "heroicons_outline:home",
         children: [
             {
                 id: "dashboards.home",
-                title: "home.title",
+                title: "Vista principal",
                 type: "basic",
                 icon: "heroicons_outline:home",
                 link: "/inicio"
@@ -19,20 +19,23 @@ export const defaultNavigation: FuseNavigationItem[] = [
     },
     {
         id: "patients",
-        title: "patients.title",
+        title: "Pacientes",
+        subtitle: "Información de los pacientes",
         type: "group",
         icon: "heroicons_outline:user-group",
         children: [
             {
                 id: "patients.list",
-                title: "patients.list",
+                title: "Listado de pacientes",
+                subtitle: "Consulta y administración de registros",
                 type: "basic",
                 icon: "heroicons_outline:user-group",
                 link: "/pacientes/lista"
             },
             {
                 id: "patients.history",
-                title: "patients.history",
+                title: "Historial clínico",
+                subtitle: "Registro detallado del historial médico",
                 type: "basic",
                 icon: "heroicons_outline:book-open",
                 link: "/pacientes/historia"
@@ -41,49 +44,53 @@ export const defaultNavigation: FuseNavigationItem[] = [
     },
     {
         id: "real-time-images",
-        title: "real-time-images.title",
+        title: "Imágenes en Tiempo Real",
+        subtitle: "Visualización y procesamiento en vivo",
         type: "group",
         icon: "heroicons_outline:camera",
         children: [
             {
                 id: "real-time-images.capture",
-                title: "real-time-images.capture",
+                title: "Captura en vivo",
+                subtitle: "Captura de imágenes en tiempo real",
                 type: "basic",
                 icon: "heroicons_outline:video-camera",
-                link: "/tiempo-real/"
+                link: "/tiempo-real/reproduccion"
             },
             {
                 id: "real-time-images.filters",
-                title: "real-time-images.filters",
+                title: "Galería de Resultados",
+                subtitle: "Colección de imágenes capturadas por la cápsula",
                 type: "basic",
                 icon: "heroicons_outline:adjustments-horizontal",
-                link: "/tiempo-real/filtros"
+                link: "/tiempo-real/resultados"
             }
         ]
     },
     {
         id: "support",
-        title: "support.title",
+        title: "Soporte",
+        subtitle: "Asistencia técnica y documentación",
         type: "group",
         icon: "heroicons_outline:question-mark-circle",
         children: [
             {
                 id: "support.guides",
-                title: "support.guides",
+                title: "Guías de uso",
                 type: "basic",
                 icon: "heroicons_outline:book-open",
                 link: "/soporte/guias"
             },
             {
                 id: "support.faq",
-                title: "support.faq",
+                title: "Preguntas frecuentes",
                 type: "basic",
                 icon: "heroicons_outline:question-mark-circle",
                 link: "/soporte/preguntas-frecuentes"
             },
             {
                 id: "support.contact",
-                title: "support.contact",
+                title: "Contacto con soporte",
                 type: "basic",
                 icon: "heroicons_outline:chat-bubble-bottom-center-text",
                 link: "/soporte/contacto"
