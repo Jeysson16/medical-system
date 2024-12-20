@@ -7,6 +7,7 @@ import {
     ChangeDetectorRef,
     Component,
     ElementRef,
+    inject,
     OnDestroy,
     OnInit,
     Renderer2,
@@ -34,6 +35,9 @@ import { PatientsService } from "@services/patients-list.service";
 import { PatientsViewListComponent } from "../list/list.component";
 import { Country, Patient, Tag } from "@models/IPatient";
 import { MatMenuModule } from "@angular/material/menu";
+import { CapsuleService } from "@services/capsule.service";
+import { DialogCapsuleComponent } from "../../dialog-capsule/dialog-capsule.component";
+import { MatDialog } from "@angular/material/dialog";
 
 @Component({
     selector: "contacts-details",
@@ -79,6 +83,8 @@ export class PatientsDetailsComponent implements OnInit, OnDestroy {
     countries: Country[];
     private _tagsPanelOverlayRef: OverlayRef;
     private _unsubscribeAll: Subject<any> = new Subject<any>();
+    private capsuleService = inject(CapsuleService);
+    private dialog = inject(MatDialog);
 
     /**
      * Constructor
@@ -692,10 +698,28 @@ export class PatientsDetailsComponent implements OnInit, OnDestroy {
     }
 
     registerCapsule(): void {
+        const dialogRef = this.dialog.open(DialogCapsuleComponent, {
+            width: "400px",
+            data: { contactId: this.contact.id }
+        });
 
+        dialogRef.afterClosed().subscribe(result => {
+            if (result) {
+                this.capsuleService.addCapsule(result);
+                console.log("Cápsula registrada:", result);
+            }
+        });
     }
 
-    viewLastEndoscopicAnalysis(): void {
-        
+    generateUniqueId(): string {
+        return Math.random().toString(36).substr(2, 9); // Genera un ID único simple
     }
+    viewLastEndoscopicAnalysis(): void {}
+}
+export interface Capsule {
+    id: string; // Código único para la cápsula
+    title: string; // Nombre o título
+    description: string; // Descripción opcional
+    createdAt: Date; // Fecha de creación
+    contactId: string; // Relacionado con el contacto
 }
